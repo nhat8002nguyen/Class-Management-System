@@ -5,16 +5,16 @@
  - Copyright (c) 2019. All rights reserved                                    -
  -----------------------------------------------------------------------------*/
 package com.haerul.foodsapp.view.home;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.haerul.foodsapp.R;
 import com.haerul.foodsapp.Utils;
 import com.haerul.foodsapp.adapter.RecyclerViewHomeAdapter;
@@ -22,12 +22,9 @@ import com.haerul.foodsapp.adapter.ViewPagerHeaderAdapter;
 import com.haerul.foodsapp.model.Categories;
 import com.haerul.foodsapp.model.Meals;
 import com.haerul.foodsapp.view.category.CategoryActivity;
-
+import com.haerul.foodsapp.view.detail.DetailActivity;
 import java.io.Serializable;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity implements HomeView {
 
@@ -73,7 +70,10 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         headerAdapter.notifyDataSetChanged();
 
         headerAdapter.setOnItemClickListener((v, position) -> {
-            //TODO #8.1 make an intent to DetailActivity (get the name of the meal from the edit text view, then send the name of the meal to DetailActivity)
+            TextView mealName = v.findViewById(R.id.mealName);
+            Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+            intent.putExtra(EXTRA_DETAIL, mealName.getText().toString());
+            startActivity(intent);
         });
     }
 
