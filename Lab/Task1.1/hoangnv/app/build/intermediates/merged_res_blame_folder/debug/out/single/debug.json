@@ -1,0 +1,410 @@
+[
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_shadow_for_love_white.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\drawable-xxhdpi\\shadow_for_love_white.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_link.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_link.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_search_primary_light.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_search_primary_light.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_more.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_more.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable_sample_image_meal.jpg.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\drawable\\sample_image_meal.jpg"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_search.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_search.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_play.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_play.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_more.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_more.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_shadow_for_love_white.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\drawable-hdpi\\shadow_for_love_white.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_more.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_more.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_more.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_more.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_play.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_play.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_info.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_info.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_info.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_info.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable_sample_image_category.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\drawable\\sample_image_category.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_circle.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_circle.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_view_pager_header_shimmer.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\layout\\item_view_pager_header_shimmer.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_category.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\layout\\activity_category.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_search_primary_light.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_search_primary_light.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_play.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_play.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_more.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_more.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_recycler_meal.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\layout\\item_recycler_meal.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_search.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_search.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_category.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\layout\\fragment_category.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_circle.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_circle.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_more.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_more.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_circle.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_circle.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_view_pager_header.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\layout\\item_view_pager_header.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_detail.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\menu\\menu_detail.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_more.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_more.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_recycler_category.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\layout\\item_recycler_category.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_info.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_info.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_link.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_link.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_more.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_more.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_info.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_info.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_circle.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_circle.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_link.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_link.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_link.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_link.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_search.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_search.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_search.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_search.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_search_primary_light.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_search_primary_light.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_favorite.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_favorite.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_shadow_for_love_white.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\drawable-xxxhdpi\\shadow_for_love_white.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_search.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_search.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_search_primary_light.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_search_primary_light.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_favorite_border.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_favorite_border.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_search.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_search.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_favorite.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_favorite.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_info.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_info.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_circle.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_circle.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_favorite_border.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_favorite_border.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_info.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_info.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_search_primary_light.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_search_primary_light.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_shadow_for_love_white.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\drawable-mdpi\\shadow_for_love_white.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shadow_bottom_to_top.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\drawable\\shadow_bottom_to_top.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_play.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_play.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_favorite.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_favorite.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_play.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_play.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_detail.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_favorite.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_favorite.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_info.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_info.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_search_primary_light.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_search_primary_light.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_favorite_border.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_favorite_border.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_circle.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_circle.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_favorite_border.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_favorite_border.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_favorite.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_favorite.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_shadow_for_love_white.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\drawable-xhdpi\\shadow_for_love_white.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_search.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_search.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_recycler_category_shimmer.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\layout\\item_recycler_category_shimmer.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_search_primary_light.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_search_primary_light.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_link.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_link.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_link.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_link.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_play.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_play.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_favorite.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_favorite.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_play.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_play.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_favorite_border.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_favorite_border.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_favorite.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_favorite.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_link.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_link.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_favorite_border.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_favorite_border.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_favorite_border.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_favorite_border.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_circle.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_circle.png"
+    },
+    {
+        "merged": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\Docs\\202co3043_whatever\\Lab\\Task1.1\\hoangnv\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    }
+]

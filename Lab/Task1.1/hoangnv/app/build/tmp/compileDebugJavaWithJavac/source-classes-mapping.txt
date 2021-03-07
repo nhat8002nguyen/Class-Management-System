@@ -1,0 +1,51 @@
+com/haerul/foodsapp/view/home/HomeActivity.java
+ com.haerul.foodsapp.view.home.HomeActivity
+com/haerul/foodsapp/adapter/ViewPagerCategoryAdapter.java
+ com.haerul.foodsapp.adapter.ViewPagerCategoryAdapter
+com/haerul/foodsapp/view/home/HomeView.java
+ com.haerul.foodsapp.view.home.HomeView
+com/haerul/foodsapp/BuildConfig.java
+ com.haerul.foodsapp.BuildConfig
+com/haerul/foodsapp/view/category/CategoryActivity.java
+ com.haerul.foodsapp.view.category.CategoryActivity
+com/haerul/foodsapp/Utils.java
+ com.haerul.foodsapp.Utils
+com/haerul/foodsapp/view/category/CategoryView.java
+ com.haerul.foodsapp.view.category.CategoryView
+com/haerul/foodsapp/adapter/ViewPagerHeaderAdapter.java
+ com.haerul.foodsapp.adapter.ViewPagerHeaderAdapter
+ com.haerul.foodsapp.adapter.ViewPagerHeaderAdapter$ClickListener
+com/haerul/foodsapp/model/Meals.java
+ com.haerul.foodsapp.model.Meals
+ com.haerul.foodsapp.model.Meals$Meal
+com/haerul/foodsapp/view/category/CategoryPresenter.java
+ com.haerul.foodsapp.view.category.CategoryPresenter
+ com.haerul.foodsapp.view.category.CategoryPresenter$1
+com/haerul/foodsapp/api/FoodApi.java
+ com.haerul.foodsapp.api.FoodApi
+com/haerul/foodsapp/view/detail/DetailActivity.java
+ com.haerul.foodsapp.view.detail.DetailActivity
+com/haerul/foodsapp/view/detail/DetailPresenter.java
+ com.haerul.foodsapp.view.detail.DetailPresenter
+ com.haerul.foodsapp.view.detail.DetailPresenter$1
+com/haerul/foodsapp/view/detail/DetailView.java
+ com.haerul.foodsapp.view.detail.DetailView
+com/haerul/foodsapp/model/Categories.java
+ com.haerul.foodsapp.model.Categories
+ com.haerul.foodsapp.model.Categories$Category
+com/haerul/foodsapp/adapter/RecyclerViewMealByCategory.java
+ com.haerul.foodsapp.adapter.RecyclerViewMealByCategory
+ com.haerul.foodsapp.adapter.RecyclerViewMealByCategory$ClickListener
+ com.haerul.foodsapp.adapter.RecyclerViewMealByCategory$RecyclerViewHolder
+com/haerul/foodsapp/adapter/RecyclerViewHomeAdapter.java
+ com.haerul.foodsapp.adapter.RecyclerViewHomeAdapter
+ com.haerul.foodsapp.adapter.RecyclerViewHomeAdapter$ClickListener
+ com.haerul.foodsapp.adapter.RecyclerViewHomeAdapter$RecyclerViewHolder
+com/haerul/foodsapp/api/FoodClient.java
+ com.haerul.foodsapp.api.FoodClient
+com/haerul/foodsapp/view/home/HomePresenter.java
+ com.haerul.foodsapp.view.home.HomePresenter
+ com.haerul.foodsapp.view.home.HomePresenter$1
+ com.haerul.foodsapp.view.home.HomePresenter$2
+com/haerul/foodsapp/view/category/CategoryFragment.java
+ com.haerul.foodsapp.view.category.CategoryFragment
