@@ -1,0 +1,1402 @@
+/* Frame 1 */
+
+position: relative;
+width: 335px;
+height: 576px;
+
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 335px;
+height: 576px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+border-radius: 44px;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: 290px;
+top: 516px;
+
+background: #000000;
+
+
+/* 12x14 */
+
+position: absolute;
+width: 12px;
+height: 14px;
+left: calc(50% - 12px/2 + 129.5px);
+top: calc(50% - 14px/2 + 235px);
+
+background: #000000;
+border-radius: 100px 100px 0px 0px;
+
+
+/* 14x1 */
+
+position: absolute;
+width: 14px;
+height: 1px;
+left: calc(50% - 14px/2 + 129.5px);
+top: calc(50% - 1px/2 + 241.5px);
+
+background: #000000;
+
+
+/* 2x1 */
+
+position: absolute;
+width: 2px;
+height: 1px;
+left: calc(50% - 2px/2 + 129.5px);
+top: calc(50% - 1px/2 + 243.5px);
+
+background: #000000;
+border-radius: 0px 0px 100px 100px;
+
+
+/* Thêm nhóm */
+
+position: absolute;
+width: 75px;
+height: 16px;
+left: 54px;
+top: 26px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+
+
+
+/* Line 1 */
+
+position: absolute;
+width: 19.8px;
+height: 0px;
+left: 22px;
+top: 26px;
+
+border: 1px solid #000000;
+transform: rotate(45deg);
+
+
+/* Line 2 */
+
+position: absolute;
+width: 19.8px;
+height: 0px;
+left: 36px;
+top: 25px;
+
+border: 1px solid #000000;
+transform: rotate(135deg);
+
+
+/* Line 3 */
+
+position: absolute;
+width: 13.6px;
+height: 0px;
+left: 296px;
+top: 33px;
+
+border: 1px solid #000000;
+transform: rotate(53.97deg);
+
+
+/* Line 4 */
+
+position: absolute;
+width: 23.26px;
+height: 0px;
+left: 304px;
+top: 44px;
+
+border: 1px solid #000000;
+transform: rotate(-64.54deg);
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 292px;
+height: 41px;
+left: 22px;
+top: 87px;
+
+background: #FFFFFF;
+border: 1px solid #3350B9;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 292px;
+height: 41px;
+left: 22px;
+top: 171px;
+
+background: #FFFFFF;
+border: 1px solid #3350B9;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 292px;
+height: 54px;
+left: 22px;
+top: 258px;
+
+background: #5C9BF9;
+border: 1px solid #FFFFFF;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+
+/* Thêm nhóm */
+
+position: absolute;
+width: 86px;
+height: 19px;
+left: 123px;
+top: 277px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Bấm vào để thêm học viên */
+
+position: absolute;
+width: 165px;
+height: 16px;
+left: 46px;
+top: 183px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: rgba(0, 0, 0, 0.5);
+
+
+
+/* Học viên */
+
+position: absolute;
+width: 55px;
+height: 16px;
+left: 37px;
+top: 150px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: rgba(0, 0, 0, 0.5);
+
+
+
+/* Tên nhóm */
+
+position: absolute;
+width: 62px;
+height: 16px;
+left: 30px;
+top: 66px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: rgba(0, 0, 0, 0.5);
+
+
+
+/* Line 5 */
+
+position: absolute;
+width: 335px;
+height: 0px;
+left: 0px;
+top: 497px;
+
+border: 1px solid #DADADA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Lớp học */
+
+position: absolute;
+width: 43px;
+height: 14px;
+left: 22px;
+top: 540px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Câu chuyện */
+
+position: absolute;
+width: 63px;
+height: 14px;
+left: 81px;
+top: 540px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Tin nhắn */
+
+position: absolute;
+width: 47px;
+height: 14px;
+left: 203px;
+top: 540px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Thông báo */
+
+position: absolute;
+width: 58px;
+height: 14px;
+left: 271px;
+top: 540px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 28px;
+height: 27px;
+left: 154px;
+top: 520px;
+
+background: #FFFFFF;
+border: 1px solid #5C9BF9;
+box-sizing: border-box;
+
+
+/* 20x14 */
+
+position: absolute;
+width: 20px;
+height: 14px;
+left: 217px;
+top: 519px;
+
+background: #000000;
+
+
+/* Subtract */
+
+position: absolute;
+width: 20px;
+height: 14px;
+left: 217px;
+top: 519px;
+
+background: #000000;
+
+
+/* 20x14 */
+
+position: absolute;
+width: 20px;
+height: 14px;
+left: calc(50% - 20px/2 + 59.5px);
+top: calc(50% - 14px/2 + 238px);
+
+background: #000000;
+
+
+/* 18x12 */
+
+position: absolute;
+width: 18px;
+height: 12px;
+left: calc(50% - 18px/2 + 59.5px);
+top: calc(50% - 12px/2 + 238px);
+
+background: #000000;
+
+
+/* Vector 19 */
+
+position: absolute;
+width: 18px;
+height: 8px;
+left: 218px;
+top: 520px;
+
+border: 1px solid #000000;
+
+
+/* Vector 20 */
+
+position: absolute;
+width: 6px;
+height: 6px;
+left: 218px;
+top: 526px;
+
+border: 1px solid #000000;
+
+
+/* Vector 21 */
+
+position: absolute;
+width: 6px;
+height: 6px;
+left: 230px;
+top: 526px;
+
+border: 1px solid #000000;
+
+
+/* 16x16 */
+
+position: absolute;
+width: 28px;
+height: 13px;
+left: 23px;
+top: 519px;
+
+
+
+/* 28x13 */
+
+position: absolute;
+width: 28px;
+height: 13px;
+left: 23px;
+top: 519px;
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 28x12 */
+
+position: absolute;
+width: 28px;
+height: 12px;
+left: 23px;
+top: 520px;
+
+background: #000000;
+
+
+/* 16x8 */
+
+position: absolute;
+width: 16px;
+height: 8px;
+left: 23px;
+top: 524px;
+
+background: #000000;
+
+
+/* 24x12 */
+
+position: absolute;
+width: 24px;
+height: 12px;
+left: 27px;
+top: 520px;
+
+background: #000000;
+
+
+/* 3x3 */
+
+position: absolute;
+width: 3px;
+height: 3px;
+left: 32px;
+top: 519px;
+
+background: #000000;
+
+
+/* 16x16 */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: calc(50% - 16px/2 - 132.5px);
+top: calc(50% - 16px/2 + 236px);
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 20x20 */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 103px;
+top: 516px;
+
+background: #000000;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: 103px;
+top: 516px;
+
+background: #000000;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: calc(50% - 14px/2 - 57.5px);
+top: calc(50% - 16px/2 + 236px);
+
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 9x13 */
+
+position: absolute;
+width: 9px;
+height: 13px;
+left: calc(50% - 9px/2 - 55px);
+top: calc(50% - 13px/2 + 237.5px);
+
+background: #000000;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: 109px;
+top: 520px;
+
+background: #000000;
+
+
+/* Subtract */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: 109px;
+top: 520px;
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: calc(50% - 14px/2 - 51.5px);
+top: calc(50% - 16px/2 + 240px);
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 12px;
+height: 14px;
+left: calc(50% - 12px/2 - 51.5px);
+top: calc(50% - 14px/2 + 240px);
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Union */
+
+position: absolute;
+width: 10px;
+height: 11px;
+left: 111px;
+top: 522px;
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 234.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 236.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 238.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 240.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 242.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 244.5px);
+
+background: #000000;
+
+
+/* Frame 2 */
+
+position: relative;
+width: 335px;
+height: 576px;
+
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 335px;
+height: 576px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+border-radius: 44px;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: 290px;
+top: 516px;
+
+background: #000000;
+
+
+/* 12x14 */
+
+position: absolute;
+width: 12px;
+height: 14px;
+left: calc(50% - 12px/2 + 129.5px);
+top: calc(50% - 14px/2 + 235px);
+
+background: #000000;
+border-radius: 100px 100px 0px 0px;
+
+
+/* 14x1 */
+
+position: absolute;
+width: 14px;
+height: 1px;
+left: calc(50% - 14px/2 + 129.5px);
+top: calc(50% - 1px/2 + 241.5px);
+
+background: #000000;
+
+
+/* 2x1 */
+
+position: absolute;
+width: 2px;
+height: 1px;
+left: calc(50% - 2px/2 + 129.5px);
+top: calc(50% - 1px/2 + 243.5px);
+
+background: #000000;
+border-radius: 0px 0px 100px 100px;
+
+
+/* Line 5 */
+
+position: absolute;
+width: 335px;
+height: 0px;
+left: 0px;
+top: 497px;
+
+border: 1px solid #DADADA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Lớp học */
+
+position: absolute;
+width: 43px;
+height: 14px;
+left: 22px;
+top: 540px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Câu chuyện */
+
+position: absolute;
+width: 63px;
+height: 14px;
+left: 81px;
+top: 540px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Tin nhắn */
+
+position: absolute;
+width: 47px;
+height: 14px;
+left: 203px;
+top: 540px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Thông báo */
+
+position: absolute;
+width: 58px;
+height: 14px;
+left: 271px;
+top: 540px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 28px;
+height: 27px;
+left: 154px;
+top: 520px;
+
+background: #FFFFFF;
+border: 1px solid #5C9BF9;
+box-sizing: border-box;
+
+
+/* 20x14 */
+
+position: absolute;
+width: 20px;
+height: 14px;
+left: 217px;
+top: 519px;
+
+background: #000000;
+
+
+/* Subtract */
+
+position: absolute;
+width: 20px;
+height: 14px;
+left: 217px;
+top: 519px;
+
+background: #000000;
+
+
+/* 20x14 */
+
+position: absolute;
+width: 20px;
+height: 14px;
+left: calc(50% - 20px/2 + 59.5px);
+top: calc(50% - 14px/2 + 238px);
+
+background: #000000;
+
+
+/* 18x12 */
+
+position: absolute;
+width: 18px;
+height: 12px;
+left: calc(50% - 18px/2 + 59.5px);
+top: calc(50% - 12px/2 + 238px);
+
+background: #000000;
+
+
+/* Vector 19 */
+
+position: absolute;
+width: 18px;
+height: 8px;
+left: 218px;
+top: 520px;
+
+border: 1px solid #000000;
+
+
+/* Vector 20 */
+
+position: absolute;
+width: 6px;
+height: 6px;
+left: 218px;
+top: 526px;
+
+border: 1px solid #000000;
+
+
+/* Vector 21 */
+
+position: absolute;
+width: 6px;
+height: 6px;
+left: 230px;
+top: 526px;
+
+border: 1px solid #000000;
+
+
+/* 16x16 */
+
+position: absolute;
+width: 28px;
+height: 13px;
+left: 23px;
+top: 519px;
+
+
+
+/* 28x13 */
+
+position: absolute;
+width: 28px;
+height: 13px;
+left: 23px;
+top: 519px;
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 28x12 */
+
+position: absolute;
+width: 28px;
+height: 12px;
+left: 23px;
+top: 520px;
+
+background: #000000;
+
+
+/* 16x8 */
+
+position: absolute;
+width: 16px;
+height: 8px;
+left: 23px;
+top: 524px;
+
+background: #000000;
+
+
+/* 24x12 */
+
+position: absolute;
+width: 24px;
+height: 12px;
+left: 27px;
+top: 520px;
+
+background: #000000;
+
+
+/* 3x3 */
+
+position: absolute;
+width: 3px;
+height: 3px;
+left: 32px;
+top: 519px;
+
+background: #000000;
+
+
+/* 16x16 */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: calc(50% - 16px/2 - 132.5px);
+top: calc(50% - 16px/2 + 236px);
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 20x20 */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 103px;
+top: 516px;
+
+background: #000000;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: 103px;
+top: 516px;
+
+background: #000000;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: calc(50% - 14px/2 - 57.5px);
+top: calc(50% - 16px/2 + 236px);
+
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 9x13 */
+
+position: absolute;
+width: 9px;
+height: 13px;
+left: calc(50% - 9px/2 - 55px);
+top: calc(50% - 13px/2 + 237.5px);
+
+background: #000000;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: 109px;
+top: 520px;
+
+background: #000000;
+
+
+/* Subtract */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: 109px;
+top: 520px;
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 14px;
+height: 16px;
+left: calc(50% - 14px/2 - 51.5px);
+top: calc(50% - 16px/2 + 240px);
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* 14x16 */
+
+position: absolute;
+width: 12px;
+height: 14px;
+left: calc(50% - 12px/2 - 51.5px);
+top: calc(50% - 14px/2 + 240px);
+
+background: #000000;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Union */
+
+position: absolute;
+width: 10px;
+height: 11px;
+left: 111px;
+top: 522px;
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 234.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 236.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 238.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 240.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 242.5px);
+
+background: #000000;
+
+
+/* 10x1 */
+
+position: absolute;
+width: 10px;
+height: 1px;
+left: calc(50% - 10px/2 - 51.5px);
+top: calc(50% - 1px/2 + 244.5px);
+
+background: #000000;
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 135px;
+height: 92px;
+left: 27px;
+top: 88px;
+
+background: #FFFFFF;
+border: 1px solid #3350B9;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 18px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 135px;
+height: 92px;
+left: 27px;
+top: 194px;
+
+background: #FFFFFF;
+border: 1px solid #3350B9;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 18px;
+
+
+/* Rectangle 10 */
+
+position: absolute;
+width: 135px;
+height: 92px;
+left: 173px;
+top: 88px;
+
+background: #FFFFFF;
+border: 1px solid #3350B9;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 18px;
+
+
+/* Nhóm 1 */
+
+position: absolute;
+width: 43px;
+height: 14px;
+left: 67px;
+top: 150px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Nhóm 3 */
+
+position: absolute;
+width: 43px;
+height: 14px;
+left: 67px;
+top: 256px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Nhóm 2 */
+
+position: absolute;
+width: 43px;
+height: 14px;
+left: 213px;
+top: 150px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 125px;
+height: 54px;
+left: 31px;
+top: 91px;
+
+background: url(0c004024-e96f-46a5-b42f-e98ad77fd095.jpg);
+border-radius: 17px;
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 125px;
+height: 54px;
+left: 31px;
+top: 197px;
+
+background: url(0c004024-e96f-46a5-b42f-e98ad77fd095.jpg);
+border-radius: 17px;
+
+
+/* Rectangle 11 */
+
+position: absolute;
+width: 125px;
+height: 54px;
+left: 177px;
+top: 91px;
+
+background: url(0c004024-e96f-46a5-b42f-e98ad77fd095.jpg);
+border-radius: 17px;
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 135px;
+height: 92px;
+left: 173px;
+top: 196px;
+
+background: #FFFFFF;
+border: 1px solid #3350B9;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 18px;
+
+
+/* Ellipse 2 */
+
+position: absolute;
+width: 59px;
+height: 54px;
+left: 211px;
+top: 201px;
+
+background: #FFFFFF;
+border: 1px solid #5C9BF9;
+box-sizing: border-box;
+
+
+/* Line 6 */
+
+position: absolute;
+width: 24px;
+height: 0px;
+left: 241px;
+top: 216px;
+
+border: 1px solid #5C9BF9;
+transform: rotate(90deg);
+
+
+/* Line 7 */
+
+position: absolute;
+width: 21px;
+height: 0px;
+left: 230px;
+top: 228px;
+
+border: 1px solid #5C9BF9;
+
+
+/* Thêm nhóm */
+
+position: absolute;
+width: 65px;
+height: 14px;
+left: 208px;
+top: 262px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #5C9BF9;
+
+
+
+/* Lớp học 1 */
+
+position: absolute;
+width: 105px;
+height: 28px;
+left: 115px;
+top: 33px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+border: 1px solid rgba(128, 128, 128, 0.66);
+
