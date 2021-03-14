@@ -1,0 +1,1269 @@
+/* iOS/Status Bar/Black */
+
+position: absolute;
+height: 44px;
+left: 0px;
+right: 0px;
+top: 0px;
+
+
+
+/* BG */
+
+position: absolute;
+width: 375px;
+height: 46px;
+left: 0px;
+top: -2px;
+
+
+
+/* BG */
+
+position: absolute;
+visibility: hidden;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+
+background: #000000;
+
+
+/* Exclude */
+
+position: absolute;
+visibility: hidden;
+width: 375px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+/* Carbon / Darkest */
+background: #24262B;
+
+
+/* BG */
+
+position: absolute;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+
+/* Carbon Neutral/300 */
+background: #D6D9DD;
+
+
+/* Notch */
+
+position: absolute;
+width: 219px;
+height: 30px;
+left: calc(50% - 219px/2);
+top: -2px;
+
+background: #000000;
+
+
+/* Right Side */
+
+position: absolute;
+width: 66.66px;
+height: 11.34px;
+left: 293.67px;
+top: 17.33px;
+
+
+
+/* Battery */
+
+position: absolute;
+left: 89.6%;
+right: 3.91%;
+top: 39.39%;
+bottom: 34.85%;
+
+
+
+/* Rectangle */
+
+position: absolute;
+width: 22px;
+height: 11.33px;
+right: 17px;
+top: 17.33px;
+
+mix-blend-mode: normal;
+opacity: 0.35;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 2.66667px;
+
+
+/* Combined Shape */
+
+position: absolute;
+width: 1.33px;
+height: 4px;
+right: 14.67px;
+top: 21px;
+
+background: #000000;
+mix-blend-mode: normal;
+opacity: 0.4;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 18px;
+height: 7.33px;
+right: 19px;
+top: 19.33px;
+
+background: #000000;
+border-radius: 1.33333px;
+
+
+/* Wifi */
+
+position: absolute;
+left: 84.18%;
+right: 11.74%;
+top: 39.39%;
+bottom: 35.69%;
+
+background: #000000;
+
+
+/* Wifi-path */
+
+position: absolute;
+width: 15.27px;
+height: 4.74px;
+right: 44.03px;
+top: 17.33px;
+
+background: #DADADA;
+
+
+/* Wifi-path */
+
+position: absolute;
+width: 9.95px;
+height: 3.63px;
+right: 46.69px;
+top: 21.12px;
+
+background: #DADADA;
+
+
+/* Wifi-path */
+
+position: absolute;
+width: 4.63px;
+height: 3.37px;
+right: 49.36px;
+top: 24.92px;
+
+background: #DADADA;
+
+
+/* Mobile Signal */
+
+position: absolute;
+left: 78.31%;
+right: 17.16%;
+top: 40.15%;
+bottom: 35.61%;
+
+background: #000000;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 4px;
+right: 78.33px;
+top: 24.33px;
+
+background: #DADADA;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.67px;
+top: 22.33px;
+
+background: #DADADA;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 8.33px;
+right: 69px;
+top: 20px;
+
+background: #DADADA;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 10.67px;
+right: 64.33px;
+top: 17.67px;
+
+background: #DADADA;
+
+
+/* Left Side */
+
+position: absolute;
+width: 28.43px;
+height: 11.09px;
+left: 33.45px;
+top: 17.17px;
+
+
+
+/* 9:41 */
+
+position: absolute;
+width: 28.43px;
+height: 11.09px;
+left: 33.45px;
+top: 17.17px;
+
+background: #000000;
+
+
+/* BG */
+
+position: absolute;
+left: 4%;
+right: 4.53%;
+top: 9.98%;
+bottom: 16.01%;
+
+/* Gray/01 */
+background: #F6F6F6;
+/* Gray/02 */
+border: 1px solid #E8E8E8;
+box-sizing: border-box;
+border-radius: 8px;
+
+
+/* BG */
+
+position: absolute;
+left: 76.27%;
+right: 4%;
+top: 4.56%;
+bottom: 91.01%;
+
+/* Gray/01 */
+background: #F6F6F6;
+/* Gray/02 */
+border: 1px solid #E8E8E8;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+
+
+/* Sign up */
+
+position: absolute;
+width: 59px;
+height: 19px;
+left: 294px;
+top: 44px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Cancel */
+
+position: absolute;
+width: 55px;
+height: 19px;
+left: 19px;
+top: 46px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+
+
+
+/* Log in */
+
+position: absolute;
+width: 73px;
+height: 30px;
+left: calc(50% - 73px/2 - 1px);
+top: 93px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 30px;
+text-align: center;
+
+/* Black */
+color: #000000;
+
+
+/* Input/Text */
+
+position: absolute;
+height: 50px;
+left: 33px;
+right: 37px;
+top: 163px;
+
+
+
+/* BG */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Gray/01 */
+background: #F6F6F6;
+/* Gray 4 */
+border: 1px solid #BDBDBD;
+box-sizing: border-box;
+border-radius: 8px;
+
+
+/* Show */
+
+position: absolute;
+visibility: hidden;
+width: 43px;
+height: 19px;
+right: 16px;
+top: calc(50% - 19px/2 + 0.5px);
+
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+text-align: right;
+
+/* Green/Primary */
+color: #5DB075;
+
+
+/* Username or email */
+
+position: absolute;
+width: 128px;
+height: 17px;
+left: 39px;
+top: calc(50% - 17px/2 - 257.5px);
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+/* Gray 1 */
+color: #333333;
+
+
+/* Forgot password? */
+
+position: absolute;
+width: 119px;
+height: 17px;
+left: 66px;
+top: calc(50% - 17px/2 - 71.5px);
+
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+/* Gray 1 */
+color: #333333;
+
+
+/* Don’t have an account? */
+
+position: absolute;
+width: 155px;
+height: 17px;
+left: 73px;
+top: calc(50% - 17px/2 + 258.5px);
+
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+/* Gray 1 */
+color: #333333;
+
+
+/* Reset yout password */
+
+position: absolute;
+width: 139px;
+height: 17px;
+left: 186px;
+top: calc(50% - 17px/2 - 72.5px);
+
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+text-decoration-line: underline;
+
+/* Primary */
+color: #170ACC;
+
+
+/* Sign up */
+
+position: absolute;
+width: 50px;
+height: 17px;
+left: 231px;
+top: calc(50% - 17px/2 + 258.5px);
+
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+text-decoration-line: underline;
+
+/* Primary */
+color: #170ACC;
+
+
+/* Input/Text */
+
+position: absolute;
+height: 50px;
+left: 33px;
+right: 37px;
+top: 241px;
+
+
+
+/* BG */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Gray/01 */
+background: #F6F6F6;
+/* Gray 3 */
+border: 1px solid #828282;
+box-sizing: border-box;
+border-radius: 8px;
+
+
+/* Icon/Eye */
+
+position: absolute;
+left: 87.54%;
+right: 5.25%;
+top: 32%;
+bottom: 24%;
+
+
+
+/* Shape */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 13.38%;
+bottom: 18.43%;
+
+background: #81909F;
+
+
+/* Path */
+
+position: absolute;
+left: 36.36%;
+right: 36.36%;
+top: 33.84%;
+bottom: 38.89%;
+
+background: #000000;
+
+
+/* Path */
+
+position: absolute;
+left: 27.27%;
+right: 27.27%;
+top: 24.75%;
+bottom: 29.8%;
+
+background: #000000;
+
+
+/* Path */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 13.38%;
+bottom: 18.43%;
+
+background: #000000;
+
+
+/* Shape */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 13.38%;
+bottom: 18.43%;
+
+background: #1E1F20;
+
+
+/* Path */
+
+position: absolute;
+left: 36.36%;
+right: 36.36%;
+top: 33.84%;
+bottom: 38.89%;
+
+background: #000000;
+
+
+/* Path */
+
+position: absolute;
+left: 27.27%;
+right: 27.27%;
+top: 24.75%;
+bottom: 29.8%;
+
+background: #000000;
+
+
+/* Path */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 13.38%;
+bottom: 18.43%;
+
+background: #000000;
+
+
+/* Input/Text */
+
+position: absolute;
+height: 45px;
+left: 33px;
+right: 37px;
+top: 349px;
+
+
+
+/* BG */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #BDBDBD;
+/* Gray 3 */
+border: 1px solid #828282;
+box-sizing: border-box;
+border-radius: 8px;
+
+
+/* Log in */
+
+position: absolute;
+left: 41.97%;
+right: 42.3%;
+top: 28.89%;
+bottom: 33.11%;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+
+/* Gray 6 */
+color: #F2F2F2;
+
+
+/* Password */
+
+position: absolute;
+width: 68px;
+height: 17px;
+left: 39px;
+top: calc(50% - 17px/2 - 178.5px);
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* or */
+
+position: absolute;
+width: 15px;
+height: 17px;
+left: 178px;
+top: calc(50% - 17px/2 + 11.5px);
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+color: rgba(0, 0, 0, 0.87);
+
+
+
+/* kahoot12 */
+
+position: absolute;
+width: 320px;
+height: 178px;
+
+background: url(kahoot12.jpg);
+
+
+/* iOS/Status Bar/Black */
+
+position: absolute;
+height: 44px;
+left: 0px;
+right: 0px;
+top: 0px;
+
+
+
+/* BG */
+
+position: absolute;
+width: 375px;
+height: 46px;
+left: 0px;
+top: -2px;
+
+
+
+/* BG */
+
+position: absolute;
+visibility: hidden;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+
+background: #000000;
+
+
+/* Exclude */
+
+position: absolute;
+visibility: hidden;
+width: 375px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+/* Carbon / Darkest */
+background: #24262B;
+
+
+/* BG */
+
+position: absolute;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+
+/* Carbon Neutral/300 */
+background: #D6D9DD;
+
+
+/* Notch */
+
+position: absolute;
+width: 219px;
+height: 30px;
+left: calc(50% - 219px/2);
+top: -2px;
+
+background: #000000;
+
+
+/* Right Side */
+
+position: absolute;
+width: 66.66px;
+height: 11.34px;
+left: 293.67px;
+top: 17.33px;
+
+
+
+/* Battery */
+
+position: absolute;
+left: 89.6%;
+right: 3.91%;
+top: 39.39%;
+bottom: 34.85%;
+
+
+
+/* Rectangle */
+
+position: absolute;
+width: 22px;
+height: 11.33px;
+right: 17px;
+top: 17.33px;
+
+mix-blend-mode: normal;
+opacity: 0.35;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 2.66667px;
+
+
+/* Combined Shape */
+
+position: absolute;
+width: 1.33px;
+height: 4px;
+right: 14.67px;
+top: 21px;
+
+background: #000000;
+mix-blend-mode: normal;
+opacity: 0.4;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 18px;
+height: 7.33px;
+right: 19px;
+top: 19.33px;
+
+background: #000000;
+border-radius: 1.33333px;
+
+
+/* Wifi */
+
+position: absolute;
+left: 84.18%;
+right: 11.74%;
+top: 39.39%;
+bottom: 35.69%;
+
+background: #000000;
+
+
+/* Wifi-path */
+
+position: absolute;
+width: 15.27px;
+height: 4.74px;
+right: 44.03px;
+top: 17.33px;
+
+background: #DADADA;
+
+
+/* Wifi-path */
+
+position: absolute;
+width: 9.95px;
+height: 3.63px;
+right: 46.69px;
+top: 21.12px;
+
+background: #DADADA;
+
+
+/* Wifi-path */
+
+position: absolute;
+width: 4.63px;
+height: 3.37px;
+right: 49.36px;
+top: 24.92px;
+
+background: #DADADA;
+
+
+/* Mobile Signal */
+
+position: absolute;
+left: 78.31%;
+right: 17.16%;
+top: 40.15%;
+bottom: 35.61%;
+
+background: #000000;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 4px;
+right: 78.33px;
+top: 24.33px;
+
+background: #DADADA;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.67px;
+top: 22.33px;
+
+background: #DADADA;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 8.33px;
+right: 69px;
+top: 20px;
+
+background: #DADADA;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 10.67px;
+right: 64.33px;
+top: 17.67px;
+
+background: #DADADA;
+
+
+/* Left Side */
+
+position: absolute;
+width: 28.43px;
+height: 11.09px;
+left: 33.45px;
+top: 17.17px;
+
+
+
+/* 9:41 */
+
+position: absolute;
+width: 28.43px;
+height: 11.09px;
+left: 33.45px;
+top: 17.17px;
+
+background: #000000;
+
+
+/* BG */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 18.35%;
+bottom: 7.64%;
+
+background: #E9F2F3;
+border: 1px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 8px;
+
+
+/* Library */
+
+position: absolute;
+width: 56px;
+height: 19px;
+left: 150px;
+top: 42px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Folder (3) */
+
+position: absolute;
+width: 77px;
+height: 19px;
+left: calc(50% - 77px/2 - 142px);
+top: 159px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+
+color: #4E4842;
+
+
+
+/* Library */
+
+position: absolute;
+width: 42px;
+height: 15px;
+left: 15px;
+top: 133px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+color: #401056;
+
+
+
+/* Cancel */
+
+position: absolute;
+width: 55px;
+height: 19px;
+left: 19px;
+top: 46px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+
+
+
+/* Icon/Plus */
+
+position: absolute;
+left: 89.33%;
+right: 4%;
+top: 4.8%;
+bottom: 92.12%;
+
+
+
+/* Shape */
+
+position: absolute;
+left: 11.11%;
+right: 11.11%;
+top: 11.11%;
+bottom: 11.11%;
+
+background: #94A3B3;
+
+
+/* Shape */
+
+position: absolute;
+left: 11.11%;
+right: 11.11%;
+top: 11.11%;
+bottom: 11.11%;
+
+background: #1E1F20;
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 7px;
+top: 82px;
+
+background: #401056;
+mix-blend-mode: darken;
+
+
+/* BG */
+
+position: absolute;
+left: 34.13%;
+right: 33.87%;
+top: 47.29%;
+bottom: 47.29%;
+
+background: #FFFFFF;
+/* Gray/02 */
+border: 1px solid #E8E8E8;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+
+
+/* BG */
+
+position: absolute;
+left: 2.67%;
+right: 2.67%;
+top: 23.03%;
+bottom: 54.8%;
+
+background: #FFFFFF;
+/* Gray/02 */
+border: 1px solid #E8E8E8;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+
+
+/* Icon/Ripple */
+
+position: absolute;
+left: 9.33%;
+right: 82.67%;
+top: 36.45%;
+bottom: 59.85%;
+
+
+
+/* Shape */
+
+position: absolute;
+left: 5.56%;
+right: 5.56%;
+top: 0%;
+bottom: 0%;
+
+background: #401056;
+
+
+/* Shape */
+
+position: absolute;
+left: 5.56%;
+right: 5.56%;
+top: 0%;
+bottom: 0%;
+
+background: #1E1F20;
+
+
+/* Groups */
+
+position: absolute;
+width: 57px;
+height: 19px;
+left: calc(50% - 57px/2 - 81px);
+top: 208px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+
+color: #4E4842;
+
+
+
+/* Favorites */
+
+position: absolute;
+width: 72px;
+height: 19px;
+left: calc(50% - 72px/2 - 72.5px);
+top: 254px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+
+color: #4E4842;
+
+
+
+/* Shared */
+
+position: absolute;
+width: 55px;
+height: 19px;
+left: calc(50% - 55px/2 - 82px);
+top: 299px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+
+color: #4E4842;
+
+
+
+/* Create Folder */
+
+position: absolute;
+width: 106px;
+height: 19px;
+left: calc(50% - 106px/2 + 0.5px);
+top: 396px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 5.6%;
+right: 89.09%;
+top: 11.82%;
+bottom: 85.71%;
+
+border: 2px solid #FFFFFF;
+
+
+/* group_users 1 */
+
+position: absolute;
+width: 30px;
+height: 30px;
+left: 36px;
+top: 202px;
+
+background: url(group_users.png);
+
+
+/* Icon/Heart/Filled */
+
+position: absolute;
+left: 9.33%;
+right: 82.67%;
+top: 30.67%;
+bottom: 65.64%;
+
+
+
+/* Shape */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 8.25%;
+
+background: #401056;
+
+
+/* Shape */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 8.25%;
+
+background: #1E1F20;
+
+
+/* footer */
+
+position: absolute;
+width: 375px;
+height: 97px;
+
+background: url(footer.jpg);
