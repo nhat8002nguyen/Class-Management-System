@@ -1,0 +1,663 @@
+/* Quiz - Enter PIN */
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #F28D3E;
+
+
+/* Quiz PIN */
+
+position: absolute;
+width: 375px;
+height: 708px;
+left: 0px;
+top: 52px;
+
+
+
+/* Quiz PIN frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Quiz PIN form */
+
+position: absolute;
+left: 6.93%;
+right: 6.93%;
+top: 34.46%;
+bottom: 34.46%;
+
+
+
+/* Quiz PIN form frame */
+
+position: absolute;
+left: 6.93%;
+right: 6.93%;
+top: 34.46%;
+bottom: 34.46%;
+
+border: 2px solid #FF8E0A;
+box-sizing: border-box;
+border-radius: 10px;
+
+
+/* Enter */
+
+position: absolute;
+left: 34.67%;
+right: 34.67%;
+top: 52.54%;
+bottom: 41.81%;
+
+
+
+/* Enter frame */
+
+position: absolute;
+left: 34.67%;
+right: 34.67%;
+top: 52.54%;
+bottom: 41.81%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Enter text */
+
+position: absolute;
+left: 43.73%;
+right: 43.47%;
+top: 53.67%;
+bottom: 43.08%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FF8E0A;
+
+
+
+/* Quiz PIN */
+
+position: absolute;
+left: 20.8%;
+right: 20.53%;
+top: 41.81%;
+bottom: 51.13%;
+
+
+
+/* Quiz PIN frame */
+
+position: absolute;
+left: 20.8%;
+right: 20.53%;
+top: 41.81%;
+bottom: 51.13%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Quiz PIN text */
+
+position: absolute;
+left: 45.6%;
+right: 45.56%;
+top: 43.64%;
+bottom: 53.11%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz label */
+
+position: absolute;
+left: 27.73%;
+right: 27.73%;
+top: 7.34%;
+bottom: 85.59%;
+
+
+
+/* Quiz frame */
+
+position: absolute;
+width: 167px;
+height: 50px;
+left: 0px;
+top: 0px;
+
+
+
+/* Quiz text */
+
+position: absolute;
+left: 32.93%;
+right: 32.93%;
+top: 16%;
+bottom: 18%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* iOS status bar */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 0px;
+
+
+
+/* Time */
+
+position: absolute;
+width: 39.76px;
+height: 11.1px;
+left: 25.78px;
+top: 16.17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* battery */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 14.5px;
+top: 17px;
+
+
+
+/* outline */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 0px;
+top: 0px;
+
+/* Black Foreground */
+background: #000000;
+opacity: 0.44;
+
+
+/* inside */
+
+position: absolute;
+width: 14px;
+height: 7.5px;
+right: 8.5px;
+top: 2px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Reception */
+
+position: absolute;
+left: 78.4%;
+right: 17.2%;
+top: 34.62%;
+bottom: 46.15%;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* signal */
+
+position: absolute;
+width: 3px;
+height: 4.5px;
+right: 78px;
+top: 28px;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.5px;
+top: 22px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 8px;
+right: 69px;
+top: 20px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 10px;
+right: 64.5px;
+top: 18px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Wifi */
+
+position: absolute;
+width: 15.27px;
+height: 10.97px;
+right: 43.73px;
+top: 17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Quiz - Enter name */
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #F28D3E;
+
+
+/* Student name */
+
+position: absolute;
+width: 323px;
+height: 412px;
+left: 26px;
+top: 104px;
+
+
+
+/* Quiz PIN frame */
+
+position: absolute;
+left: -8.05%;
+right: -8.05%;
+top: -12.62%;
+bottom: -59.22%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Student name form */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 46.6%;
+bottom: 0%;
+
+
+
+/* Student name form frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 46.6%;
+bottom: 0%;
+
+border-radius: 10px;
+
+
+/* Enter */
+
+position: absolute;
+left: 32.2%;
+right: 32.2%;
+top: 77.67%;
+bottom: 12.62%;
+
+
+
+/* Enter frame */
+
+position: absolute;
+left: 32.2%;
+right: 32.2%;
+top: 77.67%;
+bottom: 12.62%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Enter text */
+
+position: absolute;
+left: 42.72%;
+right: 42.41%;
+top: 79.61%;
+bottom: 14.81%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FF8E0A;
+
+
+
+/* Student name */
+
+position: absolute;
+left: 16.1%;
+right: 15.79%;
+top: 59.22%;
+bottom: 28.64%;
+
+
+
+/* Student name frame */
+
+position: absolute;
+left: 16.1%;
+right: 15.79%;
+top: 59.22%;
+bottom: 28.64%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Student name text */
+
+position: absolute;
+left: 41.8%;
+right: 41.8%;
+top: 62.38%;
+bottom: 32.04%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz label */
+
+position: absolute;
+left: 24.15%;
+right: 24.15%;
+top: 0%;
+bottom: 87.86%;
+
+
+
+/* Quiz frame */
+
+position: absolute;
+width: 167px;
+height: 50px;
+left: 0px;
+top: 0px;
+
+
+
+/* #quiz-name */
+
+position: absolute;
+width: 87px;
+height: 19px;
+left: 40px;
+top: 84px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #595959;
+
+
+
+/* #quiz-PIN */
+
+position: absolute;
+width: 73px;
+height: 19px;
+left: 47px;
+top: 53px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #595959;
+
+
+
+/* Quiz text */
+
+position: absolute;
+left: 32.93%;
+right: 32.93%;
+top: 16%;
+bottom: 18%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* iOS status bar */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 0px;
+
+
+
+/* Time */
+
+position: absolute;
+width: 39.76px;
+height: 11.1px;
+left: 25.78px;
+top: 16.17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* battery */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 14.5px;
+top: 17px;
+
+
+
+/* outline */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 0px;
+top: 0px;
+
+/* Black Foreground */
+background: #000000;
+opacity: 0.44;
+
+
+/* inside */
+
+position: absolute;
+width: 14px;
+height: 7.5px;
+right: 8.5px;
+top: 2px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Reception */
+
+position: absolute;
+left: 78.4%;
+right: 17.2%;
+top: 34.62%;
+bottom: 46.15%;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* signal */
+
+position: absolute;
+width: 3px;
+height: 4.5px;
+right: 78px;
+top: 28px;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.5px;
+top: 22px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 8px;
+right: 69px;
+top: 20px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 10px;
+right: 64.5px;
+top: 18px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Wifi */
+
+position: absolute;
+width: 15.27px;
+height: 10.97px;
+right: 43.73px;
+top: 17px;
+
+/* Black Foreground */
+background: #000000;
+

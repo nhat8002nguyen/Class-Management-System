@@ -1,0 +1,2515 @@
+/* Quiz - Answer with 4 answers */
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #FFFFFF;
+
+
+/* Name and score */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: calc(50% - 375px/2);
+top: calc(50% - 52px/2 + 328px);
+
+
+
+/* Name and score frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* #student-name */
+
+position: absolute;
+left: 6.93%;
+right: 56%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* #student-score */
+
+position: absolute;
+left: 56.27%;
+right: 6.93%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Question and answers */
+
+position: absolute;
+width: 323px;
+height: 500px;
+left: calc(50% - 323px/2);
+top: calc(50% - 500px/2 + 26px);
+
+border: 1px solid #F28D3E;
+box-sizing: border-box;
+border-radius: 10px;
+
+
+/* Question frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 55.6%;
+
+background: #F28D3E;
+border: 1px solid #F28D3E;
+box-sizing: border-box;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Answer D */
+
+position: absolute;
+left: 54.18%;
+right: 8.05%;
+top: 74.8%;
+bottom: 5.2%;
+
+background: #164051;
+border-radius: 10px;
+
+
+/* Answer 4 */
+
+position: absolute;
+width: 68px;
+height: 19px;
+left: 202px;
+top: 414px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Answer C */
+
+position: absolute;
+left: 8.05%;
+right: 54.18%;
+top: 74.8%;
+bottom: 5.2%;
+
+background: #0E9D8C;
+border-radius: 10px;
+
+
+/* Answer 3 */
+
+position: absolute;
+width: 68px;
+height: 19px;
+left: 53px;
+top: 414px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Answer B */
+
+position: absolute;
+left: 54.18%;
+right: 8.05%;
+top: 49.6%;
+bottom: 30.4%;
+
+background: #E44E29;
+border-radius: 10px;
+
+
+/* Answer 2 */
+
+position: absolute;
+width: 68px;
+height: 19px;
+left: 202px;
+top: 288px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Answer A */
+
+position: absolute;
+left: 8.05%;
+right: 54.18%;
+top: 49.6%;
+bottom: 30.4%;
+
+background: #E3B440;
+border-radius: 10px;
+
+
+/* Answer 1 */
+
+position: absolute;
+width: 68px;
+height: 19px;
+left: 53px;
+top: 288px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Question info */
+
+position: absolute;
+width: 297px;
+height: 196px;
+left: 13px;
+top: 13px;
+
+
+
+/* Question content */
+
+position: absolute;
+width: 297px;
+height: 164px;
+left: 13px;
+top: 45px;
+
+
+
+/* Question content frame */
+
+position: absolute;
+width: 297px;
+height: 164px;
+left: 13px;
+top: 45px;
+
+background: #F28D3E;
+
+
+/* #question-content */
+
+position: absolute;
+width: 297px;
+height: 19px;
+left: 13px;
+top: 117px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* #question-ord */
+
+position: absolute;
+width: 103px;
+height: 19px;
+left: 13px;
+top: 13px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+
+
+/* Quiz label */
+
+position: absolute;
+width: 323px;
+height: 104px;
+left: 26px;
+top: 52px;
+
+
+
+/* Quiz name text */
+
+position: absolute;
+left: 0%;
+right: 73.07%;
+top: 81.73%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz PIN text */
+
+position: absolute;
+left: 0%;
+right: 77.4%;
+top: 47.12%;
+bottom: 34.62%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz text */
+
+position: absolute;
+left: 0%;
+right: 82.35%;
+top: 0%;
+bottom: 68.27%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #F28D3E;
+
+
+
+/* iOS Large */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 0px;
+
+
+
+/* iOS status bar */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Time */
+
+position: absolute;
+width: 39.76px;
+height: 11.1px;
+left: 25.78px;
+top: 16.17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* battery */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 14.5px;
+top: 17px;
+
+
+
+/* outline */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 0px;
+top: 0px;
+
+/* Black Foreground */
+background: #000000;
+opacity: 0.44;
+
+
+/* inside */
+
+position: absolute;
+width: 14px;
+height: 7.5px;
+right: 8.5px;
+top: 2px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Reception */
+
+position: absolute;
+left: 78.4%;
+right: 17.2%;
+top: 34.62%;
+bottom: 46.15%;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* signal */
+
+position: absolute;
+width: 3px;
+height: 4.5px;
+right: 78px;
+top: 28px;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.5px;
+top: 22px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 8px;
+right: 69px;
+top: 20px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 10px;
+right: 64.5px;
+top: 18px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Wifi */
+
+position: absolute;
+width: 15.27px;
+height: 10.97px;
+right: 43.73px;
+top: 17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Quiz - Answer with chose answer in 4 answers */
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #FFFFFF;
+
+
+/* Name and score */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 708px;
+
+
+
+/* Name and score frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* #student-name */
+
+position: absolute;
+left: 6.93%;
+right: 56%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* #student-score */
+
+position: absolute;
+left: 56.27%;
+right: 6.93%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Question and answers */
+
+position: absolute;
+width: 323px;
+height: 500px;
+left: calc(50% - 323px/2);
+top: calc(50% - 500px/2 + 26px);
+
+border: 1px solid #F28D3E;
+box-sizing: border-box;
+border-radius: 10px;
+
+
+/* Question frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 55.6%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Answer D */
+
+position: absolute;
+left: 8.05%;
+right: 54.18%;
+top: 74.8%;
+bottom: 5.2%;
+
+background: #0E9D8C;
+border-radius: 10px;
+
+
+/* Answer C */
+
+position: absolute;
+left: 54.18%;
+right: 8.05%;
+top: 74.8%;
+bottom: 5.2%;
+
+background: #164051;
+border-radius: 10px;
+
+
+/* Answer B */
+
+position: absolute;
+left: 54.18%;
+right: 8.05%;
+top: 49.6%;
+bottom: 30.4%;
+
+background: #E44E29;
+border-radius: 10px;
+
+
+/* Answer A */
+
+position: absolute;
+left: 8.05%;
+right: 54.18%;
+top: 49.6%;
+bottom: 30.4%;
+
+background: #E3B440;
+border-radius: 10px;
+
+
+/* Check answer */
+
+position: absolute;
+left: 22.29%;
+right: 68.42%;
+top: 57.4%;
+bottom: 38.03%;
+
+background: #FFFFFF;
+
+
+/* Question info */
+
+position: absolute;
+width: 297px;
+height: 196px;
+left: 13px;
+top: 13px;
+
+
+
+/* Question content */
+
+position: absolute;
+width: 297px;
+height: 164px;
+left: 13px;
+top: 45px;
+
+
+
+/* Question content frame */
+
+position: absolute;
+width: 297px;
+height: 164px;
+left: 13px;
+top: 45px;
+
+background: #F28D3E;
+
+
+/* #question-content */
+
+position: absolute;
+width: 297px;
+height: 19px;
+left: 13px;
+top: 117px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* #question-ord */
+
+position: absolute;
+width: 103px;
+height: 19px;
+left: 13px;
+top: 13px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+
+
+/* Quiz label */
+
+position: absolute;
+width: 323px;
+height: 104px;
+left: 26px;
+top: 52px;
+
+
+
+/* Quiz name text */
+
+position: absolute;
+left: 0%;
+right: 73.07%;
+top: 81.73%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz PIN text */
+
+position: absolute;
+left: 0%;
+right: 77.4%;
+top: 47.12%;
+bottom: 34.62%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz text */
+
+position: absolute;
+left: 0%;
+right: 82.35%;
+top: 0%;
+bottom: 68.27%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #F28D3E;
+
+
+
+/* iOS Large */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 0px;
+
+
+
+/* iOS status bar */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Time */
+
+position: absolute;
+width: 39.76px;
+height: 11.1px;
+left: 25.78px;
+top: 16.17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* battery */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 14.5px;
+top: 17px;
+
+
+
+/* outline */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 0px;
+top: 0px;
+
+/* Black Foreground */
+background: #000000;
+opacity: 0.44;
+
+
+/* inside */
+
+position: absolute;
+width: 14px;
+height: 7.5px;
+right: 8.5px;
+top: 2px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Reception */
+
+position: absolute;
+left: 78.4%;
+right: 17.2%;
+top: 34.62%;
+bottom: 46.15%;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* signal */
+
+position: absolute;
+width: 3px;
+height: 4.5px;
+right: 78px;
+top: 28px;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.5px;
+top: 22px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 8px;
+right: 69px;
+top: 20px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 10px;
+right: 64.5px;
+top: 18px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Wifi */
+
+position: absolute;
+width: 15.27px;
+height: 10.97px;
+right: 43.73px;
+top: 17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Quiz - Answer with 2 answers */
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #FFFFFF;
+
+
+/* iOS Large */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 0px;
+
+
+
+/* iOS status bar */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Time */
+
+position: absolute;
+width: 39.76px;
+height: 11.1px;
+left: 25.78px;
+top: 16.17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* battery */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 14.5px;
+top: 17px;
+
+
+
+/* outline */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 0px;
+top: 0px;
+
+/* Black Foreground */
+background: #000000;
+opacity: 0.44;
+
+
+/* inside */
+
+position: absolute;
+width: 14px;
+height: 7.5px;
+right: 8.5px;
+top: 2px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Reception */
+
+position: absolute;
+left: 78.4%;
+right: 17.2%;
+top: 34.62%;
+bottom: 46.15%;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* signal */
+
+position: absolute;
+width: 3px;
+height: 4.5px;
+right: 78px;
+top: 28px;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.5px;
+top: 22px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 8px;
+right: 69px;
+top: 20px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 10px;
+right: 64.5px;
+top: 18px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Wifi */
+
+position: absolute;
+width: 15.27px;
+height: 10.97px;
+right: 43.73px;
+top: 17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Name and score */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 708px;
+
+
+
+/* Name and score frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* #student-name */
+
+position: absolute;
+left: 6.93%;
+right: 56%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* #student-score */
+
+position: absolute;
+left: 56.27%;
+right: 6.93%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Question and answers */
+
+position: absolute;
+width: 323px;
+height: 500px;
+left: calc(50% - 323px/2);
+top: calc(50% - 500px/2 + 26px);
+
+border: 1px solid #F28D3E;
+box-sizing: border-box;
+border-radius: 10px;
+
+
+/* Question frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 55.6%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Answer B */
+
+position: absolute;
+left: 54.18%;
+right: 8.05%;
+top: 54.8%;
+bottom: 10.4%;
+
+background: #0E9D8C;
+border-radius: 10px;
+
+
+/* Answer 2 */
+
+position: absolute;
+width: 68px;
+height: 19px;
+left: 202px;
+top: 351px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Answer A */
+
+position: absolute;
+left: 8.05%;
+right: 54.18%;
+top: 54.8%;
+bottom: 10.4%;
+
+background: #E3B440;
+border-radius: 10px;
+
+
+/* Answer 1 */
+
+position: absolute;
+width: 68px;
+height: 19px;
+left: 53px;
+top: 351px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Question info */
+
+position: absolute;
+width: 297px;
+height: 196px;
+left: 13px;
+top: 13px;
+
+
+
+/* Question content */
+
+position: absolute;
+width: 297px;
+height: 164px;
+left: 13px;
+top: 45px;
+
+
+
+/* Question content frame */
+
+position: absolute;
+width: 297px;
+height: 164px;
+left: 13px;
+top: 45px;
+
+background: #F28D3E;
+
+
+/* #question-content */
+
+position: absolute;
+width: 297px;
+height: 19px;
+left: 13px;
+top: 117px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* #question-ord */
+
+position: absolute;
+width: 103px;
+height: 19px;
+left: 13px;
+top: 13px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+
+
+/* Quiz label */
+
+position: absolute;
+width: 323px;
+height: 104px;
+left: 26px;
+top: 52px;
+
+
+
+/* Quiz name text */
+
+position: absolute;
+left: 0%;
+right: 73.07%;
+top: 81.73%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz PIN text */
+
+position: absolute;
+left: 0%;
+right: 77.4%;
+top: 47.12%;
+bottom: 34.62%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz text */
+
+position: absolute;
+left: 0%;
+right: 82.35%;
+top: 0%;
+bottom: 68.27%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #F28D3E;
+
+
+
+/* Quiz - Answer with chose answer in 2 answers */
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #FFFFFF;
+
+
+/* iOS Large */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 0px;
+
+
+
+/* iOS status bar */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Time */
+
+position: absolute;
+width: 39.76px;
+height: 11.1px;
+left: 25.78px;
+top: 16.17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* battery */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 14.5px;
+top: 17px;
+
+
+
+/* outline */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 0px;
+top: 0px;
+
+/* Black Foreground */
+background: #000000;
+opacity: 0.44;
+
+
+/* inside */
+
+position: absolute;
+width: 14px;
+height: 7.5px;
+right: 8.5px;
+top: 2px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Reception */
+
+position: absolute;
+left: 78.4%;
+right: 17.2%;
+top: 34.62%;
+bottom: 46.15%;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* signal */
+
+position: absolute;
+width: 3px;
+height: 4.5px;
+right: 78px;
+top: 28px;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.5px;
+top: 22px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 8px;
+right: 69px;
+top: 20px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 10px;
+right: 64.5px;
+top: 18px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Wifi */
+
+position: absolute;
+width: 15.27px;
+height: 10.97px;
+right: 43.73px;
+top: 17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Name and score */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 708px;
+
+
+
+/* Name and score frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* #student-name */
+
+position: absolute;
+left: 6.93%;
+right: 56%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* #student-score */
+
+position: absolute;
+left: 56.27%;
+right: 6.93%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Question and answers */
+
+position: absolute;
+width: 323px;
+height: 500px;
+left: calc(50% - 323px/2);
+top: calc(50% - 500px/2 + 26px);
+
+border: 1px solid #F28D3E;
+box-sizing: border-box;
+border-radius: 10px;
+
+
+/* Question frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 55.6%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Answer D */
+
+position: absolute;
+left: 54.18%;
+right: 8.05%;
+top: 54.8%;
+bottom: 10.4%;
+
+background: #0E9D8C;
+border-radius: 10px;
+
+
+/* Answer A */
+
+position: absolute;
+left: 8.05%;
+right: 54.18%;
+top: 54.8%;
+bottom: 10.4%;
+
+background: #E3B440;
+border-radius: 10px;
+
+
+/* Question info */
+
+position: absolute;
+width: 297px;
+height: 196px;
+left: 13px;
+top: 13px;
+
+
+
+/* Question content */
+
+position: absolute;
+width: 297px;
+height: 164px;
+left: 13px;
+top: 45px;
+
+
+
+/* Question content frame */
+
+position: absolute;
+width: 297px;
+height: 164px;
+left: 13px;
+top: 45px;
+
+background: #F28D3E;
+
+
+/* #question-content */
+
+position: absolute;
+width: 297px;
+height: 19px;
+left: 13px;
+top: 117px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* #question-ord */
+
+position: absolute;
+width: 103px;
+height: 19px;
+left: 13px;
+top: 13px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+
+
+/* Check answer */
+
+position: absolute;
+left: 22.29%;
+right: 68.42%;
+top: 70%;
+bottom: 25.43%;
+
+background: #FFFFFF;
+
+
+/* Quiz label */
+
+position: absolute;
+width: 323px;
+height: 104px;
+left: 26px;
+top: 52px;
+
+
+
+/* Quiz name text */
+
+position: absolute;
+left: 0%;
+right: 73.07%;
+top: 81.73%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz PIN text */
+
+position: absolute;
+left: 0%;
+right: 77.4%;
+top: 47.12%;
+bottom: 34.62%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz text */
+
+position: absolute;
+left: 0%;
+right: 82.35%;
+top: 0%;
+bottom: 68.27%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #F28D3E;
+
+
+
+/* Quiz - Ranks between each answer */
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #FFFFFF;
+
+
+/* iOS Large */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 0px;
+
+
+
+/* iOS status bar */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Time */
+
+position: absolute;
+width: 39.76px;
+height: 11.1px;
+left: 25.78px;
+top: 16.17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* battery */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 14.5px;
+top: 17px;
+
+
+
+/* outline */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 0px;
+top: 0px;
+
+/* Black Foreground */
+background: #000000;
+opacity: 0.44;
+
+
+/* inside */
+
+position: absolute;
+width: 14px;
+height: 7.5px;
+right: 8.5px;
+top: 2px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Reception */
+
+position: absolute;
+left: 78.4%;
+right: 17.2%;
+top: 34.62%;
+bottom: 46.15%;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* signal */
+
+position: absolute;
+width: 3px;
+height: 4.5px;
+right: 78px;
+top: 28px;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.5px;
+top: 22px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 8px;
+right: 69px;
+top: 20px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 10px;
+right: 64.5px;
+top: 18px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Wifi */
+
+position: absolute;
+width: 15.27px;
+height: 10.97px;
+right: 43.73px;
+top: 17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Name and score */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 708px;
+
+
+
+/* Name and score frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* #student-name */
+
+position: absolute;
+left: 6.93%;
+right: 56%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* #student-score */
+
+position: absolute;
+left: 56.27%;
+right: 6.93%;
+top: 26.92%;
+bottom: 28.85%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Ranking */
+
+position: absolute;
+width: 323px;
+height: 500px;
+left: calc(50% - 323px/2);
+top: calc(50% - 500px/2 + 26px);
+
+border: 1px solid #F28D3E;
+box-sizing: border-box;
+border-radius: 10px;
+
+
+/* Ranks frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 80.8%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Ranking */
+
+position: absolute;
+width: 297px;
+height: 378px;
+left: 13px;
+top: 109px;
+
+
+
+/* Top 5 ranking */
+
+position: absolute;
+width: 297px;
+height: 346px;
+left: 0px;
+top: 32px;
+
+
+
+/* Rectangle 35 */
+
+position: absolute;
+width: 297px;
+height: 346px;
+left: calc(50% - 297px/2);
+top: calc(50% - 346px/2 + 16px);
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* #rank5-score */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 + 87px);
+top: calc(50% - 19px/2 + 127.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* #rank5-name */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 - 87px);
+top: calc(50% - 19px/2 + 127.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* #rank4-score */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 + 87px);
+top: calc(50% - 19px/2 + 71.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* #rank4-name */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 - 87px);
+top: calc(50% - 19px/2 + 71.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* #rank3-score */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 + 87px);
+top: calc(50% - 19px/2 + 15.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* #rank3-name */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 - 87px);
+top: calc(50% - 19px/2 + 15.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* #rank2-score */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 + 86px);
+top: calc(50% - 19px/2 - 40.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* #rank2-name */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 - 87px);
+top: calc(50% - 19px/2 - 40.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* #rank1-score */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 + 87px);
+top: calc(50% - 19px/2 - 96.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* #rank1-name */
+
+position: absolute;
+width: 97px;
+height: 19px;
+left: calc(50% - 97px/2 - 87px);
+top: calc(50% - 19px/2 - 96.5px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* Top 5 */
+
+position: absolute;
+left: 41.75%;
+right: 41.41%;
+top: 3.7%;
+bottom: 90.21%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* Line 2 */
+
+position: absolute;
+width: 271px;
+height: 0px;
+left: 13px;
+top: 121px;
+
+border: 1px solid #F28D3E;
+
+
+/* Line 3 */
+
+position: absolute;
+width: 271px;
+height: 0px;
+left: 13px;
+top: 176px;
+
+border: 1px solid #F28D3E;
+
+
+/* Line 4 */
+
+position: absolute;
+width: 271px;
+height: 0px;
+left: 13px;
+top: 232px;
+
+border: 1px solid #F28D3E;
+
+
+/* Line 5 */
+
+position: absolute;
+width: 271px;
+height: 0px;
+left: 13px;
+top: 288px;
+
+border: 1px solid #F28D3E;
+
+
+/* Your rank */
+
+position: absolute;
+width: 297px;
+height: 70px;
+left: calc(50% - 297px/2);
+top: calc(50% - 70px/2 - 202px);
+
+
+
+/* #student-rank */
+
+position: absolute;
+left: 15.49%;
+right: 15.49%;
+top: 45.71%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 37px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Your rank */
+
+position: absolute;
+left: 0%;
+right: 76.77%;
+top: 0%;
+bottom: 72.86%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+
+
+/* Quiz label */
+
+position: absolute;
+width: 323px;
+height: 104px;
+left: 26px;
+top: 52px;
+
+
+
+/* Quiz name text */
+
+position: absolute;
+left: 0%;
+right: 73.07%;
+top: 81.73%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz PIN text */
+
+position: absolute;
+left: 0%;
+right: 77.4%;
+top: 47.12%;
+bottom: 34.62%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Quiz text */
+
+position: absolute;
+left: 0%;
+right: 82.35%;
+top: 0%;
+bottom: 68.27%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #F28D3E;
+
+
