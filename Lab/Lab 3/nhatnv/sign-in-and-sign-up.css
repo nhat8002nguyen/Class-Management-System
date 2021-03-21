@@ -1,0 +1,861 @@
+/* Sign in */
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #F28D3E;
+
+
+/* Login */
+
+position: absolute;
+width: 375px;
+height: 708px;
+left: 0px;
+top: 52px;
+
+
+
+/* Login frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Login form */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 30.37%;
+bottom: 29.52%;
+
+
+
+/* Forgot your password? */
+
+position: absolute;
+width: 163px;
+height: 19px;
+left: 162px;
+top: 480px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #FFFFFF;
+
+
+
+/* Sign in */
+
+position: absolute;
+left: 34.67%;
+right: 34.67%;
+top: 58.47%;
+bottom: 35.88%;
+
+
+
+/* Sign in frame */
+
+position: absolute;
+left: 34.67%;
+right: 34.67%;
+top: 58.47%;
+bottom: 35.88%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Sign in text */
+
+position: absolute;
+left: 41.6%;
+right: 41.87%;
+top: 59.6%;
+bottom: 37.15%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FF8E0A;
+
+
+
+/* Remember password */
+
+position: absolute;
+width: 173px;
+height: 18px;
+left: 50px;
+top: 367px;
+
+
+
+/* Remember password */
+
+position: absolute;
+left: 21.6%;
+right: 40.53%;
+top: 51.84%;
+bottom: 45.62%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 35 */
+
+position: absolute;
+left: 13.33%;
+right: 81.87%;
+top: 51.84%;
+bottom: 45.62%;
+
+background: #F6F6F6;
+border: 1px solid #E1E1E1;
+box-sizing: border-box;
+border-radius: 5px;
+
+
+/* Login form frame */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 30.37%;
+bottom: 51.84%;
+
+
+
+/* Password frame */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 41.1%;
+bottom: 51.84%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Password text */
+
+position: absolute;
+left: 72.53%;
+right: 16.8%;
+top: 43.22%;
+bottom: 54.1%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #F28D3E;
+
+
+
+/* Password text */
+
+position: absolute;
+left: 16.8%;
+right: 64.27%;
+top: 43.22%;
+bottom: 54.1%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Email frame */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 30.37%;
+bottom: 62.57%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Email text */
+
+position: absolute;
+left: 16.8%;
+right: 72.53%;
+top: 32.49%;
+bottom: 64.83%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Login label */
+
+position: absolute;
+left: 28%;
+right: 27.47%;
+top: 7.34%;
+bottom: 85.59%;
+
+
+
+/* Login frame */
+
+position: absolute;
+width: 167px;
+height: 50px;
+left: 0px;
+top: 0px;
+
+
+
+/* Login text */
+
+position: absolute;
+left: 23.95%;
+right: 23.95%;
+top: 16%;
+bottom: 18%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Sign up */
+
+position: absolute;
+left: 82.4%;
+right: 3.47%;
+top: 0.85%;
+bottom: 96.47%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+
+
+/* iOS status bar */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 0px;
+
+
+
+/* Time */
+
+position: absolute;
+width: 39.76px;
+height: 11.1px;
+left: 25.78px;
+top: 16.17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* battery */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 14.5px;
+top: 17px;
+
+
+
+/* outline */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 0px;
+top: 0px;
+
+/* Black Foreground */
+background: #000000;
+opacity: 0.44;
+
+
+/* inside */
+
+position: absolute;
+width: 14px;
+height: 7.5px;
+right: 8.5px;
+top: 2px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Reception */
+
+position: absolute;
+left: 78.4%;
+right: 17.2%;
+top: 34.62%;
+bottom: 46.15%;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* signal */
+
+position: absolute;
+width: 3px;
+height: 4.5px;
+right: 78px;
+top: 28px;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.5px;
+top: 22px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 8px;
+right: 69px;
+top: 20px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 10px;
+right: 64.5px;
+top: 18px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Wifi */
+
+position: absolute;
+width: 15.27px;
+height: 10.97px;
+right: 43.73px;
+top: 17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Sign up */
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #F28D3E;
+
+
+/* Login */
+
+position: absolute;
+width: 375px;
+height: 708px;
+left: 0px;
+top: 52px;
+
+
+
+/* Login frame */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #F28D3E;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Login form */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 19.63%;
+bottom: 35.88%;
+
+
+
+/* Sign in */
+
+position: absolute;
+left: 34.67%;
+right: 34.67%;
+top: 58.47%;
+bottom: 35.88%;
+
+
+
+/* Sign in frame */
+
+position: absolute;
+left: 34.67%;
+right: 34.67%;
+top: 58.47%;
+bottom: 35.88%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Sign in text */
+
+position: absolute;
+left: 40.8%;
+right: 41.07%;
+top: 59.6%;
+bottom: 37.15%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FF8E0A;
+
+
+
+/* Login form frame */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 19.63%;
+bottom: 51.84%;
+
+
+
+/* Password frame */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 41.1%;
+bottom: 51.84%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Password text */
+
+position: absolute;
+left: 72.53%;
+right: 16.8%;
+top: 43.22%;
+bottom: 54.1%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #F28D3E;
+
+
+
+/* Password text */
+
+position: absolute;
+left: 16.8%;
+right: 64.27%;
+top: 43.22%;
+bottom: 54.1%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Email frame */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 30.37%;
+bottom: 62.57%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Email text */
+
+position: absolute;
+left: 16.8%;
+right: 72.53%;
+top: 32.49%;
+bottom: 64.83%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Name frame */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 19.63%;
+bottom: 73.31%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Name text */
+
+position: absolute;
+left: 16.8%;
+right: 71.73%;
+top: 21.75%;
+bottom: 75.56%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #828282;
+
+
+
+/* Login label */
+
+position: absolute;
+left: 27.73%;
+right: 27.73%;
+top: 7.34%;
+bottom: 85.59%;
+
+
+
+/* Login frame */
+
+position: absolute;
+width: 167px;
+height: 50px;
+left: 0px;
+top: 0px;
+
+
+
+/* Login text */
+
+position: absolute;
+left: 21.56%;
+right: 21.56%;
+top: 16%;
+bottom: 18%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* carbon:exit */
+
+position: absolute;
+left: 2.4%;
+right: 89.07%;
+top: 0%;
+bottom: 95.48%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 81.25%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 31.25%;
+top: 31.25%;
+bottom: 31.25%;
+
+background: #FFFFFF;
+
+
+/* iOS status bar */
+
+position: absolute;
+width: 375px;
+height: 52px;
+left: 0px;
+top: 0px;
+
+
+
+/* Time */
+
+position: absolute;
+width: 39.76px;
+height: 11.1px;
+left: 25.78px;
+top: 16.17px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* battery */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 14.5px;
+top: 17px;
+
+
+
+/* outline */
+
+position: absolute;
+width: 24.5px;
+height: 11.5px;
+right: 0px;
+top: 0px;
+
+/* Black Foreground */
+background: #000000;
+opacity: 0.44;
+
+
+/* inside */
+
+position: absolute;
+width: 14px;
+height: 7.5px;
+right: 8.5px;
+top: 2px;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* Reception */
+
+position: absolute;
+left: 78.4%;
+right: 17.2%;
+top: 34.62%;
+bottom: 46.15%;
+
+/* Black Foreground */
+background: #000000;
+
+
+/* signal */
+
+position: absolute;
+width: 3px;
+height: 4.5px;
+right: 78px;
+top: 28px;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 6px;
+right: 73.5px;
+top: 22px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 8px;
+right: 69px;
+top: 20px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 3px;
+height: 10px;
+right: 64.5px;
+top: 18px;
+
+background: #000000;
+border-radius: 1px;
+
+
+/* Wifi */
+
+position: absolute;
+width: 15.27px;
+height: 10.97px;
+right: 43.73px;
+top: 17px;
+
+/* Black Foreground */
+background: #000000;
+
