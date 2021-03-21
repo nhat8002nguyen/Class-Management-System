@@ -1,0 +1,148 @@
+/* Create_điểm danh */
+
+
+position: relative;
+width: 375px;
+height: 812px;
+
+/* White */
+
+background: #FFFFFF;
+
+
+/* Input/Text */
+
+
+position: absolute;
+height: 45px;
+left: 17px;
+right: 15px;
+top: 189px;
+
+border-radius: 100px;
+
+
+/* Input/Text */
+
+
+position: absolute;
+height: 50px;
+left: 16px;
+right: 16px;
+top: 279px;
+
+
+/* Button/Primary */
+
+
+/* Auto Layout */
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 16px 32px;
+
+position: absolute;
+height: 51px;
+left: 121px;
+right: 118px;
+bottom: 292px;
+
+background: #F28D3E;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 100px;
+
+
+/* avatar */
+
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 28px;
+top: 94px;
+
+
+/* Join Class */
+
+
+position: absolute;
+width: 75px;
+height: 46px;
+left: 154px;
+top: 150px;
+
+
+/* Login */
+
+
+position: absolute;
+width: 375px;
+height: 708px;
+left: 0px;
+top: 52px;
+
+
+/* Sign in */
+
+
+position: absolute;
+left: 34.67%;
+right: 34.67%;
+top: 58.47%;
+bottom: 35.88%;
+
+
+/* Class */
+
+
+position: absolute;
+width: 325px;
+height: 56.15px;
+left: 23px;
+top: 225px;
+
+
+
+/* Header */
+
+
+position: absolute;
+width: 375px;
+height: 133.63px;
+left: 0px;
+top: 0px;
+
+
+
+/* ClassIN */
+
+
+position: absolute;
+width: 250px;
+height: 250px;
+left: 63px;
+top: 281px;
+
+
+
+/* classINpage */
+
+
+position: relative;
+width: 375px;
+height: 812px;
+
+background: #F5F5F5;
+border-radius: 20px;
+
+
+
+/* ClassIN */
+
+
+position: absolute;
+width: 250px;
+height: 250px;
+left: 63px;
+top: 281px;
