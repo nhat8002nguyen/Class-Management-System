@@ -1,1 +1,0 @@
-// a more complex element is combined by 1 or many components from atoms file 
