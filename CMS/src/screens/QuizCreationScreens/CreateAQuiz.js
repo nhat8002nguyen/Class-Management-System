@@ -10,11 +10,11 @@ import {
   ScrollView,
   TextInput,
 } from 'react-native';
-import {addAQuiz} from '../../actions/quizzesActions';
+import {addAQuiz} from '../../redux/actions/quizzesActions';
 
 const CreateAQuiz = ({navigation, route}) => {
 
-  const isAddNewQuiz = Object.keys(route.params).length ? true : false;
+  const isAddNewQuiz = Object.keys(route.params).length <= 1 ? true : false;
   const quizzesId = route.params.quizzesId;
   console.log(quizzesId);
   const quizId = isAddNewQuiz ? "" : route.params.quizId;
@@ -127,7 +127,7 @@ const CreateAQuiz = ({navigation, route}) => {
           <TouchableOpacity onPress={onAddOrUpdateQuiz}>
             <Image
               style={styles.acceptTest}
-              source={require('../images/check.jpeg')}></Image>
+              source={require('../../assets/images/check.jpeg')}></Image>
           </TouchableOpacity>
         </View>
       </View>

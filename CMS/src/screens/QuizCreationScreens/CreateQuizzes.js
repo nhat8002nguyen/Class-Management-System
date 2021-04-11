@@ -4,7 +4,7 @@ import { TouchableNativeFeedback } from "react-native";
 import { TextInput } from "react-native";
 import { SafeAreaView, StyleSheet, View, Text, Image, TouchableOpacity, ScrollView, } from "react-native";
 import { baseProps } from "react-native-gesture-handler/lib/typescript/handlers/gestureHandlers";
-import QuizCard from "../elements/QuizCard";
+import QuizCard from "../../components/molecules/QuizCard";
 import {launchCamera, launchImageLibrary} from "react-native-image-picker";
 import { v4 } from "uuid";
 
@@ -65,7 +65,7 @@ const CreateQuizzes = ({route,navigation}) => {
           </View>
         </TouchableNativeFeedback>
         <TouchableOpacity onPress={() => navigation.navigate('ListTest')}>
-          <Image style={styles.acceptTest} source={require('../images/check.jpeg')}></Image>
+          <Image style={styles.acceptTest} source={require('../../assets/images/check.jpeg')}></Image>
         </TouchableOpacity>
       </View>
        

@@ -1,13 +1,13 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import ListTest from "./Screens/ListTest";
-import CreateQuizzes from "./Screens/CreateQuizzes";
-import CreateAQuiz from "./Screens/CreateAQuiz";
-import Scores from "./Screens/Scores";
+import ListTest from "../screens/QuizCreationScreens/ListTest";
+import CreateQuizzes from "../screens/QuizCreationScreens/CreateQuizzes";
+import CreateAQuiz from "../screens/QuizCreationScreens/CreateAQuiz";
+import Scores from "../screens/QuizCreationScreens/Scores";
 
 const Stack = createStackNavigator();
 
-const QuizCreationNavigator= () => {
+const QuizCreationNavigator = () => {
   return (
       
     <Stack.Navigator initialRouteName="ListTest" >

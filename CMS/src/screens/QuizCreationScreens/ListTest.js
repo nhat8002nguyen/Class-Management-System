@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import QuizzesCard from "../elements/QuizzesCard"; 
+import QuizzesCard from "../../components/molecules/QuizzesCard"; 
 import { SafeAreaView, StyleSheet, View, Text, Image, TouchableOpacity, ScrollView, StatusBar} from "react-native";
 
 
@@ -23,7 +23,7 @@ const ListTest= ({navigation}) => {
 
       </ScrollView>
       <TouchableOpacity style={styles.addQuizzes} onPress={()=>openAddQuizzes()}>
-        <Image style={styles.addIcon} source={require('../images/buttonAdd.png')}></Image>
+        <Image style={styles.addIcon} source={require('../../assets/images/buttonAdd.png')}></Image>
       </TouchableOpacity>
       </View>
   );

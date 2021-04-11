@@ -4,7 +4,7 @@ import {View, Text, Button, StyleSheet, Image} from 'react-native';
 import { TouchableHighlight } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import DateTimePicker from "@react-native-community/datetimepicker";
-import {removeQuizzes} from "../../actions/quizzesActions";
+import {removeQuizzes} from "../../redux/actions/quizzesActions"; 
 
 
 const QuizzesCard = (props) => {
@@ -83,7 +83,7 @@ const QuizzesCard = (props) => {
           <TouchableHighlight onPress={showBeginTimepicker}>
             <Text>{beginDate.toLocaleTimeString()}</Text>
           </TouchableHighlight>
-          <Image style={styles.calIcon} source={require('../images/calendarIcon.png')}></Image>
+          <Image style={styles.calIcon} source={require('../../assets/images/calendarIcon.png')}></Image>
         </View>
 
         {showBeginMode && (
@@ -106,7 +106,7 @@ const QuizzesCard = (props) => {
           <TouchableHighlight onPress={showEndTimepicker}>
             <Text>{endDate.toLocaleTimeString()}</Text>
           </TouchableHighlight >
-          <Image style={styles.calIcon} source={require('../images/calendarIcon.png')}></Image>
+          <Image style={styles.calIcon} source={require('../../assets/images/calendarIcon.png')}></Image>
         </View>
       </View>
       <Text style={styles.quizNameAndStatus}>{props.quizzesStatus}</Text>
@@ -122,7 +122,7 @@ const QuizzesCard = (props) => {
         </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={onDeleteQuiz}>
-          <Image style={styles.deleteIcon} source={require('../images/delete.png')} />
+          <Image style={styles.deleteIcon} source={require('../../assets/images/delete.png')} />
         </TouchableOpacity>
         {showEndMode && (
         <DateTimePicker

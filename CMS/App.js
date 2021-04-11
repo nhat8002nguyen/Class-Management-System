@@ -8,14 +8,14 @@
 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import CreateQuizStack from './components/CreateQuickTest/CreateQuizStack';
+import QuizCreationNavigator from "./src/navigations/QuizCreationNavigator";
 
 const App = () => {
   
 
   return (
     <NavigationContainer>
-      <CreateQuizStack />
+      <QuizCreationNavigator />
     </NavigationContainer>
   );
 };
