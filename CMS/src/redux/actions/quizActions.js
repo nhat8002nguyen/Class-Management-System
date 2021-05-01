@@ -1,0 +1,120 @@
+import axios from 'axios';
+import {
+  QUIZ_LIST_REQUEST,
+  QUIZ_LIST_SUCCESS,
+  QUIZ_LIST_FAIL,
+  QUIZ_ADD_FAIL,
+  QUIZ_ADD_REQUEST,
+  QUIZ_ADD_SUCCESS,
+  QUIZ_SAVE_REQUEST,
+  QUIZ_SAVE_SUCCESS,
+  QUIZ_SAVE_FAIL,
+  QUIZ_REMOVE_REQUEST,
+  QUIZ_REMOVE_SUCCESS,
+  QUIZ_REMOVE_FAIL,
+} from '../constants/quizActionConstants';
+import QuizData from '../../data/QuizData';
+import {v4} from 'uuid';
+
+const listQuiz = () => async dispatch => {
+  dispatch({type: QUIZ_LIST_REQUEST});
+  try {
+    // get date from api
+    // const { data } = await axios.get('/api/quiz/');
+    const data = QuizData.quizData;
+    dispatch({type: QUIZ_LIST_SUCCESS, payload: data});
+  } catch (error) {
+    dispatch({type: QUIZ_LIST_FAIL, payload: error.message});
+  }
+};
+
+const addQuiz = ({quizName, quizImage, quizDescription, questions}) => async (
+  dispatch,
+  getState,
+) => {
+  // const {
+  //   userSignin: {useInfo},
+  // } = getState();
+  dispatch({type: QUIZ_ADD_REQUEST});
+  try {
+    /*
+    const {data} = await axios.post('/api/quiz/', {
+      quizName,
+      quizImage,
+      description,
+      questions,
+    }, {
+      headers: {Authorization: "Nhat" + userInfo.token}
+    });
+    */
+    const data = QuizData.addQuiz(
+      quizName,
+      quizImage,
+      quizDescription,
+      questions,
+    );
+    dispatch({type: QUIZ_ADD_SUCCESS, payload: data});
+  } catch (error) {
+    dispatch({type: QUIZ_ADD_FAIL});
+  }
+};
+
+const saveQuiz = ({
+  _quizId,
+  quizName,
+  quizImage,
+  quizDescription,
+  questions,
+}) => async (dispatch, getState) => {
+  dispatch({type: QUIZ_SAVE_REQUEST});
+  // const {
+  //   userSignin: {userInfo},
+  // } = getState();
+  try {
+    /*
+    const {data} = await axios.put(
+      '/api/quiz/' + _quizId,
+      {quizName, quizImage, description, questions},
+      {
+        headers: {Authorization: 'Nhat ' + userInfo.token},
+      },
+    );
+    */
+    // TO-DO: save data
+    const data = QuizData.saveQuiz(
+      _quizId,
+      quizName,
+      quizImage,
+      quizDescription,
+      questions,
+    );
+
+    dispatch({type: QUIZ_SAVE_SUCCESS, payload: data});
+  } catch (error) {
+    dispatch({type: QUIZ_SAVE_FAIL, payload: error.message});
+  }
+};
+
+const removeQuiz = _quizId => async (dispatch, getState) => {
+  dispatch({type: QUIZ_REMOVE_REQUEST});
+  // const {
+  //   userSignin: {userInfo},
+  // } = getState();
+  try {
+    /*
+    const { data } = await axios.delete("/api/quiz/" + _quizId, {
+      headers: { Authorization: "Nhat" + userInfo.token}
+    });
+    */
+
+    const data = QuizData.quizData.filter(el => el._quizId === _quizId);
+
+    QuizData.removeQuiz(_quizId);
+
+    dispatch({type: QUIZ_REMOVE_SUCCESS, payload: data});
+  } catch (error) {
+    dispatch({type: QUIZ_REMOVE_FAIL, payload: error.message});
+  }
+};
+
+export {listQuiz, addQuiz, removeQuiz, saveQuiz};

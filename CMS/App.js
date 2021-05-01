@@ -7,12 +7,11 @@
  */
 
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import QuizCreationNavigator from "./src/navigations/QuizCreationNavigator";
+import {NavigationContainer} from '@react-navigation/native';
+import QuizCreationNavigator from './src/navigations/QuizCreationNavigator';
+import DoingQuizNavigator from './src/navigations/DoingQuizNavigator';
 
 const App = () => {
-  
-
   return (
     <NavigationContainer>
       <QuizCreationNavigator />

@@ -1,21 +1,21 @@
-import { createStore, combineReducers, applyMiddleware} from "redux"
-import thunk from "redux-thunk";
-import {quizzesListReducer} from "./reducers/quizzesListReducer"; 
-import quizzesData from "./data/quizData";
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import {
+  quizAddReducer,
+  quizListReducer,
+  quizRemoveReducer,
+  quizSaveReducer,
+} from './reducers/quizListReducer';
+import questionCreateReducers from './reducers/questionCreateReducer';
 
 const reducer = combineReducers({
-  quizzesList: quizzesListReducer,
+  quizList: quizListReducer,
+  questions: questionCreateReducers,
+  quizRemove: quizRemoveReducer,
+  quizAdd: quizAddReducer,
+  quizSave: quizSaveReducer,
 });
 
-
-const initialState = {
-  quizzesList: quizzesData,
-} 
-
-const store = createStore(
-  reducer,
-  initialState,
-  applyMiddleware(thunk)
-);
+const store = createStore(reducer, {}, applyMiddleware(thunk));
 
 export default store;
