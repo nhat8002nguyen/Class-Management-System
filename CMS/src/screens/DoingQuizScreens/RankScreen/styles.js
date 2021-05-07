@@ -24,7 +24,7 @@ export default StyleSheet.create({
   },
   ranksBox: {
     width: 350,
-    height: 500,
+    height: 480,
     backgroundColor: colors.WHITE,
     marginTop: 20,
     borderRadius: 10,

@@ -24,7 +24,7 @@ export default StyleSheet.create({
   },
   answersBox: {
     width: 350,
-    height: 500,
+    height: 480,
     backgroundColor: colors.WHITE,
     marginTop: 20,
     borderRadius: 10,
@@ -32,7 +32,7 @@ export default StyleSheet.create({
     borderColor: colors.PRIMARY,
   },
   questionInfo: {
-    height: 220,
+    height: 200,
     backgroundColor: colors.PRIMARY,
     padding: 10,
     borderRadius: 10,

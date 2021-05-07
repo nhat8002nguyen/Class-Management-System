@@ -6,15 +6,24 @@ import React, {
 } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {View, Text, TouchableOpacity, TextInput} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
+import {takeCurrentQuiz} from '../../../redux/actions/currentQuizActions';
 
 export default EnterPinScreen = () => {
   const [pin, setPin] = useState('');
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   const onEnterPin = () => {
-    navigation.navigate('EnterNameScreen');
+    if (pin.length !== 0) {
+      dispatch(takeCurrentQuiz(pin));
+      navigation.navigate('EnterNameScreen');
+    } else {
+      alert('Enter pin!');
+    }
   };
+
+  useLayoutEffect(() => {}, [navigation]);
 
   return (
     <View style={styles.container}>

@@ -114,7 +114,7 @@ const QuizCard = props => {
             source={require('../../assets/images/calendarIcon.png')}></Image>
         </View>
       </View>
-      <Text style={styles.quizNameAndStatus}>{props.quizStatus}</Text>
+      <Text style={styles.quizNameAndStatus}>{`Pin: ${props.quizPin}`}</Text>
       <View style={styles.row}>
         <TouchableOpacity onPress={editCreatedQuiz}>
           <View style={styles.button}>

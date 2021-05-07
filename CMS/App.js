@@ -14,7 +14,7 @@ import DoingQuizNavigator from './src/navigations/DoingQuizNavigator';
 const App = () => {
   return (
     <NavigationContainer>
-      <QuizCreationNavigator />
+      <DoingQuizNavigator />
     </NavigationContainer>
   );
 };

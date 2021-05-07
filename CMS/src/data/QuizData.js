@@ -6,10 +6,10 @@ const dataSample = [
     quizName: 'Test1',
     quizBeginTime: new Date(1598051730000),
     quizEndTime: new Date(1598051730000),
-    quizStatus: 'Lock',
     quizImage:
       'https://cdnimg.vietnamplus.vn/t1200/Uploaded/hmnsy/2019_09_10/phan_thiet.jpg',
     quizDescription: 'Learn about concrete mathematics',
+    quizPin: 98436,
     questions: [
       {
         questionId: 1,
@@ -42,10 +42,10 @@ const dataSample = [
     quizName: 'Test1',
     quizBeginTime: new Date(1598051730000),
     quizEndTime: new Date(1598051730000),
-    quizStatus: 'Lock',
     quizImage:
       'https://cdnimg.vietnamplus.vn/t1200/Uploaded/hmnsy/2019_09_10/phan_thiet.jpg',
     quizDescription: 'Learn about concrete mathematics',
+    quizPin: 23477,
     questions: [
       {
         questionId: 1,
@@ -78,10 +78,10 @@ const dataSample = [
     quizName: 'Test1',
     quizBeginTime: new Date(1598051730000),
     quizEndTime: new Date(1598051730000),
-    quizStatus: 'Lock',
     quizImage:
       'https://cdnimg.vietnamplus.vn/t1200/Uploaded/hmnsy/2019_09_10/phan_thiet.jpg',
     quizDescription: 'Learn about concrete mathematics',
+    quizPin: 34283,
     questions: [
       {
         questionId: 1,
@@ -114,10 +114,10 @@ const dataSample = [
     quizName: 'Test1',
     quizBeginTime: new Date(1598051730000),
     quizEndTime: new Date(1598051730000),
-    quizStatus: 'Lock',
     quizImage:
       'https://cdnimg.vietnamplus.vn/t1200/Uploaded/hmnsy/2019_09_10/phan_thiet.jpg',
     quizDescription: 'Learn about concrete mathematics',
+    quizPin: 84928,
     questions: [
       {
         questionId: 1,
@@ -158,6 +158,7 @@ class QuizData {
       quizImage,
       quizDescription,
       questions,
+      quizPin: Math.floor(Math.random() * 90000 + 9999),
     });
 
     return this.quizData;
@@ -176,6 +177,18 @@ class QuizData {
 
     return this.quizData;
   }
+
+  static takeQuizWithPin = quizPin => {
+    const quizTake = this.quizData.find(
+      quiz => quiz.quizPin === parseInt(quizPin),
+    );
+    if (!quizTake) {
+      throw 'Wrong pin !';
+      return;
+    } else {
+      return quizTake;
+    }
+  };
 }
 
 export default QuizData;
