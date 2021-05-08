@@ -1,9 +1,11 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import EnterPinScreen from '../screens/DoingQuizScreens/EnterPinScreen/index';
-import EnterNameScreen from '../screens/DoingQuizScreens/EnterNameScreen/index';
-import AnswerQuizScreen from '../screens/DoingQuizScreens/AnswerQuizScreen/index';
-import RankScreen from '../screens/DoingQuizScreens/RankScreen/index';
+import {
+  EnterNameScreen,
+  EnterPinScreen,
+  AnswerQuizScreen,
+  RankScreen,
+} from '../../screens/DoingQuizScreens';
 
 const Stack = createStackNavigator();
 

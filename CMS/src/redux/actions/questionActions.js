@@ -7,7 +7,21 @@ import {
 } from '../constants/questionActionConstants';
 
 const listQuestion = _quizId => async dispatch => {
-  dispatch({type: QUESTION_LIST, payload: _quizId});
+  const {data} = await axios.get(
+    `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}/questions`,
+  );
+  // const data = QuizData.quizData.find(quiz => quiz._quizId === _quizId);
+  let uiQuestions = data
+    ? data.map(ques => ({
+        questionId: ques.id,
+        questionImage: ques.mediaURL,
+        questionDescription: ques.description,
+        answers: ['A 123', 'B 456', 'C 456', 'D 789'],
+        questionTime: ques.time,
+      }))
+    : [];
+  console.log('here run', uiQuestions);
+  dispatch({type: QUESTION_LIST, payload: uiQuestions});
 };
 
 const addQuestion = ({

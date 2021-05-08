@@ -20,9 +20,21 @@ const listQuiz = () => async dispatch => {
   dispatch({type: QUIZ_LIST_REQUEST});
   try {
     // get date from api
-    // const { data } = await axios.get('/api/quiz/');
-    const data = QuizData.quizData;
-    dispatch({type: QUIZ_LIST_SUCCESS, payload: data});
+    const {data} = await axios.get(
+      'https://cms-backend-whatever.herokuapp.com/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/quizzes',
+    );
+    const uiData = data.map(quiz => ({
+      _quizId: quiz.id,
+      quizName: quiz.name,
+      quizDescription: quiz.description,
+      quizBeginTime: new Date(quiz.start),
+      quizEndTime: new Date(quiz.end),
+      quizImage: quiz.mediaURL,
+      quizPin: quiz.PIN,
+      questions: [],
+    }));
+    // const data = QuizData.quizData;
+    dispatch({type: QUIZ_LIST_SUCCESS, payload: uiData});
   } catch (error) {
     dispatch({type: QUIZ_LIST_FAIL, payload: error.message});
   }

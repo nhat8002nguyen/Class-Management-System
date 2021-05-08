@@ -7,15 +7,19 @@
  */
 
 import React from 'react';
+import {Provider} from 'react-native-paper';
 import {NavigationContainer} from '@react-navigation/native';
-import QuizCreationNavigator from './src/navigations/QuizCreationNavigator';
-import DoingQuizNavigator from './src/navigations/DoingQuizNavigator';
+import {theme} from './src/styles/theme';
+import AuthStack from './src/navigations/outsidestacks/AuthStack';
+import CombineStack from './src/navigations/CombineStack';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <DoingQuizNavigator />
-    </NavigationContainer>
+    <Provider theme={theme}>
+      <NavigationContainer>
+        <CombineStack />
+      </NavigationContainer>
+    </Provider>
   );
 };
 

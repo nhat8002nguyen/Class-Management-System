@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useIsFocused} from '@react-navigation/native';
 
@@ -20,7 +20,6 @@ const wait = timeout => {
 };
 
 const ListTest = ({navigation}) => {
-  const isFocused = useIsFocused();
   const quizList = useSelector(state => state.quizList);
   const {loading, quizzes, error} = quizList;
 
@@ -34,13 +33,13 @@ const ListTest = ({navigation}) => {
     wait(1000).then(() => setRefreshing(false));
   }, []);
 
+  useEffect(() => {
+    dispatch(listQuiz());
+  }, [navigation]);
+
   const openAddQuiz = () => {
     navigation.navigate('CreateQuiz');
   };
-
-  useLayoutEffect(() => {
-    dispatch(listQuiz());
-  }, [isFocused]);
 
   return (
     <View style={styles.container}>

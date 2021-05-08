@@ -10,14 +10,8 @@ import QuizData from '../../data/QuizData';
 const questionCreateReducers = (state = {questions: []}, action) => {
   switch (action.type) {
     case QUESTION_LIST:
-      const _quizId = action.payload;
-      // const { data } = await axios.get("/api/quizzes/" + _quizId);
-      const data = QuizData.quizData.find(quiz => quiz._quizId === _quizId);
-      if (data) {
-        return {questions: [...data.questions]};
-      } else {
-        return {questions: []};
-      }
+      const questions = action.payload ? action.payload : [];
+      return {questions};
     case QUESTION_ADD:
       const questionId = state.questions.length + 1;
       return {

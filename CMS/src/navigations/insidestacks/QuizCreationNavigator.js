@@ -1,9 +1,11 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import ListTest from '../screens/QuizCreationScreens/ListTest/index';
-import CreateQuiz from '../screens/QuizCreationScreens/CreateQuiz/index';
-import CreateQuestion from '../screens/QuizCreationScreens/CreateQuestion/index';
-import Scores from '../screens/QuizCreationScreens/Scores/index';
+import {
+  ListTest,
+  CreateQuestion,
+  CreateQuiz,
+  Scores,
+} from '../../screens/QuizCreationScreens';
 
 const Stack = createStackNavigator();
 

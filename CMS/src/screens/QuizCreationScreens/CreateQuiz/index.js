@@ -14,14 +14,14 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import QuestionCard from '../../../components/molecules/QuestionCard';
 import {listQuestion} from '../../../redux/actions/questionActions';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
-import {v4} from 'uuid';
 import styles from './styles';
 import {addQuiz, saveQuiz} from '../../../redux/actions/quizActions';
 
 const CreateQuiz = ({route, navigation}) => {
   const _quizId = route.params ? route.params.quizId : '';
-  const {quizzes} = useSelector(state => state.quizList);
-
+  const quizList = useSelector(state => state.quizList);
+  console.log(quizList);
+  const {loading, quizzes, error} = quizList;
   const quiz = quizzes.find(quiz => quiz._quizId === _quizId);
 
   const [quizName, setQuizName] = useState(
