@@ -12,13 +12,15 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import * as ImagePicker from 'react-native-image-picker';
 import {
   addQuestion,
+  listQuestion,
   saveQuestion,
 } from '../../../redux/actions/questionActions';
 import styles from './styles';
+import {RadioButton} from 'react-native-paper';
 
 const CreateQuestion = ({navigation, route}) => {
   const isAddNewQuiz = Object.keys(route.params).length <= 1 ? true : false;
-  const _quizId = route.params.quizId;
+  const _quizId = route.params._quizId;
   const questionId = isAddNewQuiz ? '' : route.params.questionId;
   const [questionImage, setQuestionImage] = useState(
     isAddNewQuiz
@@ -30,6 +32,9 @@ const CreateQuestion = ({navigation, route}) => {
   );
   const [answers, setAnswers] = useState(
     isAddNewQuiz ? ['A ', 'B ', 'C ', 'D '] : route.params.answers,
+  );
+  const [correctAnswer, setCorrectAnswer] = useState(
+    isAddNewQuiz ? 1 : route.params.correctAnswer,
   );
   const [questionTime, setQuestionTime] = useState(
     isAddNewQuiz ? '' : route.params.questionTime,
@@ -99,7 +104,7 @@ const CreateQuestion = ({navigation, route}) => {
     setAnswers(pAnswers => pAnswers.map((a, i) => (a = i == 3 ? text : a)));
   };
 
-  const onAddOrUpdateQuestion = () => {
+  const onAddOrUpdateQuestion = async () => {
     if (
       questionDescription === '' ||
       answers[0] === '' ||
@@ -110,27 +115,31 @@ const CreateQuestion = ({navigation, route}) => {
     } else {
       if (questionId === '') {
         // this is add new question
-        console.log('run');
-        dispatch(
+        await dispatch(
           addQuestion({
+            _quizId,
             questionImage,
             questionDescription,
             answers,
+            correctAnswer,
             questionTime,
           }),
         );
       } else {
         // edit a existed question
-        dispatch(
+        await dispatch(
           saveQuestion({
             questionId,
             questionImage,
             questionDescription,
             answers,
+            correctAnswer,
             questionTime,
           }),
         );
       }
+
+      dispatch(listQuestion(_quizId));
     }
 
     navigation.navigate('CreateQuiz');
@@ -178,6 +187,32 @@ const CreateQuestion = ({navigation, route}) => {
               keyboardType="numeric"
               value={questionTime}></TextInput>
             <Text>S</Text>
+          </View>
+          <View style={styles.radioBtnGroup}>
+            <Text>A</Text>
+            <RadioButton
+              value={1}
+              status={correctAnswer === 1 ? 'checked' : 'unchecked'}
+              onPress={() => setCorrectAnswer(1)}
+            />
+            <Text>B</Text>
+            <RadioButton
+              value={2}
+              status={correctAnswer === 2 ? 'checked' : 'unchecked'}
+              onPress={() => setCorrectAnswer(2)}
+            />
+            <Text>C</Text>
+            <RadioButton
+              value={3}
+              status={correctAnswer === 3 ? 'checked' : 'unchecked'}
+              onPress={() => setCorrectAnswer(3)}
+            />
+            <Text>D</Text>
+            <RadioButton
+              value={4}
+              status={correctAnswer === 4 ? 'checked' : 'unchecked'}
+              onPress={() => setCorrectAnswer(4)}
+            />
           </View>
           <TouchableOpacity onPress={onAddOrUpdateQuestion}>
             <Icon

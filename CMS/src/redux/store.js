@@ -7,12 +7,20 @@ import {
   quizRemoveReducer,
   quizSaveReducer,
 } from './reducers/quizListReducer';
-import questionCreateReducers from './reducers/questionCreateReducer';
+import {
+  questionListReducer,
+  questionAddReducer,
+  questionRemoveReducer,
+  questionSaveReducer,
+} from './reducers/questionCreateReducer';
 import {currentQuizReducer} from './reducers/currentQuizReducers';
 
 const reducer = combineReducers({
   quizList: quizListReducer,
-  questions: questionCreateReducers,
+  questionList: questionListReducer,
+  questionAdd: questionAddReducer,
+  questionRemove: questionRemoveReducer,
+  questionSave: questionSaveReducer,
   quizRemove: quizRemoveReducer,
   quizAdd: quizAddReducer,
   quizSave: quizSaveReducer,

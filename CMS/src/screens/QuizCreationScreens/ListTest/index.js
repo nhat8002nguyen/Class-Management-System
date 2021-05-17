@@ -1,6 +1,5 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useIsFocused} from '@react-navigation/native';
 
 import QuizCard from '../../../components/molecules/QuizCard';
 import styles from './styles';
@@ -12,8 +11,10 @@ import {
   ScrollView,
   StatusBar,
   RefreshControl,
+  ActivityIndicator,
 } from 'react-native';
 import {listQuiz} from '../../../redux/actions/quizActions';
+import {theme} from '../../../styles/theme';
 
 const wait = timeout => {
   return new Promise(resolve => setTimeout(resolve, timeout));
@@ -45,7 +46,7 @@ const ListTest = ({navigation}) => {
     <View style={styles.container}>
       <StatusBar backgroundColor="red" barStyle="dark-content" />
       {loading ? (
-        <Text>Loading...</Text>
+        <ActivityIndicator size="large" color={theme.colors.primary} />
       ) : error ? (
         error.message
       ) : (
