@@ -79,13 +79,13 @@ const saveQuiz = ({_quizId, quizName, quizImage, quizDescription}) => async (
   //   userSignin: {userInfo},
   // } = getState();
   try {
-    const {data} = await axios.put(
+    const {
+      data,
+    } = await axios.put(
       `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}`,
       {name: quizName, mediaURL: quizImage, description: quizDescription},
-      // {
-      //   headers: {Authorization: 'Nhat ' + userInfo.token},
-      // },
     );
+    console.log(data);
     // const data = QuizData.saveQuiz(
     //   _quizId,
     //   quizName,

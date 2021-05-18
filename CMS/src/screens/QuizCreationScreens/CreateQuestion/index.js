@@ -92,7 +92,6 @@ const CreateQuestion = ({navigation, route}) => {
 
   const onChangeAns0 = text => {
     setAnswers(pAnswers => pAnswers.map((a, i) => (a = i == 0 ? text : a)));
-    console.log(answers);
   };
   const onChangeAns1 = text => {
     setAnswers(pAnswers => pAnswers.map((a, i) => (a = i == 1 ? text : a)));

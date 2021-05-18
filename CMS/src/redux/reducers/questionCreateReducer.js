@@ -13,14 +13,20 @@ import {
   QUESTION_SAVE_SUCCESS,
 } from '../constants/questionActionConstants';
 
-const questionListReducer = (state = {questions: []}, action) => {
+const intialState = {
+  loading: true,
+  questions: [],
+  error: false,
+};
+
+const questionListReducer = (state = intialState, action) => {
   switch (action.type) {
     case QUESTION_LIST_REQUEST:
-      return {...state, loading: true};
+      return {loading: true};
     case QUESTION_LIST_SUCCESS:
       return {loading: false, questions: action.payload};
     case QUESTION_LIST_FAIL:
-      return {...state, loading: false, error: action.payload};
+      return {loading: false, error: action.payload};
     default:
       return state;
   }

@@ -12,12 +12,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {theme} from './src/styles/theme';
 import AuthStack from './src/navigations/outsidestacks/AuthStack';
 import CombineStack from './src/navigations/CombineStack';
+import QuizCreationNavigator from './src/navigations/insidestacks/QuizCreationNavigator';
 
 const App = () => {
   return (
     <Provider theme={theme}>
       <NavigationContainer>
-        <CombineStack />
+        <QuizCreationNavigator />
       </NavigationContainer>
     </Provider>
   );

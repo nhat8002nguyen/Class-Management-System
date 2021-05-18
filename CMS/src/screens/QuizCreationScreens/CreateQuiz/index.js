@@ -27,7 +27,7 @@ const wait = timeout => {
 const CreateQuiz = ({route, navigation}) => {
   const _quizId = route.params ? route.params.quizId : '';
   const quizList = useSelector(state => state.quizList);
-  const {loading, quizzes, error} = quizList;
+  const {quizzes} = quizList;
   const quiz = quizzes.find(quiz => quiz._quizId === _quizId);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -37,13 +37,13 @@ const CreateQuiz = ({route, navigation}) => {
   const [quizImage, setQuizImage] = useState(
     quiz !== undefined ? quiz.quizImage : '',
   );
-  const [quizDescription, setQuiDescripition] = useState(
+  const [quizDescription, setQuestionDescripition] = useState(
     quiz !== undefined ? quiz.quizDescription : '',
   );
 
   const dispatch = useDispatch();
 
-  const {questions} = useSelector(state => state.questionList);
+  const {loading, questions, error} = useSelector(state => state.questionList);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -106,7 +106,6 @@ const CreateQuiz = ({route, navigation}) => {
       dispatch(addQuiz({quizName, quizImage, quizDescription}));
     }
 
-    dispatch(listQuiz());
     navigation.goBack();
   };
 
@@ -134,7 +133,7 @@ const CreateQuiz = ({route, navigation}) => {
         <TextInput
           style={[styles.input, styles.inputText]}
           value={quizDescription}
-          onChangeText={text => setQuiDescripition(text)}></TextInput>
+          onChangeText={text => setQuestionDescripition(text)}></TextInput>
       </View>
       <View style={styles.viewQuestions}>
         <Text style={styles.fieldName}>
@@ -146,9 +145,9 @@ const CreateQuiz = ({route, navigation}) => {
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
           }>
           {loading ? (
-            <ActivityIndicator size="smail" color={theme.colors.primary} />
+            <ActivityIndicator size="large" color={theme.colors.primary} />
           ) : error ? (
-            error.message
+            <Text>Something wrong, you need to create quiz first !</Text>
           ) : (
             questions.map((question, index) => (
               <QuestionCard

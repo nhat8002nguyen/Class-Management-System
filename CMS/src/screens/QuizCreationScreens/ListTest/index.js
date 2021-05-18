@@ -34,7 +34,7 @@ const ListTest = ({navigation}) => {
     wait(1000).then(() => setRefreshing(false));
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     dispatch(listQuiz());
   }, [navigation]);
 
