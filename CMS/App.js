@@ -18,7 +18,7 @@ const App = () => {
   return (
     <Provider theme={theme}>
       <NavigationContainer>
-        <QuizCreationNavigator />
+        <CombineStack />
       </NavigationContainer>
     </Provider>
   );

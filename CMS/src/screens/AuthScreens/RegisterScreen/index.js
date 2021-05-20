@@ -1,6 +1,13 @@
-import React, {useState} from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {Text} from 'react-native-paper';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  ActivityIndicator,
+  Alert,
+} from 'react-native';
+import {Text, RadioButton} from 'react-native-paper';
 import styles from './styles';
 import {
   Background,
@@ -15,11 +22,16 @@ import {
   emailValidator,
   passwordValidator,
 } from '../../../helpers/auth';
+import {signup} from '../../../redux/actions/userActions';
+import {theme} from '../../../styles/theme';
 
 export default function RegisterScreen({navigation}) {
   const [name, setName] = useState({value: '', error: ''});
   const [email, setEmail] = useState({value: '', error: ''});
   const [password, setPassword] = useState({value: '', error: ''});
+  const [userType, setUserType] = useState(1);
+  const dispatch = useDispatch();
+  const {loading, success, error} = useSelector(state => state.userSignup);
 
   const onSignUpPressed = () => {
     const nameError = nameValidator(name.value);
@@ -31,11 +43,29 @@ export default function RegisterScreen({navigation}) {
       setPassword({...password, error: passwordError});
       return;
     }
-    navigation.reset({
-      index: 0,
-      routes: [{name: 'Dashboard'}],
-    });
+    dispatch(
+      signup({email: email.value, password: password.value, type: userType}),
+    );
   };
+
+  useEffect(() => {
+    if (success) {
+      Alert.alert('Signup successful !', 'Move to signin ', [
+        {
+          text: 'OK',
+          onPress: () => navigation.replace('LoginScreen'),
+        },
+      ]);
+    }
+  }, [success]);
+
+  useEffect(() => {
+    if (error) {
+      Alert.alert('Something wrong !', 'please try again ', [
+        {text: 'OK', onPress: () => console.log('OKE')},
+      ]);
+    }
+  }, [error]);
 
   return (
     <Background>
@@ -71,12 +101,32 @@ export default function RegisterScreen({navigation}) {
         errorText={password.error}
         secureTextEntry
       />
-      <Button
-        mode="contained"
-        onPress={onSignUpPressed}
-        style={{marginTop: 24}}>
-        Sign Up
-      </Button>
+      <View style={styles.userTypes}>
+        <View style={styles.userType}>
+          <Text>Student</Text>
+          <RadioButton
+            value={1}
+            status={userType === 1 ? 'checked' : 'unchecked'}
+            onPress={() => setUserType(1)}></RadioButton>
+        </View>
+        <View>
+          <Text>Teacher</Text>
+          <RadioButton
+            value={2}
+            status={userType === 2 ? 'checked' : 'unchecked'}
+            onPress={() => setUserType(2)}></RadioButton>
+        </View>
+      </View>
+      {loading ? (
+        <ActivityIndicator size="large" color={theme.colors.primary} />
+      ) : (
+        <Button
+          mode="contained"
+          onPress={onSignUpPressed}
+          style={{marginTop: 24}}>
+          Sign Up
+        </Button>
+      )}
       <View style={styles.row}>
         <Text>Already have an account? </Text>
         <TouchableOpacity onPress={() => navigation.replace('LoginScreen')}>

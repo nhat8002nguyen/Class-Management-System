@@ -1,7 +1,19 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
 import {Background, Logo, Header, Button} from '../../../components/atoms';
+import {logout} from '../../../redux/actions/userActions';
 
 export default function Dashboard({navigation}) {
+  const dispatch = useDispatch();
+
+  const onLogout = () => {
+    dispatch(logout());
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'StartScreen'}],
+    });
+  };
+
   return (
     <Background>
       <Logo />
@@ -26,14 +38,7 @@ export default function Dashboard({navigation}) {
         }>
         Do Quiz
       </Button>
-      <Button
-        mode="outlined"
-        onPress={() =>
-          navigation.reset({
-            index: 0,
-            routes: [{name: 'StartScreen'}],
-          })
-        }>
+      <Button mode="outlined" onPress={onLogout}>
         Logout
       </Button>
     </Background>

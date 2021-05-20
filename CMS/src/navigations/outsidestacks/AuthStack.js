@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {createStackNavigator} from '@react-navigation/stack';
 import {
   LoginScreen,
@@ -13,7 +14,7 @@ const Stack = createStackNavigator();
 export default AuthStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="StartScreen"
+      initialRouteName={'StartScreen'}
       screenOptions={{
         headerShown: false,
       }}>
