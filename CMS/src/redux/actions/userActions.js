@@ -22,16 +22,18 @@ const storeUserInfo = async userInfo => {
 const signin = ({email, password}) => async (dispatch, getState) => {
   dispatch({type: USER_SIGNIN_REQUEST});
   try {
-    const token = await axios.post(
+    const {data} = await axios.post(
       'https://cms-backend-whatever.herokuapp.com/auth/sign-in',
       {
         email,
         password,
       },
     );
-    storeUserInfo({email: email, password: password, token: String(token)});
-    console.log('login success with user', email);
-    dispatch({type: USER_SIGNIN_SUCCESS, payload: {email, password, token}});
+    storeUserInfo({email: email, password: password, token: data});
+    dispatch({
+      type: USER_SIGNIN_SUCCESS,
+      payload: {email: email, password: password, token: data},
+    });
   } catch (err) {
     dispatch({type: USER_SIGNIN_FAIL, payload: err.message});
   }

@@ -14,7 +14,7 @@ const Stack = createStackNavigator();
 export default AuthStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName={'StartScreen'}
+      initialRouteName="StartScreen"
       screenOptions={{
         headerShown: false,
       }}>

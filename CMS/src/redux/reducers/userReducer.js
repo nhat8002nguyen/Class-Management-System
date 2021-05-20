@@ -10,7 +10,7 @@ import {
 const userSigninReducer = (state = {userInfo: {}}, action) => {
   switch (action.type) {
     case USER_SIGNIN_REQUEST:
-      return {loading: true};
+      return {loading: true, error: false};
     case USER_SIGNIN_SUCCESS:
       return {loading: false, userInfo: action.payload, success: true};
     case USER_SIGNIN_FAIL:
@@ -23,7 +23,7 @@ const userSigninReducer = (state = {userInfo: {}}, action) => {
 const userSignupReducer = (state = {userInfo: {}}, action) => {
   switch (action.type) {
     case USER_SIGNUP_REQUEST:
-      return {loading: true};
+      return {loading: true, error: false};
     case USER_SIGNUP_SUCCESS:
       return {loading: false, userInfo: action.payload, success: true};
     case USER_SIGNUP_FAIL:

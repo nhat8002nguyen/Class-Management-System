@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {Background, Logo, Header, Button} from '../../../components/atoms';
 import {logout} from '../../../redux/actions/userActions';
 

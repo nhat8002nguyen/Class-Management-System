@@ -14,6 +14,7 @@ import {theme} from '../../../styles/theme';
 export default function StartScreen({navigation}) {
   const dispatch = useDispatch();
   const {loading, userInfo} = useSelector(state => state.userSignin);
+
   const onMoveToLogin = () => {
     if (userInfo?._W?.token) {
       dispatch(
