@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef, useState} from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {TextInput} from 'react-native';
 import {
@@ -28,7 +28,7 @@ const CreateQuiz = ({route, navigation}) => {
   const _quizId = route.params ? route.params.quizId : '';
   const quizList = useSelector(state => state.quizList);
   const {quizzes} = quizList;
-  const quiz = quizzes.find(quiz => quiz._quizId === _quizId);
+  const quiz = quizzes?.find(quiz => quiz._quizId === _quizId);
   const [refreshing, setRefreshing] = useState(false);
 
   const [quizName, setQuizName] = useState(
@@ -147,7 +147,7 @@ const CreateQuiz = ({route, navigation}) => {
           {loading ? (
             <ActivityIndicator size="large" color={theme.colors.primary} />
           ) : error ? (
-            <Text>Something wrong, you need to create quiz first !</Text>
+            <Text>you need to confirm quiz first !</Text>
           ) : (
             questions.map((question, index) => (
               <QuestionCard

@@ -13,6 +13,7 @@ import {
   RefreshControl,
   ActivityIndicator,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {listQuiz} from '../../../redux/actions/quizActions';
 import {theme} from '../../../styles/theme';
 
@@ -35,8 +36,21 @@ const ListTest = ({navigation}) => {
   }, []);
 
   useLayoutEffect(() => {
+    navigation.setOptions({
+      title: 'List Quizzes',
+      headerLeft: () => (
+        <Icon name="arrow-back" size={30} onPress={() => onGoBackHome()} />
+      ),
+    });
     dispatch(listQuiz());
   }, [navigation]);
+
+  const onGoBackHome = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Dashboard'}],
+    });
+  };
 
   const openAddQuiz = () => {
     navigation.navigate('CreateQuiz');

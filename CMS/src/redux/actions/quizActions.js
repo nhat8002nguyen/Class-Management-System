@@ -15,12 +15,20 @@ import {
 } from '../constants/quizActionConstants';
 import QuizData from '../../data/QuizData';
 
-const listQuiz = () => async dispatch => {
+const listQuiz = () => async (dispatch, getState) => {
   dispatch({type: QUIZ_LIST_REQUEST});
+  const {
+    userSignin: {userInfo},
+  } = getState();
   try {
     // get date from api
     const {data} = await axios.get(
       'https://cms-backend-whatever.herokuapp.com/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/quizzes',
+      {
+        headers: {
+          token: userInfo.token,
+        },
+      },
     );
     const uiData = data.map(quiz => ({
       _quizId: quiz.id,
@@ -43,10 +51,11 @@ const addQuiz = ({quizName, quizImage, quizDescription}) => async (
   dispatch,
   getState,
 ) => {
-  // const {
-  //   userSignin: {useInfo},
-  // } = getState();
+  const {
+    userSignin: {userInfo},
+  } = getState();
   dispatch({type: QUIZ_ADD_REQUEST});
+
   try {
     const {data} = await axios.post(
       'https://cms-backend-whatever.herokuapp.com/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/quizzes',
@@ -56,6 +65,11 @@ const addQuiz = ({quizName, quizImage, quizDescription}) => async (
         description: quizDescription,
         start: Date(Date.now()),
         end: Date(Date.now()),
+      },
+      {
+        headers: {
+          token: userInfo.token,
+        },
       },
     );
     // const data = QuizData.addQuiz(
@@ -75,25 +89,17 @@ const saveQuiz = ({_quizId, quizName, quizImage, quizDescription}) => async (
   getState,
 ) => {
   dispatch({type: QUIZ_SAVE_REQUEST});
-  // const {
-  //   userSignin: {userInfo},
-  // } = getState();
+  const {
+    userSignin: {userInfo},
+  } = getState();
   try {
-    const {
-      data,
-    } = await axios.put(
+    const {data} = await axios.put(
       `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}`,
       {name: quizName, mediaURL: quizImage, description: quizDescription},
+      {
+        headers: {token: userInfo.token},
+      },
     );
-    console.log(data);
-    // const data = QuizData.saveQuiz(
-    //   _quizId,
-    //   quizName,
-    //   quizImage,
-    //   quizDescription,
-    //   questions,
-    // );
-
     dispatch({type: QUIZ_SAVE_SUCCESS, payload: data});
   } catch (error) {
     dispatch({type: QUIZ_SAVE_FAIL, payload: error.message});
@@ -102,16 +108,16 @@ const saveQuiz = ({_quizId, quizName, quizImage, quizDescription}) => async (
 
 const removeQuiz = _quizId => async (dispatch, getState) => {
   dispatch({type: QUIZ_REMOVE_REQUEST});
-  // const {
-  //   userSignin: {userInfo},
-  // } = getState();
+  const {
+    userSignin: {userInfo},
+  } = getState();
   try {
     const {data} = await axios.delete(
       `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}`,
+      {
+        headers: {token: userInfo.token},
+      },
     );
-    // const data = QuizData.quizData.filter(el => el._quizId === _quizId);
-
-    // QuizData.removeQuiz(_quizId);
 
     dispatch({type: QUIZ_REMOVE_SUCCESS, payload: data});
   } catch (error) {

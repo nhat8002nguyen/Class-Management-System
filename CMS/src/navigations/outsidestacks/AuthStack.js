@@ -8,6 +8,8 @@ import {
   Dashboard,
   StartScreen,
 } from '../../screens/AuthScreens';
+import QuizCreationNavigator from '../insidestacks/QuizCreationNavigator';
+import DoingQuizNavigator from '../insidestacks/DoingQuizNavigator';
 
 const Stack = createStackNavigator();
 
@@ -22,10 +24,18 @@ export default AuthStack = () => {
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
+
+      {/* Nested navigation with main function */}
+
       <Stack.Screen
         name="ResetPasswordScreen"
         component={ResetPasswordScreen}
       />
+      <Stack.Screen
+        name="QuizCreationNavigator"
+        component={QuizCreationNavigator}
+      />
+      <Stack.Screen name="DoingQuizNavigator" component={DoingQuizNavigator} />
     </Stack.Navigator>
   );
 };
