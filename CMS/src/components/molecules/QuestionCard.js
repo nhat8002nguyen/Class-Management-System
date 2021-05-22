@@ -3,24 +3,29 @@ import {View, Text, Button, StyleSheet, Image} from 'react-native';
 import {TouchableNativeFeedback, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useDispatch} from 'react-redux';
-import {removeQuestion} from '../../redux/actions/questionActions';
+import {
+  listQuestion,
+  removeQuestion,
+} from '../../redux/actions/questionActions';
 
-const QuizCard = props => {
+const QuestionCard = props => {
   const dispatch = useDispatch();
 
   const openEditCreatedQuestion = () => {
     props.navigation.navigate('CreateQuestion', {
       questionId: props.questionId,
-      quizId: props.quizId,
+      _quizId: props._quizId,
       questionImage: props.questionImage,
       questionDescription: props.questionDescription,
       answers: props.answers,
+      correctAnswer: props.correctAnswer,
       questionTime: props.questionTime,
     });
   };
 
-  const onDeleteQuestion = () => {
-    dispatch(removeQuestion(props.questionId));
+  const onDeleteQuestion = async () => {
+    await dispatch(removeQuestion(props.questionId));
+    dispatch(listQuestion(props._quizId));
   };
 
   return (
@@ -83,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default QuizCard;
+export default QuestionCard;

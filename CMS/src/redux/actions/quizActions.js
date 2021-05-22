@@ -13,15 +13,21 @@ import {
   QUIZ_REMOVE_SUCCESS,
   QUIZ_REMOVE_FAIL,
 } from '../constants/quizActionConstants';
-import QuizData from '../../data/QuizData';
-import {v4} from 'uuid';
 
-const listQuiz = () => async dispatch => {
+const listQuiz = () => async (dispatch, getState) => {
   dispatch({type: QUIZ_LIST_REQUEST});
+  const {
+    userSignin: { userSignin: {token}},
+  } = getState();
   try {
     // get date from api
     const {data} = await axios.get(
       'https://cms-backend-whatever.herokuapp.com/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/quizzes',
+      {
+        headers: {
+          token: token,
+        },
+      },
     );
     const uiData = data.map(quiz => ({
       _quizId: quiz.id,
@@ -40,67 +46,53 @@ const listQuiz = () => async dispatch => {
   }
 };
 
-const addQuiz = ({quizName, quizImage, quizDescription, questions}) => async (
+const addQuiz = ({quizName, quizImage, quizDescription}) => async (
   dispatch,
   getState,
 ) => {
-  // const {
-  //   userSignin: {useInfo},
-  // } = getState();
+  const {
+    userSignin: { userSignin: {token}},
+  } = getState();
   dispatch({type: QUIZ_ADD_REQUEST});
+
   try {
-    /*
-    const {data} = await axios.post('/api/quiz/', {
-      quizName,
-      quizImage,
-      description,
-      questions,
-    }, {
-      headers: {Authorization: "Nhat" + userInfo.token}
-    });
-    */
-    const data = QuizData.addQuiz(
-      quizName,
-      quizImage,
-      quizDescription,
-      questions,
+    const {data} = await axios.post(
+      'https://cms-backend-whatever.herokuapp.com/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/quizzes',
+      {
+        name: quizName,
+        mediaURL: quizImage,
+        description: quizDescription,
+        start: Date(Date.now()),
+        end: Date(Date.now()),
+      },
+      {
+        headers: {
+          token: token,
+        },
+      },
     );
     dispatch({type: QUIZ_ADD_SUCCESS, payload: data});
   } catch (error) {
-    dispatch({type: QUIZ_ADD_FAIL});
+    dispatch({type: QUIZ_ADD_FAIL, payload: error.message});
   }
 };
 
-const saveQuiz = ({
-  _quizId,
-  quizName,
-  quizImage,
-  quizDescription,
-  questions,
-}) => async (dispatch, getState) => {
+const saveQuiz = ({_quizId, quizName, quizImage, quizDescription}) => async (
+  dispatch,
+  getState,
+) => {
   dispatch({type: QUIZ_SAVE_REQUEST});
-  // const {
-  //   userSignin: {userInfo},
-  // } = getState();
+  const {
+    userSignin: { userSignin: {token}},
+  } = getState();
   try {
-    /*
     const {data} = await axios.put(
-      '/api/quiz/' + _quizId,
-      {quizName, quizImage, description, questions},
+      `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}`,
+      {name: quizName, mediaURL: quizImage, description: quizDescription},
       {
-        headers: {Authorization: 'Nhat ' + userInfo.token},
+        headers: {token: token},
       },
     );
-    */
-    // TO-DO: save data
-    const data = QuizData.saveQuiz(
-      _quizId,
-      quizName,
-      quizImage,
-      quizDescription,
-      questions,
-    );
-
     dispatch({type: QUIZ_SAVE_SUCCESS, payload: data});
   } catch (error) {
     dispatch({type: QUIZ_SAVE_FAIL, payload: error.message});
@@ -109,19 +101,16 @@ const saveQuiz = ({
 
 const removeQuiz = _quizId => async (dispatch, getState) => {
   dispatch({type: QUIZ_REMOVE_REQUEST});
-  // const {
-  //   userSignin: {userInfo},
-  // } = getState();
+  const {
+    userSignin: { userSignin: {token}},
+  } = getState();
   try {
-    /*
-    const { data } = await axios.delete("/api/quiz/" + _quizId, {
-      headers: { Authorization: "Nhat" + userInfo.token}
-    });
-    */
-
-    const data = QuizData.quizData.filter(el => el._quizId === _quizId);
-
-    QuizData.removeQuiz(_quizId);
+    const {data} = await axios.delete(
+      `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}`,
+      {
+        headers: {token: token},
+      },
+    );
 
     dispatch({type: QUIZ_REMOVE_SUCCESS, payload: data});
   } catch (error) {

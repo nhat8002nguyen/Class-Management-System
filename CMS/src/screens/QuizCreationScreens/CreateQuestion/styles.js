@@ -61,6 +61,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  radioBtnGroup: {
+    flexDirection: 'row',
+  },
   acceptTest: {
     width: 40,
     height: 40,
