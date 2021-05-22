@@ -8,6 +8,7 @@ import QuizCreationNavigator from './insidestacks/QuizCreationNavigator';
 import DoingQuizNavigator from './insidestacks/DoingQuizNavigator';
 import {ListGroups, CreateGroup} from '../screens/GroupManagement';
 import {CreateExercise, SetUpExercise} from '../screens/Exercises';
+import Home from '../screens/Home'
 import {Provider} from 'react-redux';
 import store from '../redux/store';
 
@@ -17,7 +18,7 @@ export default CombineStack = () => {
   return (
     <Provider store={store}>
       <Stack.Navigator
-        initialRouteName="ListGroups"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
@@ -32,6 +33,7 @@ export default CombineStack = () => {
           component={DoingQuizNavigator}
         />
         <Stack.Screen name="ListGroups" component={ListGroups} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="CreateGroup" component={CreateGroup} />
         <Stack.Screen name="CreateExercise" component={CreateExercise} />
         <Stack.Screen name="SetUpExercise" component={SetUpExercise} />
