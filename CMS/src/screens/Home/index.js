@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {useSelector} from 'react-redux';
 import Header from '../../components/Header';
 import {View, TouchableOpacity, Image, Text, FlatList} from 'react-native';
 import styles from './styles';
@@ -13,6 +14,17 @@ const Box = ({data, onPress}) => {
 };
 
 export default function Home({navigation}) {
+  const [userType, setUserType] = useState(1);
+  const {userSignin} = useSelector(state => state.userSignin);
+
+  setTimeout(() => {
+    if (userSignin?.userInfo) {
+      setUserType(userSignin.userInfo.type);
+    }
+  }, 1000);
+
+  console.log(userSignin);
+
   const list = [
     {
       title: 'Lớp học',
@@ -42,18 +54,20 @@ export default function Home({navigation}) {
         break;
       case 1:
         //TODO: Nhom
-        navigation.navigate('ListGroups')
+        navigation.navigate('ListGroups');
         break;
       case 2:
         //TODO: Quiz
+        navigation.navigate(userType === 1 ? "QuizCreationNavigator" :'DoingQuizNavigator' );
         break;
       case 3:
         //TODO: Bai tap
-        navigation.navigate('CreateExercise')
+        navigation.navigate('CreateExercise');
 
         break;
       case 4:
         //TODO: Profile
+        navigation.navigate('ProfileScreen')
         break;
     }
   };
