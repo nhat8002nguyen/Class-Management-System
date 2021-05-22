@@ -40,20 +40,12 @@ export default function LoginScreen({navigation}) {
     dispatch(signin({email: email.value, password: password.value}));
   };
 
-  useEffect(() => {
-    if (userInfo?.token) {
-      navigation.reset({
-        index: 0,
-        routes: [{name: 'Dashboard'}],
-      });
-    }
-  }, [userInfo]);
 
   useEffect(() => {
     if (success) {
       navigation.reset({
         index: 0,
-        routes: [{name: 'Dashboard'}],
+        routes: [{name: 'Home'}],
       });
     }
   }, [success]);
