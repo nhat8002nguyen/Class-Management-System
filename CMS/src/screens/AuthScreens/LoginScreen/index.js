@@ -1,5 +1,12 @@
-import React, {useState} from 'react';
-import {TouchableOpacity, StyleSheet, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  TouchableOpacity,
+  StyleSheet,
+  View,
+  ActivityIndicator,
+  Alert,
+} from 'react-native';
 import styles from './styles';
 import {Text} from 'react-native-paper';
 import {
@@ -11,10 +18,16 @@ import {
   BackButton,
 } from '../../../components/atoms';
 import {passwordValidator, emailValidator} from '../../../helpers/auth';
+import {signin} from '../../../redux/actions/userActions';
+import {theme} from '../../../styles/theme';
 
 export default function LoginScreen({navigation}) {
   const [email, setEmail] = useState({value: '', error: ''});
   const [password, setPassword] = useState({value: '', error: ''});
+  const dispatch = useDispatch();
+  const {loading, userInfo, success, error} = useSelector(
+    state => state.userSignin,
+  );
 
   const onLoginPressed = () => {
     const emailError = emailValidator(email.value);
@@ -24,11 +37,34 @@ export default function LoginScreen({navigation}) {
       setPassword({...password, error: passwordError});
       return;
     }
-    navigation.reset({
-      index: 0,
-      routes: [{name: 'Dashboard'}],
-    });
+    dispatch(signin({email: email.value, password: password.value}));
   };
+
+  useEffect(() => {
+    if (userInfo?.token) {
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'Dashboard'}],
+      });
+    }
+  }, [userInfo]);
+
+  useEffect(() => {
+    if (success) {
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'Dashboard'}],
+      });
+    }
+  }, [success]);
+
+  useEffect(() => {
+    if (error) {
+      Alert.alert('Email or password is invalid !', 'please try again ', [
+        {text: 'OK', onPress: () => console.log('OKE')},
+      ]);
+    }
+  }, [error]);
 
   return (
     <Background>
@@ -62,9 +98,13 @@ export default function LoginScreen({navigation}) {
           <Text style={styles.forgot}>Forgot your password?</Text>
         </TouchableOpacity>
       </View>
-      <Button mode="contained" onPress={onLoginPressed}>
-        Login
-      </Button>
+      {loading ? (
+        <ActivityIndicator size="large" color={theme.colors.primary} />
+      ) : (
+        <Button mode="contained" onPress={onLoginPressed}>
+          Login
+        </Button>
+      )}
       <View style={styles.row}>
         <Text>Don’t have an account? </Text>
         <TouchableOpacity onPress={() => navigation.replace('RegisterScreen')}>

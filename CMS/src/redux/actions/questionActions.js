@@ -1,43 +1,97 @@
 import axios from 'axios';
 import {
-  QUESTION_ADD,
-  QUESTION_LIST,
-  QUESTION_REMOVE,
-  QUESTION_SAVE,
+  QUESTION_LIST_REQUEST,
+  QUESTION_LIST_SUCCESS,
+  QUESTION_LIST_FAIL,
+  QUESTION_ADD_REQUEST,
+  QUESTION_ADD_SUCCESS,
+  QUESTION_ADD_FAIL,
+  QUESTION_REMOVE_REQUEST,
+  QUESTION_REMOVE_SUCCESS,
+  QUESTION_REMOVE_FAIL,
+  QUESTION_SAVE_REQUEST,
+  QUESTION_SAVE_SUCCESS,
+  QUESTION_SAVE_FAIL,
 } from '../constants/questionActionConstants';
 
-const listQuestion = _quizId => async dispatch => {
-  const {data} = await axios.get(
-    `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}/questions`,
-  );
-  // const data = QuizData.quizData.find(quiz => quiz._quizId === _quizId);
-  let uiQuestions = data
-    ? data.map(ques => ({
-        questionId: ques.id,
-        questionImage: ques.mediaURL,
-        questionDescription: ques.description,
-        answers: ['A 123', 'B 456', 'C 456', 'D 789'],
-        questionTime: ques.time,
-      }))
-    : [];
-  console.log('here run', uiQuestions);
-  dispatch({type: QUESTION_LIST, payload: uiQuestions});
+const listQuestion = _quizId => async (dispatch, getState) => {
+  dispatch({type: QUESTION_LIST_REQUEST});
+  const {
+    userSignin: {userSignin: {token}},
+  } = getState();
+  try {
+    const {data} = await axios.get(
+      `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}/questions`,
+      {
+        headers: {token: token},
+      },
+    );
+    let uiQuestions = data
+      ? data.map(ques => ({
+          questionId: ques.id,
+          questionImage: ques.mediaURL,
+          questionDescription: ques.description,
+          answers: ques.answers,
+          correctAnswer: ques.correctAnswer,
+          questionTime: ques.time.toString(),
+        }))
+      : [];
+    dispatch({type: QUESTION_LIST_SUCCESS, payload: uiQuestions});
+  } catch (err) {
+    dispatch({type: QUESTION_LIST_FAIL, payload: err.message});
+  }
 };
 
 const addQuestion = ({
+  _quizId,
   questionImage,
   questionDescription,
   answers,
+  correctAnswer,
   questionTime,
-}) => async dispatch => {
-  dispatch({
-    type: QUESTION_ADD,
-    payload: {questionImage, questionDescription, answers, questionTime},
-  });
+}) => async (dispatch, getState) => {
+  dispatch({type: QUESTION_ADD_REQUEST});
+  const {
+    userSignin: {userSignin: {token}},
+  } = getState();
+  const quesData = {
+    name: questionDescription,
+    description: questionDescription,
+    answers: answers,
+    correctAnswer: correctAnswer,
+    time: parseInt(questionTime),
+    mediaURL: questionImage,
+  };
+  try {
+    const {
+      data,
+    } = await axios.post(
+      `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}/questions`,
+      quesData,
+      {headers: {token: token}},
+    );
+    dispatch({type: QUESTION_ADD_SUCCESS, payload: data});
+  } catch (err) {
+    dispatch({type: QUESTION_ADD_FAIL, payload: err.message});
+  }
 };
 
-const removeQuestion = questionId => async dispatch => {
-  dispatch({type: QUESTION_REMOVE, payload: questionId});
+const removeQuestion = questionId => async (dispatch, getState) => {
+  dispatch({type: QUESTION_REMOVE_REQUEST});
+  const {
+    userSignin: {userSignin: {token}},
+  } = getState();
+  try {
+    const {
+      data,
+    } = await axios.delete(
+      `https://cms-backend-whatever.herokuapp.com/api/staff/questions/${questionId}`,
+      {headers: {token: token}},
+    );
+    dispatch({type: QUESTION_REMOVE_SUCCESS, payload: data});
+  } catch (err) {
+    dispatch({type: QUESTION_REMOVE_FAIL, payload: err.message});
+  }
 };
 
 const saveQuestion = ({
@@ -45,17 +99,32 @@ const saveQuestion = ({
   questionImage,
   questionDescription,
   answers,
+  correctAnswer,
   questionTime,
-}) => async dispatch => {
-  dispatch({
-    type: QUESTION_SAVE,
-    payload: {
-      questionId,
-      questionImage,
-      questionDescription,
-      answers,
-      questionTime,
-    },
-  });
+}) => async (dispatch, getState) => {
+  dispatch({type: QUESTION_SAVE_REQUEST});
+  const {
+    userSignin: {userSignin: {token}},
+  } = getState();
+  try {
+    const newUpdate = {
+      name: questionDescription,
+      description: questionDescription,
+      mediaURL: questionImage,
+      answers: answers.join(','),
+      correctAnswer: correctAnswer,
+      time: parseInt(questionTime),
+    };
+    const {
+      data,
+    } = await axios.put(
+      `https://cms-backend-whatever.herokuapp.com/api/staff/questions/${questionId}`,
+      newUpdate,
+      {headers: {token: token}},
+    );
+    dispatch({type: QUESTION_SAVE_SUCCESS, payload: data});
+  } catch (err) {
+    dispatch({type: QUESTION_SAVE_FAIL, payload: err.message});
+  }
 };
 export {listQuestion, addQuestion, removeQuestion, saveQuestion};

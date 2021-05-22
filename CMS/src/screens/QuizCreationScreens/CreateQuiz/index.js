@@ -1,6 +1,5 @@
-import React, {useLayoutEffect, useRef, useState} from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {TouchableNativeFeedback} from 'react-native';
 import {TextInput} from 'react-native';
 import {
   SafeAreaView,
@@ -8,21 +7,29 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  TouchableNativeFeedback,
   ScrollView,
+  RefreshControl,
+  ActivityIndicator,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import QuestionCard from '../../../components/molecules/QuestionCard';
 import {listQuestion} from '../../../redux/actions/questionActions';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import styles from './styles';
-import {addQuiz, saveQuiz} from '../../../redux/actions/quizActions';
+import {addQuiz, listQuiz, saveQuiz} from '../../../redux/actions/quizActions';
+import {theme} from '../../../styles/theme';
+
+const wait = timeout => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+};
 
 const CreateQuiz = ({route, navigation}) => {
   const _quizId = route.params ? route.params.quizId : '';
   const quizList = useSelector(state => state.quizList);
-  console.log(quizList);
-  const {loading, quizzes, error} = quizList;
-  const quiz = quizzes.find(quiz => quiz._quizId === _quizId);
+  const {quizzes} = quizList;
+  const quiz = quizzes?.find(quiz => quiz._quizId === _quizId);
+  const [refreshing, setRefreshing] = useState(false);
 
   const [quizName, setQuizName] = useState(
     quiz !== undefined ? quiz.quizName : '',
@@ -30,13 +37,13 @@ const CreateQuiz = ({route, navigation}) => {
   const [quizImage, setQuizImage] = useState(
     quiz !== undefined ? quiz.quizImage : '',
   );
-  const [quizDescription, setQuiDescripition] = useState(
+  const [quizDescription, setQuestionDescripition] = useState(
     quiz !== undefined ? quiz.quizDescription : '',
   );
 
   const dispatch = useDispatch();
 
-  const {questions} = useSelector(state => state.questions);
+  const {loading, questions, error} = useSelector(state => state.questionList);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -49,6 +56,12 @@ const CreateQuiz = ({route, navigation}) => {
     });
     dispatch(listQuestion(_quizId));
   }, [navigation]);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    dispatch(listQuestion(_quizId));
+    wait(1000).then(() => setRefreshing(false));
+  }, []);
 
   const pickImage = () => {
     var options = {
@@ -88,11 +101,9 @@ const CreateQuiz = ({route, navigation}) => {
   const onConfirmQuiz = () => {
     // Save content of quiz to database like update or add new quiz
     if (_quizId) {
-      dispatch(
-        saveQuiz({_quizId, quizName, quizImage, quizDescription, questions}),
-      );
+      dispatch(saveQuiz({_quizId, quizName, quizImage, quizDescription}));
     } else {
-      dispatch(addQuiz({quizName, quizImage, quizDescription, questions}));
+      dispatch(addQuiz({quizName, quizImage, quizDescription}));
     }
 
     navigation.goBack();
@@ -122,20 +133,32 @@ const CreateQuiz = ({route, navigation}) => {
         <TextInput
           style={[styles.input, styles.inputText]}
           value={quizDescription}
-          onChangeText={text => setQuiDescripition(text)}></TextInput>
+          onChangeText={text => setQuestionDescripition(text)}></TextInput>
       </View>
       <View style={styles.viewQuestions}>
-        <Text style={styles.fieldName}>Questions({questions.length})</Text>
-        <ScrollView contentContainerStyle={styles.questions}>
-          {questions.map((question, index) => (
-            <QuestionCard
-              key={question.questionId}
-              {...question}
-              _quizId={_quizId}
-              ordNum={index + 1}
-              navigation={navigation}
-            />
-          ))}
+        <Text style={styles.fieldName}>
+          Questions({questions && questions.length})
+        </Text>
+        <ScrollView
+          contentContainerStyle={styles.questions}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }>
+          {loading ? (
+            <ActivityIndicator size="large" color={theme.colors.primary} />
+          ) : error ? (
+            <Text>you need to confirm quiz first !</Text>
+          ) : (
+            questions.map((question, index) => (
+              <QuestionCard
+                key={question.questionId}
+                {...question}
+                _quizId={_quizId}
+                ordNum={index + 1}
+                navigation={navigation}
+              />
+            ))
+          )}
         </ScrollView>
       </View>
       <View style={styles.bottomButton}>

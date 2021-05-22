@@ -17,7 +17,7 @@ import {
 const quizListReducer = (state = {quizzes: []}, action) => {
   switch (action.type) {
     case QUIZ_LIST_REQUEST:
-      return {loading: true};
+      return {...state, loading: true};
     case QUIZ_LIST_SUCCESS:
       return {
         loading: false,

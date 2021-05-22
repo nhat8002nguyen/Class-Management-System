@@ -57,8 +57,8 @@ const QuizCard = props => {
     showEMode('time');
   };
 
-  const onDeleteQuiz = () => {
-    dispatch(removeQuiz(props._quizId));
+  const onDeleteQuiz = async () => {
+    await dispatch(removeQuiz(props._quizId));
     dispatch(listQuiz());
   };
 
