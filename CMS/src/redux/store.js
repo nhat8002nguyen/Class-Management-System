@@ -7,6 +7,7 @@ import {
   quizRemoveReducer,
   quizSaveReducer,
 } from './reducers/quizListReducer';
+import exercise from './reducers/exerciseReducer'
 import questionCreateReducers from './reducers/questionCreateReducer';
 import {currentQuizReducer} from './reducers/currentQuizReducers';
 
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   quizAdd: quizAddReducer,
   quizSave: quizSaveReducer,
   quizTake: currentQuizReducer,
+  exercise
 });
 
 const store = createStore(reducer, {}, applyMiddleware(thunk));
