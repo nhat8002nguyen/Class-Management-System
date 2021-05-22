@@ -7,12 +7,12 @@ import {
   USER_SIGNUP_SUCCESS,
 } from '../constants/userActionConstants';
 
-const userSigninReducer = (state = {userInfo: {}}, action) => {
+const userSigninReducer = (state =  {userSignin: {}} , action) => {
   switch (action.type) {
     case USER_SIGNIN_REQUEST:
       return {loading: true, error: false};
     case USER_SIGNIN_SUCCESS:
-      return {loading: false, userInfo: action.payload, success: true};
+      return {loading: false, userSignin: action.payload, success: true};
     case USER_SIGNIN_FAIL:
       return {loading: false, error: action.payload};
     default:
@@ -25,7 +25,7 @@ const userSignupReducer = (state = {userInfo: {}}, action) => {
     case USER_SIGNUP_REQUEST:
       return {loading: true, error: false};
     case USER_SIGNUP_SUCCESS:
-      return {loading: false, userInfo: action.payload, success: true};
+      return {loading: false, userSignup: action.payload, success: true};
     case USER_SIGNUP_FAIL:
       return {loading: false, error: action.payload};
     default:

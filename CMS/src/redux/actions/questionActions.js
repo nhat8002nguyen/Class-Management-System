@@ -17,13 +17,13 @@ import {
 const listQuestion = _quizId => async (dispatch, getState) => {
   dispatch({type: QUESTION_LIST_REQUEST});
   const {
-    userSignin: {userInfo},
+    userSignin: {userSignin: {token}},
   } = getState();
   try {
     const {data} = await axios.get(
       `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}/questions`,
       {
-        headers: {token: userInfo.token},
+        headers: {token: token},
       },
     );
     let uiQuestions = data
@@ -52,7 +52,7 @@ const addQuestion = ({
 }) => async (dispatch, getState) => {
   dispatch({type: QUESTION_ADD_REQUEST});
   const {
-    userSignin: {userInfo},
+    userSignin: {userSignin: {token}},
   } = getState();
   const quesData = {
     name: questionDescription,
@@ -68,7 +68,7 @@ const addQuestion = ({
     } = await axios.post(
       `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}/questions`,
       quesData,
-      {headers: {token: userInfo.token}},
+      {headers: {token: token}},
     );
     dispatch({type: QUESTION_ADD_SUCCESS, payload: data});
   } catch (err) {
@@ -79,14 +79,14 @@ const addQuestion = ({
 const removeQuestion = questionId => async (dispatch, getState) => {
   dispatch({type: QUESTION_REMOVE_REQUEST});
   const {
-    userSignin: {userInfo},
+    userSignin: {userSignin: {token}},
   } = getState();
   try {
     const {
       data,
     } = await axios.delete(
       `https://cms-backend-whatever.herokuapp.com/api/staff/questions/${questionId}`,
-      {headers: {token: userInfo.token}},
+      {headers: {token: token}},
     );
     dispatch({type: QUESTION_REMOVE_SUCCESS, payload: data});
   } catch (err) {
@@ -104,7 +104,7 @@ const saveQuestion = ({
 }) => async (dispatch, getState) => {
   dispatch({type: QUESTION_SAVE_REQUEST});
   const {
-    userSignin: {userInfo},
+    userSignin: {userSignin: {token}},
   } = getState();
   try {
     const newUpdate = {
@@ -115,13 +115,12 @@ const saveQuestion = ({
       correctAnswer: correctAnswer,
       time: parseInt(questionTime),
     };
-    console.log(newUpdate);
     const {
       data,
     } = await axios.put(
       `https://cms-backend-whatever.herokuapp.com/api/staff/questions/${questionId}`,
       newUpdate,
-      {headers: {token: userInfo.token}},
+      {headers: {token: token}},
     );
     dispatch({type: QUESTION_SAVE_SUCCESS, payload: data});
   } catch (err) {

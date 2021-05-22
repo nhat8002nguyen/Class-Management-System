@@ -5,6 +5,8 @@ import {logout} from '../../../redux/actions/userActions';
 
 export default function Dashboard({navigation}) {
   const dispatch = useDispatch();
+  const { userSignin } = useSelector(state => state.userSignin);
+  console.log("Dashboard log: ", userSignin);
 
   const onLogout = () => {
     dispatch(logout());

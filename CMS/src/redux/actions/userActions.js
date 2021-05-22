@@ -10,10 +10,10 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // store data to asyncstore to save signin status when reopening app.
-const storeUserInfo = async userInfo => {
+const storeUserInfo = async userSignin => {
   try {
-    const jsonValue = JSON.stringify(userInfo);
-    await AsyncStorage.setItem('userInfo', jsonValue);
+    const jsonValue = JSON.stringify(userSignin);
+    await AsyncStorage.setItem('userSignin', jsonValue);
   } catch (err) {
     console.log(err);
   }
@@ -29,24 +29,28 @@ const signin = ({email, password}) => async (dispatch, getState) => {
         password,
       },
     );
-    storeUserInfo({email: email, password: password, token: data});
+    const storageData = {
+      token: data.token,
+      userInfo: {...data.userInfo, password},
+    }
+    storeUserInfo(storageData);
     dispatch({
       type: USER_SIGNIN_SUCCESS,
-      payload: {email: email, password: password, token: data},
+      payload: data
     });
   } catch (err) {
     dispatch({type: USER_SIGNIN_FAIL, payload: err.message});
   }
 };
 
-const signup = ({email, password, type}) => async (dispatch, getState) => {
+const signup = ({name, email, password, type}) => async (dispatch, getState) => {
   dispatch({type: USER_SIGNUP_REQUEST});
   try {
     await axios.post(
       'https://cms-backend-whatever.herokuapp.com/auth/sign-up',
-      {email, password, type},
+      {name, email, password, type},
     );
-    dispatch({type: USER_SIGNUP_SUCCESS, payload: {email, password, type}});
+    dispatch({type: USER_SIGNUP_SUCCESS, payload: {name, email, password, type}});
   } catch (err) {
     dispatch({type: USER_SIGNUP_FAIL, payload: err.message});
   }
@@ -54,7 +58,7 @@ const signup = ({email, password, type}) => async (dispatch, getState) => {
 
 const logout = () => async (dispatch, getState) => {
   // clear AsyncStorage
-  AsyncStorage.setItem('userInfo', '');
+  AsyncStorage.setItem('userSignin', '');
   dispatch({type: 'USER_LOGOUT'});
 };
 

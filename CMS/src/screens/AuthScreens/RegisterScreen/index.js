@@ -44,7 +44,7 @@ export default function RegisterScreen({navigation}) {
       return;
     }
     dispatch(
-      signup({email: email.value, password: password.value, type: userType}),
+      signup({name:name.value ,email: email.value, password: password.value, type: userType}),
     );
   };
 

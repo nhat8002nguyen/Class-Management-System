@@ -34,17 +34,18 @@ const appReducer = combineReducers({
   quizTake: currentQuizReducer,
 });
 
-const fetchedUserInfo = (async () => {
+const fetchedUserSignin= (async () => {
   try {
-    const jsonValue = await AsyncStorage.getItem('userInfo');
+    const jsonValue = await AsyncStorage.getItem('userSignin');
     return jsonValue != null ? JSON.parse(jsonValue) : null;
   } catch (err) {
     return {};
   }
 })();
 
+
 const initialState = {
-  userSignin: {userInfo: fetchedUserInfo},
+  userSignin: fetchedUserSignin,
 };
 
 const rootReducer = (state, action) => {

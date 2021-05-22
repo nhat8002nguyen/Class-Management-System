@@ -25,7 +25,7 @@ export default AuthStack = () => {
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
 
-      {/* Nested navigation with main function */}
+      {/* Nested navigation with main functions */}
 
       <Stack.Screen
         name="ResetPasswordScreen"

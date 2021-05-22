@@ -13,12 +13,14 @@ import {theme} from '../../../styles/theme';
 
 export default function StartScreen({navigation}) {
   const dispatch = useDispatch();
-  const {loading, userInfo} = useSelector(state => state.userSignin);
+  const userSignin = useSelector(state => state.userSignin);
+  const {loading} = userSignin;
 
   const onMoveToLogin = () => {
-    if (userInfo?._W?.token) {
+    if (userSignin?._W?.token) {
+      const {userInfo} = userSignin._W;
       dispatch(
-        signin({email: userInfo._W.email, password: userInfo._W.password}),
+        signin({email: userInfo.email, password: userInfo.password}),
       );
       navigation.reset({
         index: 0,
