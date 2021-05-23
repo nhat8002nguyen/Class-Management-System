@@ -44,7 +44,7 @@ export default function LoginScreen({navigation}) {
     if (userInfo?.token) {
       navigation.reset({
         index: 0,
-        routes: [{name: 'Dashboard'}],
+        routes: [{name: 'Home'}],
       });
     }
   }, [userInfo]);
@@ -53,7 +53,7 @@ export default function LoginScreen({navigation}) {
     if (success) {
       navigation.reset({
         index: 0,
-        routes: [{name: 'Dashboard'}],
+        routes: [{name: 'Home'}],
       });
     }
   }, [success]);

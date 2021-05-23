@@ -3,6 +3,7 @@ import {View, TouchableOpacity, Text, Image} from 'react-native';
 import styles from './styles';
 import Feather from 'react-native-vector-icons/Feather';
 import {colors} from '../../../styles'
+import moment from 'moment'
 export default Group = ({item, onPress}) => {
   return (
     <TouchableOpacity style={styles.groupItem} onPress = {onPress}>

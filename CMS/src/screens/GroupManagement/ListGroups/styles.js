@@ -4,6 +4,7 @@ import {colors} from '../../../styles';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white'
   },
   addBtn: {
     height: 50,
@@ -20,12 +21,16 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     padding: 10,
     alignSelf: 'center',
-    borderRadius: 10,
-    shadowOpacity: 0.9,
-    shadowOffset: {height: 13, width: 55},
-    shadowColor: 'rgba(0, 0, 0, 0.5)',
-    elevation: 6,
-    shadowRadius: 15,
+    // borderRadius: 10,
+    // shadowOpacity: 0.9,
+    // shadowOffset: {height: 13, width: 55},
+    // shadowColor: 'rgba(0, 0, 0, 0.5)',
+    // elevation: 6,
+    // shadowRadius: 15,
+    borderColor: 'white', 
+    borderBottomColor: '#EBEBEB',
+    borderWidth: 1, 
+    marginTop: 5, 
     marginBottom: 10,
     backgroundColor: 'white',
     flexDirection: 'row',
@@ -43,7 +48,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: 'white',
     alignItems: 'center',
-    borderRadius: 10
+    borderRadius: 10,
   },
   input: {
     height: 40,
@@ -58,22 +63,37 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowRadius: 15,
   },
-  confirmBTn:{
+  confirmBTn: {
     height: 40,
     width: '60%',
     alignSelf: 'center',
     backgroundColor: colors.PRIMARY,
-    justifyContent:'center',
+    justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 20
+    borderRadius: 20,
   },
   selectWrap: {
-    flexDirection: 'row', 
+    flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center', 
+    alignItems: 'center',
     flexWrap: 'wrap',
-    marginLeft: 20
-  }
+    marginLeft: 20,
+  },
+  tab: {
+    flexDirection: 'row',
+    height: 40,
+    width: '98%',
+    marginHorizontal: 10,
+    alignSelf: 'center',
+    marginTop: 10,
+    borderRadius: 20,
+    backgroundColor: 'white',
+    shadowOpacity: 0.9,
+    shadowOffset: {height: 13, width: 55},
+    shadowColor: 'rgba(0, 0, 0, 0.5)',
+    elevation: 6,
+    shadowRadius: 15,
+  },
 });
 
 export default styles;

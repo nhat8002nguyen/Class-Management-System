@@ -18,7 +18,7 @@ export default CombineStack = () => {
   return (
     <Provider store={store}>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="AuthScreens"
         screenOptions={{
           headerShown: false,
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,

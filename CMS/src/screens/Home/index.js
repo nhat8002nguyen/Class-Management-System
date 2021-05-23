@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
+import {useSelector} from 'react-redux'
 import {View, TouchableOpacity, Image, Text, FlatList} from 'react-native';
 import styles from './styles';
 
@@ -13,6 +14,7 @@ const Box = ({data, onPress}) => {
 };
 
 export default function Home({navigation}) {
+  const state = useSelector(s=> s)
   const list = [
     {
       title: 'Lớp học',
@@ -61,12 +63,13 @@ export default function Home({navigation}) {
     <View style={styles.container}>
       <Header isHome={true} title="Trang chủ" />
       <FlatList
+        keyExtractor = {(_)=> _.title}
         numColumns={2}
         data={list}
         renderItem={({item, index}) => (
           <Box data={item} key={index} onPress={() => onPress(index)} />
         )}
-        contentContainerStyle={{alignItems: 'center', padding: 20}}
+        contentContainerStyle={{alignItems: 'center', marginTop: 20}}
       />
     </View>
   );

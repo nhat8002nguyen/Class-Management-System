@@ -7,6 +7,8 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   Keyboard,
+  KeyboardAvoidingView,
+  Platform
 } from 'react-native';
 import styles from './styles';
 import Feather from 'react-native-vector-icons/Feather';
@@ -100,7 +102,7 @@ export default CreateExercise = ({navigation}) => {
   };
   return (
     // <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <>
+      <KeyboardAvoidingView behavior = {Platform.OS === 'ios'? 'padding': 'height'} style = {{flex: 1}}>
       <Header title="Tạo bài tập lớn" isHome={false} navigation={navigation} />
       <ScrollView style={styles.container} keyboardShouldPersistTaps="always">
         <Text style={styles.smallBoldText}>Tên bài tập</Text>
@@ -110,23 +112,15 @@ export default CreateExercise = ({navigation}) => {
           placeholder="Nhập tên bài tập"
           onChangeText={text => onChangeInput('name', text)}
         />
-        <Text style={styles.smallBoldText}>Loại bài tập</Text>
-        <View style={styles.selectWrap}>
-          <SelectComponent
-            items={listType}
-            iconColor={colors.PRIMARY}
-            checked={typeRef.current}
-            multipleChoose={false}
-            onChecked={onCheckedType}
-          />
-        </View>
-        <Text style={styles.smallBoldText}>Mô tả</Text>
+        <Text style={styles.smallBoldText}>Yêu cầu</Text>
         <TextInput
           value={description}
-          style={styles.input}
-          placeholder="Mô tả ngắn về bài tập"
+          style={{...styles.input, height: 200, textAlignVertical: 'top'}}
+          multiline = {true}
+          placeholder="Mô tả yêu cầu của bài tập"
           onChangeText={text => onChangeInput('des', text)}
         />
+        
 
         <Text style={styles.smallBoldText}>Thời gian bắt đầu</Text>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -214,7 +208,7 @@ export default CreateExercise = ({navigation}) => {
           />
         )}
       </ScrollView>
-      </>
+      </KeyboardAvoidingView>
     // </TouchableWithoutFeedback>
   );
 };
