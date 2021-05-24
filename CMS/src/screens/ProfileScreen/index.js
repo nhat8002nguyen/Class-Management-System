@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {
-  ActivityIndicator,
-} from 'react-native';
+import {ActivityIndicator} from 'react-native';
 import styles from './styles';
 import {
   Background,
@@ -19,16 +17,28 @@ import {
 } from '../../helpers/auth';
 import {theme} from '../../styles/theme';
 import {logout} from '../../redux/actions/userActions';
+import {set} from 'react-native-reanimated';
 
 export default function ProfileScreen({navigation}) {
-  const [name, setName] = useState({value: '', error: ''});
-  const [email, setEmail] = useState({value: '', error: ''});
-  const [password, setPassword] = useState({value: '', error: ''});
-  const [userType, setUserType] = useState(1);
-  const dispatch = useDispatch();
-  const {loading, success, error} = useSelector(state => state.userSignup);
+  const {userSignin} = useSelector(state => state.userSignin);
+  const [userInfo, setUserInfo] = useState('');
 
-  const onSignUpPressed = () => {
+  const [name, setName] = useState({value: userInfo.name, error: ''});
+  const [email, setEmail] = useState({value: userInfo.email, error: ''});
+  const [password, setPassword] = useState({value: '', error: ''});
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setUserInfo(userSignin ? userSignin.userInfo : '');
+  }, [userSignin]);
+
+  useEffect(() => {
+    setName({value: userInfo.name});
+    setEmail({value: userInfo.email});
+    setPassword({value: userInfo.password});
+  }, [userInfo]);
+
+  const onUpdateInfo = () => {
     const nameError = nameValidator(name.value);
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
@@ -38,7 +48,6 @@ export default function ProfileScreen({navigation}) {
       setPassword({...password, error: passwordError});
       return;
     }
-    
   };
 
   const onLogout = () => {
@@ -83,20 +92,12 @@ export default function ProfileScreen({navigation}) {
         errorText={password.error}
         secureTextEntry
       />
-      {loading ? (
-        <ActivityIndicator size="large" color={theme.colors.primary} />
-      ) : (
-        <Button
-          mode="contained"
-          onPress={onSignUpPressed}
-          style={{marginTop: 24}}>
-          Update
-        </Button>
-      )}
+      <Button mode="contained" onPress={onUpdateInfo} style={{marginTop: 24}}>
+        Update
+      </Button>
       <Button mode="outlined" onPress={onLogout}>
         Logout
       </Button>
-      
     </Background>
   );
 }

@@ -6,6 +6,9 @@ import {
   USER_SIGNUP_FAIL,
   USER_SIGNUP_REQUEST,
   USER_SIGNUP_SUCCESS,
+  USER_UPDATE_FAIL,
+  USER_UPDATE_REQUEST,
+  USER_UPDATE_SUCCESS,
 } from '../constants/userActionConstants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -32,27 +35,43 @@ const signin = ({email, password}) => async (dispatch, getState) => {
     const storageData = {
       token: data.token,
       userInfo: {...data.userInfo, password},
-    }
+    };
     storeUserInfo(storageData);
     dispatch({
       type: USER_SIGNIN_SUCCESS,
-      payload: data
+      payload: storageData,
     });
   } catch (err) {
     dispatch({type: USER_SIGNIN_FAIL, payload: err.message});
   }
 };
 
-const signup = ({name, email, password, type}) => async (dispatch, getState) => {
+const signup = ({name, email, password, type}) => async (
+  dispatch,
+  getState,
+) => {
   dispatch({type: USER_SIGNUP_REQUEST});
   try {
     await axios.post(
       'https://cms-backend-whatever.herokuapp.com/auth/sign-up',
       {name, email, password, type},
     );
-    dispatch({type: USER_SIGNUP_SUCCESS, payload: {name, email, password, type}});
+    dispatch({
+      type: USER_SIGNUP_SUCCESS,
+      payload: {name, email, password, type},
+    });
   } catch (err) {
     dispatch({type: USER_SIGNUP_FAIL, payload: err.message});
+  }
+};
+
+const updateInfo = ({name, email, password}) => async (dispatch, getState) => {
+  dispatch({type: USER_UPDATE_REQUEST});
+  try {
+    // update info
+    dispatch({type: USER_UPDATE_SUCCESS, payload: data});
+  } catch (err) {
+    dispatch({type: USER_UPDATE_FAIL, payload: err.message});
   }
 };
 
@@ -62,4 +81,4 @@ const logout = () => async (dispatch, getState) => {
   dispatch({type: 'USER_LOGOUT'});
 };
 
-export {signin, signup, logout};
+export {signin, signup, updateInfo, logout};

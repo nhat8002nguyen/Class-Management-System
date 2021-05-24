@@ -17,7 +17,9 @@ import {
 const listQuiz = () => async (dispatch, getState) => {
   dispatch({type: QUIZ_LIST_REQUEST});
   const {
-    userSignin: { userSignin: {token}},
+    userSignin: {
+      userSignin: {token},
+    },
   } = getState();
   try {
     // get date from api
@@ -51,7 +53,9 @@ const addQuiz = ({quizName, quizImage, quizDescription}) => async (
   getState,
 ) => {
   const {
-    userSignin: { userSignin: {token}},
+    userSignin: {
+      userSignin: {token},
+    },
   } = getState();
   dispatch({type: QUIZ_ADD_REQUEST});
 
@@ -77,22 +81,39 @@ const addQuiz = ({quizName, quizImage, quizDescription}) => async (
   }
 };
 
-const saveQuiz = ({_quizId, quizName, quizImage, quizDescription}) => async (
-  dispatch,
-  getState,
-) => {
+const saveQuiz = ({
+  _quizId,
+  quizName,
+  quizImage,
+  quizDescription,
+  start,
+  end,
+}) => async (dispatch, getState) => {
   dispatch({type: QUIZ_SAVE_REQUEST});
   const {
-    userSignin: { userSignin: {token}},
+    userSignin: {
+      userSignin: {token},
+    },
   } = getState();
   try {
+    let newUpdate;
+    if (end) {
+      newUpdate = {end: end};
+    } else {
+      newUpdate = {
+        name: quizName,
+        mediaURL: quizImage,
+        description: quizDescription,
+      };
+    }
     const {data} = await axios.put(
       `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}`,
-      {name: quizName, mediaURL: quizImage, description: quizDescription},
+      newUpdate,
       {
         headers: {token: token},
       },
     );
+
     dispatch({type: QUIZ_SAVE_SUCCESS, payload: data});
   } catch (error) {
     dispatch({type: QUIZ_SAVE_FAIL, payload: error.message});
@@ -102,7 +123,9 @@ const saveQuiz = ({_quizId, quizName, quizImage, quizDescription}) => async (
 const removeQuiz = _quizId => async (dispatch, getState) => {
   dispatch({type: QUIZ_REMOVE_REQUEST});
   const {
-    userSignin: { userSignin: {token}},
+    userSignin: {
+      userSignin: {token},
+    },
   } = getState();
   try {
     const {data} = await axios.delete(

@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {View, Text, Button, StyleSheet, Image} from 'react-native';
-import {TouchableHighlight} from 'react-native';
+import {View, Text, Button, StyleSheet, Image, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import {listQuiz, removeQuiz} from '../../redux/actions/quizActions';
+import {listQuiz, removeQuiz, saveQuiz} from '../../redux/actions/quizActions';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 
@@ -26,9 +25,26 @@ const QuizCard = props => {
   };
 
   const onChangeEndDate = (event, selectedDate) => {
+    // check selectedDate is invalid
+    if (selectedDate < beginDate) {
+      Alert.alert(
+        'Date is invalid !',
+        'endDate should greater than beginDate ',
+        [
+          {
+            text: 'OK',
+          },
+        ],
+      );
+      return false;
+    }
     const currentDate = selectedDate || endDate;
     setEndDate(currentDate);
     setShowEndMode(false);
+    // TO-DO: update end date in the store
+    setTimeout(() => {
+      dispatch(saveQuiz({_quizId: props._quizId, end: currentDate}));
+    }, 500);
   };
 
   const showBMode = currentMode => {
@@ -39,14 +55,6 @@ const QuizCard = props => {
   const showEMode = currentMode => {
     setShowEndMode(true);
     setEndMode(currentMode);
-  };
-
-  const showBeginDatepicker = () => {
-    showBMode('date');
-  };
-
-  const showBeginTimepicker = () => {
-    showBMode('time');
   };
 
   const showEndDatepicker = () => {
@@ -78,12 +86,12 @@ const QuizCard = props => {
       <View style={styles.row}>
         <Text style={styles.field}>Begin Time</Text>
         <View style={styles.viewDate}>
-          <TouchableHighlight onPress={showBeginDatepicker}>
+          <TouchableOpacity>
             <Text>{beginDate.toLocaleDateString()}</Text>
-          </TouchableHighlight>
-          <TouchableHighlight onPress={showBeginTimepicker}>
+          </TouchableOpacity>
+          <TouchableOpacity>
             <Text>{beginDate.toLocaleTimeString()}</Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
           <Image
             style={styles.calIcon}
             source={require('../../assets/images/calendarIcon.png')}></Image>
@@ -91,7 +99,7 @@ const QuizCard = props => {
 
         {showBeginMode && (
           <DateTimePicker
-            testID="dateTimePicker"
+            testID="startDateTimePicker"
             value={beginDate}
             mode={beginMode}
             is24Hour={true}
@@ -103,12 +111,12 @@ const QuizCard = props => {
       <View style={styles.row}>
         <Text style={styles.field}>End Time</Text>
         <View style={styles.viewDate}>
-          <TouchableHighlight onPress={showEndDatepicker}>
+          <TouchableOpacity onPress={showEndDatepicker}>
             <Text>{endDate.toLocaleDateString()}</Text>
-          </TouchableHighlight>
-          <TouchableHighlight onPress={showEndTimepicker}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={showEndTimepicker}>
             <Text>{endDate.toLocaleTimeString()}</Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
           <Image
             style={styles.calIcon}
             source={require('../../assets/images/calendarIcon.png')}></Image>
@@ -131,7 +139,7 @@ const QuizCard = props => {
         </TouchableOpacity>
         {showEndMode && (
           <DateTimePicker
-            testID="dateTimePicker"
+            testID="endDateTimePicker"
             value={endDate}
             mode={endMode}
             is24Hour={true}

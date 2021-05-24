@@ -3,6 +3,7 @@ import {useSelector} from 'react-redux';
 import Header from '../../components/Header';
 import {View, TouchableOpacity, Image, Text, FlatList} from 'react-native';
 import styles from './styles';
+import {set} from 'react-native-reanimated';
 
 const Box = ({data, onPress}) => {
   return (
@@ -14,14 +15,12 @@ const Box = ({data, onPress}) => {
 };
 
 export default function Home({navigation}) {
-  const [userType, setUserType] = useState(1);
+  const [userInfo, setUserInfo] = useState({});
   const {userSignin} = useSelector(state => state.userSignin);
 
-  setTimeout(() => {
-    if (userSignin?.userInfo) {
-      setUserType(userSignin.userInfo.type);
-    }
-  }, 1000);
+  useEffect(() => {
+    setUserInfo(userSignin ? userSignin.userInfo : {});
+  }, [userSignin]);
 
   console.log(userSignin);
 
@@ -58,7 +57,9 @@ export default function Home({navigation}) {
         break;
       case 2:
         //TODO: Quiz
-        navigation.navigate(userType === 1 ? "QuizCreationNavigator" :'DoingQuizNavigator' );
+        navigation.navigate(
+          userInfo.type === 1 ? 'QuizCreationNavigator' : 'DoingQuizNavigator',
+        );
         break;
       case 3:
         //TODO: Bai tap
@@ -67,7 +68,7 @@ export default function Home({navigation}) {
         break;
       case 4:
         //TODO: Profile
-        navigation.navigate('ProfileScreen')
+        navigation.navigate('ProfileScreen');
         break;
     }
   };
