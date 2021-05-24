@@ -15,13 +15,26 @@ import {
 import Icon from 'react-native-vector-icons/AntDesign';
 import QuestionCard from '../../../components/molecules/QuestionCard';
 import {listQuestion} from '../../../redux/actions/questionActions';
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import DialogInput from 'react-native-dialog-input';
 import styles from './styles';
-import {addQuiz, listQuiz, saveQuiz} from '../../../redux/actions/quizActions';
+import {addQuiz, saveQuiz} from '../../../redux/actions/quizActions';
 import {theme} from '../../../styles/theme';
 
 const wait = timeout => {
   return new Promise(resolve => setTimeout(resolve, timeout));
+};
+
+const validURL = str => {
+  var pattern = new RegExp(
+    '^(https?:\\/\\/)?' + // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+      '(\\#[-a-z\\d_]*)?$',
+    'i',
+  ); // fragment locator
+  return !!pattern.test(str);
 };
 
 const CreateQuiz = ({route, navigation}) => {
@@ -29,6 +42,7 @@ const CreateQuiz = ({route, navigation}) => {
   const quizList = useSelector(state => state.quizList);
   const {quizzes} = quizList;
   const quiz = quizzes?.find(quiz => quiz._quizId === _quizId);
+  const [isDialogVisible, setDialogVisible] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
   const [quizName, setQuizName] = useState(
@@ -63,37 +77,18 @@ const CreateQuiz = ({route, navigation}) => {
     wait(1000).then(() => setRefreshing(false));
   }, []);
 
-  const pickImage = () => {
-    var options = {
-      title: 'Select Image',
-      customButtons: [
-        {
-          name: 'customOptionKey',
-          title: 'Choose file from Custom Option',
-        },
-      ],
-      storageOptions: {
-        skipBackup: true,
-        path: 'images',
-      },
-    };
-
-    launchImageLibrary(options, async res => {
-      console.log('Response = ', res);
-
-      if (res.didCancel) {
-        console.log('User cancelled image picker');
-      } else if (res.error) {
-        console.log('ImagePicker Error: ', res.error);
-      } else if (res.customButton) {
-        console.log('User tapped custom button: ', res.customButton);
-        alert(res.customButton);
-      } else {
-        const source = res.uri;
-        setQuizImage(source);
-      }
-    });
+  const addImageURL = text => {
+    // to-do: set image url and save to database
+    if (!validURL(text)) {
+      alert('URL is invalid !');
+      return false;
+    } else {
+      setQuizImage(text);
+      alert('Add URL successfully !');
+      setDialogVisible(false);
+    }
   };
+
   const openAddQuestion = () => {
     navigation.navigate('CreateQuestion', {_quizId: _quizId});
   };
@@ -114,15 +109,26 @@ const CreateQuiz = ({route, navigation}) => {
       <View style={styles.testDetail}>
         <Text style={styles.fieldName}>Tap to add image</Text>
         <View style={[styles.bigImage, styles.input]}>
-          <TouchableOpacity onPress={() => pickImage()}>
+          <TouchableOpacity onPress={() => setDialogVisible(true)}>
             <Image
               style={styles.image}
+              width={360}
+              height={220}
               source={
                 quizImage
                   ? {uri: quizImage}
                   : require('../../../assets/images/NoImage.jpg')
               }></Image>
           </TouchableOpacity>
+          <DialogInput
+            isDialogVisible={isDialogVisible}
+            title={'Choose Image'}
+            message={'Paste the image url to this space'}
+            hintInput={'media url'}
+            submitInput={inputText => addImageURL(inputText)}
+            closeDialog={() => {
+              setDialogVisible(false);
+            }}></DialogInput>
         </View>
         <Text style={styles.fieldName}>Subject</Text>
         <TextInput

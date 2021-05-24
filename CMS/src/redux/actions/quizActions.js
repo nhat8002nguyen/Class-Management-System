@@ -86,7 +86,6 @@ const saveQuiz = ({
   quizName,
   quizImage,
   quizDescription,
-  start,
   end,
 }) => async (dispatch, getState) => {
   dispatch({type: QUIZ_SAVE_REQUEST});

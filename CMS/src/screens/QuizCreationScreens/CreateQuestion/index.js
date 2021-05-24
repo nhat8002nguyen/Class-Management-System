@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import * as ImagePicker from 'react-native-image-picker';
+import DialogInput from 'react-native-dialog-input';
 import {
   addQuestion,
   listQuestion,
@@ -18,10 +19,24 @@ import {
 import styles from './styles';
 import {RadioButton} from 'react-native-paper';
 
+const validURL = str => {
+  var pattern = new RegExp(
+    '^(https?:\\/\\/)?' + // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+      '(\\#[-a-z\\d_]*)?$',
+    'i',
+  ); // fragment locator
+  return !!pattern.test(str);
+};
+
 const CreateQuestion = ({navigation, route}) => {
   const isAddNewQuiz = Object.keys(route.params).length <= 1 ? true : false;
   const _quizId = route.params._quizId;
   const questionId = isAddNewQuiz ? '' : route.params.questionId;
+  const [isDialogVisible, setDialogVisible] = useState(false);
   const [questionImage, setQuestionImage] = useState(
     isAddNewQuiz
       ? 'https://cdnimg.vietnamplus.vn/t1200/Uploaded/hmnsy/2019_09_10/phan_thiet.jpg'
@@ -90,6 +105,18 @@ const CreateQuestion = ({navigation, route}) => {
     });
   };
 
+  const addImageURL = text => {
+    // to-do: set image url and save to database
+    if (!validURL(text)) {
+      alert('URL is invalid !');
+      return false;
+    } else {
+      setQuestionImage(text);
+      alert('Add URL successfully !');
+      setDialogVisible(false);
+    }
+  };
+
   const onChangeAns0 = text => {
     setAnswers(pAnswers => pAnswers.map((a, i) => (a = i == 0 ? text : a)));
   };
@@ -148,9 +175,18 @@ const CreateQuestion = ({navigation, route}) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.quizDetail}>
         <Text style={styles.fieldName}>Tap to add image or video</Text>
-        <TouchableOpacity onPress={() => pickImage()}>
+        <TouchableOpacity onPress={() => setDialogVisible(true)}>
           <Image style={styles.image} source={{uri: questionImage}}></Image>
         </TouchableOpacity>
+        <DialogInput
+          isDialogVisible={isDialogVisible}
+          title={'Choose Image'}
+          message={'Paste the image url to this space'}
+          hintInput={'media url'}
+          submitInput={inputText => addImageURL(inputText)}
+          closeDialog={() => {
+            setDialogVisible(false);
+          }}></DialogInput>
         <Text style={styles.fieldName}>Add question</Text>
         <TextInput
           style={styles.textInput}
