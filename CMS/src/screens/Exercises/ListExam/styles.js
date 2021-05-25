@@ -15,9 +15,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 10,
     right: 10,
+    zIndex: 2
   },
   groupItem: {
-    marginHorizontal: 10,
     padding: 10,
     alignSelf: 'center',
     borderRadius: 10,
@@ -26,21 +26,17 @@ const styles = StyleSheet.create({
     shadowColor: 'rgba(0, 0, 0, 0.5)',
     elevation: 6,
     shadowRadius: 15,
-    // borderColor: 'white', 
-    // borderBottomColor: '#EBEBEB',
-    // borderWidth: 1, 
-    marginTop: 5, 
+    marginTop: 5,
     marginBottom: 10,
     backgroundColor: 'white',
-    flexDirection: 'row',
-    alignItems: 'center',
+    width: '98%',
   },
   mediumBoldText: {
     fontSize: 18,
     fontWeight: 'bold',
   },
   smallBoldText: {
-    fontWeight: 'bold',
+    fontWeight: '400',
   },
   modalContainer: {
     padding: 10,
@@ -70,7 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    marginTop: 10
+    marginTop: 10,
   },
   selectWrap: {
     flexDirection: 'row',
@@ -79,20 +75,27 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginLeft: 20,
   },
-  tab: {
+  row: {
     flexDirection: 'row',
+    marginTop: 8,
+    borderWidth: 1,
+    borderColor: 'white',
+    borderBottomColor: '#EBEBEB',
+    alignItems: 'flex-end',
+    padding: 3,
+  },
+  btn: {
     height: 40,
-    width: '98%',
-    marginHorizontal: 10,
-    alignSelf: 'center',
-    marginTop: 10,
-    borderRadius: 20,
-    backgroundColor: 'white',
+    width: '70%',
+    borderRadius: 10,
     shadowOpacity: 0.9,
     shadowOffset: {height: 13, width: 55},
     shadowColor: 'rgba(0, 0, 0, 0.5)',
     elevation: 6,
     shadowRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center', marginBottom: 8
   },
 });
 

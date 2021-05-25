@@ -62,7 +62,7 @@ export default function Home({navigation}) {
         break;
       case 3:
         //TODO: Bai tap
-        navigation.navigate('CreateExercise');
+        navigation.navigate('Exams');
 
         break;
       case 4:
@@ -75,12 +75,13 @@ export default function Home({navigation}) {
     <View style={styles.container}>
       <Header isHome={true} title="Trang chủ" />
       <FlatList
+        keyExtractor = {(_)=> _.title}
         numColumns={2}
         data={list}
         renderItem={({item, index}) => (
           <Box data={item} key={index} onPress={() => onPress(index)} />
         )}
-        contentContainerStyle={{alignItems: 'center', padding: 20}}
+        contentContainerStyle={{alignItems: 'center', marginTop: 20}}
       />
     </View>
   );

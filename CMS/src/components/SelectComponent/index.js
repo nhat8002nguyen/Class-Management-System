@@ -14,7 +14,6 @@ function SelectComponent({
 }) {
   const [selection, setSelection] = useState(checked ? checked : []);
   const handleOnClick = (item, index) => {
-    console.log(item, index);
     if(index === items.length - 1) {
       onCheckLast()
     }
