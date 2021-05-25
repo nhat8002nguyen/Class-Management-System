@@ -10,12 +10,13 @@ import api from '../api';
 import ModalJoinGroup from './ModalJoinGroup';
 import {TabView, SceneMap} from 'react-native-tab-view';
 const CLASS_ID = 'd92b8c7f-afee-4700-a350-4d9c5b288040';
-const USER_ID = 'd92b8c7f-afee-4700-a350-4d9c5b288041';
+import {useIsFocused} from '@react-navigation/native';
 import {colors} from '../../../styles';
 import {useSelector} from 'react-redux';
 export default ListGroups = ({navigation}) => {
   const {width, height} = Dimensions.get('window');
   const {userSignin} = useSelector(s => s.userSignin);
+  const isFocused = useIsFocused();
   const [listGroupsJoined, setListGroupsJoined] = useState([]);
   const [allGroups, setAllGroups] = useState([]);
   const [modalJoinGroup, setModalJoinGroup] = useState(false);
@@ -24,13 +25,14 @@ export default ListGroups = ({navigation}) => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     getData();
-  }, []);
+  }, [isFocused]);
   const getData = async () => {
     try {
       const [joined, all] = await Promise.all([
         api.getListGroupsByUserId(CLASS_ID),
         api.getListGroupsByClassId(CLASS_ID),
       ]);
+      console.log(joined?.data);
       setListGroupsJoined(joined?.data || []);
       setAllGroups(all?.data || []);
     } catch (error) {
@@ -51,8 +53,7 @@ export default ListGroups = ({navigation}) => {
       <Searching />
     ) : listGroupsJoined.length ? (
       <FlatList
-      contentContainerStyle = {{marginTop: 15}}
-
+        contentContainerStyle={{marginTop: 15}}
         data={listGroupsJoined}
         keyExtractor={(_, index) => index}
         renderItem={({item, index}) => (
@@ -67,7 +68,7 @@ export default ListGroups = ({navigation}) => {
       <Searching />
     ) : allGroups.length ? (
       <FlatList
-        contentContainerStyle = {{marginTop: 15}}
+        contentContainerStyle={{marginTop: 15}}
         data={allGroups}
         keyExtractor={(_, index) => index}
         renderItem={({item, index}) => (
@@ -109,8 +110,8 @@ export default ListGroups = ({navigation}) => {
     );
   };
   const [routes] = useState([
-    {key: 'first', title: 'Đã tham gia'},
-    {key: 'second', title: 'Tất cả'},
+    {key: 'first', title: `Đã tham gia`},
+    {key: 'second', title: `Tất cả`},
   ]);
   const renderScene = SceneMap({
     first: FirstRoute,
@@ -120,10 +121,7 @@ export default ListGroups = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header title="Nhóm" isHome={false} navigation={navigation} />
-      {/* <Text
-        style={{...styles.mediumBoldText, marginHorizontal: 10, marginTop: 5}}>
-        Đã tham gia ({listGroupsJoined?.length})
-      </Text> */}
+
       <TabView
         swipeEnabled={false}
         navigationState={{index, routes}}
@@ -132,30 +130,7 @@ export default ListGroups = ({navigation}) => {
         initialLayout={{width: width}}
         renderTabBar={props => <TabBar {...props} />}
       />
-      {/* {listGroupsJoined.length ? (
-        <FlatList
-          contentContainerStyle={{marginTop: 5}}
-          keyExtractor={item => item}
-          data={listGroupsJoined}
-          renderItem={({item, index}) => <Group />}
-          ListFooterComponent={() => <View style={{height: 10}} />}
-        />
-      ) : null}
-      <Text
-        style={{...styles.mediumBoldText, marginHorizontal: 10, marginTop: 5}}>
-        Tất cả ({allGroups?.length})
-      </Text>
-      {allGroups.length ? (
-        <FlatList
-          contentContainerStyle={{marginTop: 5}}
-          keyExtractor={item => item}
-          data={allGroups}
-          ListFooterComponent={() => <View style={{height: 10}} />}
-          renderItem={({item, index}) => (
-            <Group item={item} onPress={() => onJoinGroup(item)} />
-          )}
-        />
-      ) : null} */}
+
       {userSignin?.userInfo?.type != 1 && (
         <TouchableOpacity style={styles.addBtn} onPress={onMoveToCreateGroup}>
           <Feather name="plus" color="white" size={40} />
@@ -166,7 +141,6 @@ export default ListGroups = ({navigation}) => {
         group={groupSelected.current}
         visible={modalJoinGroup}
         onClose={onCloseModalJoinGroup}
-        userId={USER_ID}
       />
     </View>
   );

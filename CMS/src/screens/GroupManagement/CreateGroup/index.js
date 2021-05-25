@@ -41,21 +41,32 @@ export default CreateGroup = ({navigation}) => {
   const onAdd = async () => {
     setIsHandling(true)
     try {
-      if(grName === "" || pass === "") return 
-      const res = await api.createGroup(CLASS_ID, grName, pass)
-      console.log(res);
+      if(grName === "" || pass === "" || description === "" || topic === "") return 
+      const data = {
+        name: grName,
+        password: pass,
+        description, 
+        keywords: topic
+      }
+      const res = await api.createGroup(CLASS_ID, data)
+      if(res){
+        navigation.goBack()
+      }
     } catch (error) {
       console.log('Err@CreateGroup', error);
+    }finally{
+      setIsHandling(false)
     }
   };
   const listType = [
     {key: 0, value: 'Khoa học'},
     {key: 1, value: 'Nghệ thuật'},
-    {key: 3, value: 'Công nghệ'},
-    {key: 4, value: 'Ngoại ngữ'},
-    {key: 5, value: 'Khác'},
+    {key: 2, value: 'Công nghệ'},
+    {key: 3, value: 'Ngoại ngữ'},
+    {key: 4, value: 'Khác'},
   ];
   const onCheckedType = list => {
+    setTopic(listType[list[0]].value)
     typeRef.current = list;
   };
   const onCheckLast = () => {
@@ -64,7 +75,7 @@ export default CreateGroup = ({navigation}) => {
   return (
     <KeyboardAvoidingView behavior="height" style={{flex: 1}}>
       <Header title="Tạo nhóm" isHome={false} navigation={navigation} />
-      <ScrollView>
+      <ScrollView keyboardShouldPersistTaps ='always'>
         <View style={styles.container}>
           <Text style={styles.smallBoldText}>Tên nhóm</Text>
           <TextInput

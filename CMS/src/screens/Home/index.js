@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import Header from '../../components/Header';
-import {useSelector} from 'react-redux'
 import {View, TouchableOpacity, Image, Text, FlatList} from 'react-native';
 import styles from './styles';
 
@@ -63,7 +62,7 @@ export default function Home({navigation}) {
         break;
       case 3:
         //TODO: Bai tap
-        navigation.navigate('CreateExercise');
+        navigation.navigate('Exams');
 
         break;
       case 4:

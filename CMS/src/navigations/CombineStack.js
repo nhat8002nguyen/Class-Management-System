@@ -7,7 +7,7 @@ import AuthStack from './outsidestacks/AuthStack';
 import QuizCreationNavigator from './insidestacks/QuizCreationNavigator';
 import DoingQuizNavigator from './insidestacks/DoingQuizNavigator';
 import {ListGroups, CreateGroup} from '../screens/GroupManagement';
-import {CreateExercise, SetUpExercise} from '../screens/Exercises';
+import {CreateExercise, SetUpExercise, ListExam, Grade} from '../screens/Exercises';
 import Home from '../screens/Home';
 import ProfileScreen from '../screens/ProfileScreen';
 import {Provider} from 'react-redux';
@@ -39,6 +39,8 @@ export default CombineStack = () => {
         <Stack.Screen name="CreateExercise" component={CreateExercise} />
         <Stack.Screen name="SetUpExercise" component={SetUpExercise} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Screen name="Exams" component={ListExam} />
+        <Stack.Screen name="Grade" component={Grade} />
       </Stack.Navigator>
     </Provider>
   );
