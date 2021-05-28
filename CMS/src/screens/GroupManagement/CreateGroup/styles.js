@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
     height: 40, 
     borderRadius: 10,
-    marginTop: 30
+    marginTop: 30, marginBottom: 40
   },
   selectWrap: {
     marginLeft: 20

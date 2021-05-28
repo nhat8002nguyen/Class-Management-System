@@ -7,15 +7,19 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   Keyboard,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import styles from './styles';
 import Feather from 'react-native-vector-icons/Feather';
 import Header from '../../../components/Header';
+import Loading from '../../../components/Loading';
 import SelectComponent from '../../../components/SelectComponent';
 import {colors} from '../../../styles';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
-
+import api from '../api';
+const CLASS_ID = 'd92b8c7f-afee-4700-a350-4d9c5b288040';
 export default CreateExercise = ({navigation}) => {
   /*{
   "name": "Sample 1",
@@ -35,6 +39,8 @@ export default CreateExercise = ({navigation}) => {
   const [datePicker, setDatePicker] = useState(false);
   const [timePicker, setTimePicker] = useState(false);
   const typeTimeRef = useRef('start');
+  const [err, setErr] = useState('');
+  const [isHandling, setIsHandling] = useState(false);
   const listType = [
     {key: 0, value: 'Tự luận'},
     {key: 1, value: 'Trắc nghiệm'},
@@ -44,18 +50,13 @@ export default CreateExercise = ({navigation}) => {
     typeRef.current = list;
   };
   const onChangeInput = (flag, text) => {
+    if (err != '') setErr('');
     switch (flag) {
       case 'name':
         setName(text);
         break;
       case 'des':
         setDescription(text);
-        break;
-      case 'start':
-        setStartTime(text);
-        break;
-      case 'end':
-        setEndTime(text);
         break;
       default:
         break;
@@ -84,24 +85,77 @@ export default CreateExercise = ({navigation}) => {
   };
   const onOpenTimePicker = flag => {
     typeTimeRef.current = flag;
-    console.log(flag);
     setTimePicker(true);
   };
   const onOpenDatePicker = flag => {
     typeTimeRef.current = flag;
-    console.log(flag);
     setDatePicker(true);
   };
   const onAdd = async () => {
-    let data = {
-      type: typeRef.current
+    if (name === '' || description === '') {
+      setErr('Vui lòng nhập đầy đủ');
+      return;
     }
-    navigation.navigate('SetUpExercise', data)
+    const _startTime =
+      moment(startDate).format('YYYY-MM-DD') +
+      ' ' +
+      moment(startTime).format('HH:mm:ss')
+    const _endTime =
+      moment(endDate).format('YYYY-MM-DD') +
+      ' ' +
+      moment(endTime).format('HH:mm:ss')
+    if (
+      moment(_startTime, 'YYYY-MM-DD HH:mm') >
+        moment(endDate, 'YYYY-MM-DD HH:mm') ||
+      moment(_endTime, 'YYYY-MM-DD HH:mm') < moment()
+    ) {
+      setErr('Thời gian nộp bài không hợp lệ')
+      return
+    }
+    setIsHandling(true)
+    let data = {
+      name,
+      description,
+      type: 1,
+      startTime: _startTime,
+      endTime: _endTime,
+    };
+    console.log(data);
+    try {
+      const res = await api.createExam(CLASS_ID, data)
+      if(res){
+        console.log(res);
+        navigation.goBack()
+      }else{
+        setErr('Đã xảy ra sự cố. Vui lòng thử lại sau')
+        return
+      }
+    } catch (error) {
+      console.log(error);
+      setErr('Đã xảy ra sự cố. Vui lòng thử lại sau')
+      return
+      
+    }finally{
+      setIsHandling(false)
+    }
   };
   return (
     // <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{flex: 1}}>
       <Header title="Tạo bài tập lớn" isHome={false} navigation={navigation} />
+      {err.length ? (
+        <Text
+          style={{
+            fontWeight: 'bold',
+            color: 'red',
+            textAlign: 'center',
+            marginVertical: 5,
+          }}>
+          {err}
+        </Text>
+      ) : null}
       <ScrollView style={styles.container} keyboardShouldPersistTaps="always">
         <Text style={styles.smallBoldText}>Tên bài tập</Text>
         <TextInput
@@ -110,21 +164,12 @@ export default CreateExercise = ({navigation}) => {
           placeholder="Nhập tên bài tập"
           onChangeText={text => onChangeInput('name', text)}
         />
-        <Text style={styles.smallBoldText}>Loại bài tập</Text>
-        <View style={styles.selectWrap}>
-          <SelectComponent
-            items={listType}
-            iconColor={colors.PRIMARY}
-            checked={typeRef.current}
-            multipleChoose={false}
-            onChecked={onCheckedType}
-          />
-        </View>
-        <Text style={styles.smallBoldText}>Mô tả</Text>
+        <Text style={styles.smallBoldText}>Yêu cầu</Text>
         <TextInput
           value={description}
-          style={styles.input}
-          placeholder="Mô tả ngắn về bài tập"
+          style={{...styles.input, height: 200, textAlignVertical: 'top'}}
+          multiline={true}
+          placeholder="Mô tả yêu cầu của bài tập"
           onChangeText={text => onChangeInput('des', text)}
         />
 
@@ -181,13 +226,7 @@ export default CreateExercise = ({navigation}) => {
             <Feather name="clock" size={20} color={colors.PRIMARY} />
           </TouchableOpacity>
         </View>
-        <Text style={styles.smallBoldText}>Link nộp</Text>
-        <TextInput
-          value={description}
-          style={styles.input}
-          placeholder="Link nộp bài"
-          onChangeText={text => onChangeInput('des', text)}
-        />
+        
         <TouchableOpacity style={styles.addBtn} onPress={onAdd}>
           <Text style={{fontWeight: 'bold', fontSize: 18, color: 'white'}}>
             Tạo
@@ -213,8 +252,9 @@ export default CreateExercise = ({navigation}) => {
             onChange={onChangeTime}
           />
         )}
+        <Loading visible={isHandling} />
       </ScrollView>
-      </>
+    </KeyboardAvoidingView>
     // </TouchableWithoutFeedback>
   );
 };
