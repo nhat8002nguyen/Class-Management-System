@@ -43,7 +43,6 @@ const getListSubmission = async (examId) => {
         token,
       },
     };
-    console.log(url);
     const res = await axios.get(url, headers);
     return res;
   } catch (error) {
@@ -54,7 +53,6 @@ const getListSubmission = async (examId) => {
 const createExam = async (classId, data) => {
   try {
     const url = `${_URL}/staff/classes/${classId}/exercises`;
-    console.log(url);
     const {token, userInfo} = await getUserInfo();
     const headers = {
       headers: {
@@ -67,8 +65,58 @@ const createExam = async (classId, data) => {
     console.log('Err@getListExam', error);
   }
 };
+const submit = async (id, data) =>{
+  //https://cms-backend-whatever.herokuapp.com/api/exercises/f3e4da87-e050-434b-ad04-a48be7c3a6f7/submissions
+  try {
+    const url = `${_URL}/exercises/${id}/submissions`;
+    const {token} = await getUserInfo();
+    const headers = {
+      headers: {
+        token,
+      },
+    };
+    const res = await axios.post(url, data, headers);
+    return res;
+  } catch (error) {
+    console.log('Err@Submit ', error);
+  }
+}
+const getSubmit = async (id)=> {
+  try {
+    const url = `${_URL}/exercises/${id}/submissions`;
+    const {token} = await getUserInfo();
+    const headers = {
+      headers: {
+        token,
+      },
+    };
+    const res = await axios.get(url, headers);
+    return res;
+  } catch (error) {
+    console.log('Err@getSubmit ', error);
+  }
+}
+const grade = async (id, data) =>{
+  //https://cms-backend-whatever.herokuapp.com/api/staff/submissions/b842f2eb-f34e-4e0e-9cc8-77b038df0fa6/grade
+  try {
+    const url = `${_URL}/staff/submissions/${id}/grade`;
+    const {token} = await getUserInfo();
+    const headers = {
+      headers: {
+        token,
+      },
+    };
+    const res = await axios.post(url, data, headers);
+    return res;
+  } catch (error) {
+    console.log('Err@getSubmit ', error);
+  }
+}
 export default {
   getListExam,
   createExam,
-  getListSubmission
+  getListSubmission,
+  submit,
+  getSubmit,
+  grade
 };

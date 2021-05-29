@@ -161,7 +161,7 @@ export default ListExam = ({navigation}) => {
   };
   const onHiddenBtnPress = (item) =>{
     if(userSignin?.userInfo?.type === 1){
-      return;
+      navigation.navigate('Submit', item)
     } else{
       navigation.navigate('Grade', item)
     }
@@ -172,7 +172,7 @@ export default ListExam = ({navigation}) => {
       onPress= {()=> onHiddenBtnPress(section)}
         style={{...styles.btn, backgroundColor: colors.PRIMARY}}>
         <Text style={{color: 'white', fontSize: 17}}>
-          {userSignin?.userInfo?.type === 1 ? 'Nộp bài' : 'Chấm bài'}
+          {userSignin?.userInfo?.type === 1 ? 'Thông tin bài nộp' : 'Chấm bài'}
         </Text>
       </TouchableOpacity>
     );
