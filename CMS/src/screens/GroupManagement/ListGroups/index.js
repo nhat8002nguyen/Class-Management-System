@@ -13,7 +13,7 @@ const CLASS_ID = 'd92b8c7f-afee-4700-a350-4d9c5b288040';
 import {useIsFocused} from '@react-navigation/native';
 import {colors} from '../../../styles';
 import {useSelector} from 'react-redux';
-export default ListGroups = ({navigation}) => {
+export default ListGroups = ({navigation, route}) => {
   const {width, height} = Dimensions.get('window');
   const {userSignin} = useSelector(s => s.userSignin);
   const isFocused = useIsFocused();
@@ -23,16 +23,21 @@ export default ListGroups = ({navigation}) => {
   const groupSelected = useRef(null);
   const [index, setIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     getData();
   }, [isFocused]);
   const getData = async () => {
+    if (!route.params?.classId) {
+      setIsLoading(false);
+      return;
+    }
     try {
       const [joined, all] = await Promise.all([
-        api.getListGroupsByUserId(CLASS_ID),
-        api.getListGroupsByClassId(CLASS_ID),
+        api.getListGroupsByUserId(route.params?.classId),
+        api.getListGroupsByClassId(route.params?.classId),
       ]);
-      console.log(joined?.data);
+
       setListGroupsJoined(joined?.data || []);
       setAllGroups(all?.data || []);
     } catch (error) {
@@ -51,6 +56,8 @@ export default ListGroups = ({navigation}) => {
   const FirstRoute = () =>
     isLoading ? (
       <Searching />
+    ) : !route.params?.classId ? (
+      <NoData title="Bạn chưa chọn lớp, vui lòng chọn lớp và thử lại!" />
     ) : listGroupsJoined.length ? (
       <FlatList
         contentContainerStyle={{marginTop: 15}}
@@ -66,6 +73,8 @@ export default ListGroups = ({navigation}) => {
   const SecondRoute = () =>
     isLoading ? (
       <Searching />
+    ) : !route.params?.classId ? (
+      <NoData title="Bạn chưa chọn lớp, vui lòng chọn lớp và thử lại!" />
     ) : allGroups.length ? (
       <FlatList
         contentContainerStyle={{marginTop: 15}}
@@ -131,11 +140,11 @@ export default ListGroups = ({navigation}) => {
         renderTabBar={props => <TabBar {...props} />}
       />
 
-      {userSignin?.userInfo?.type != 1 && (
+      {userSignin?.userInfo?.type === 1 && route.params?.classId ? (
         <TouchableOpacity style={styles.addBtn} onPress={onMoveToCreateGroup}>
           <Feather name="plus" color="white" size={40} />
         </TouchableOpacity>
-      )}
+      ) : null}
 
       <ModalJoinGroup
         group={groupSelected.current}

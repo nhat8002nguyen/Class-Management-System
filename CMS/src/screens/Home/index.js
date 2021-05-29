@@ -54,7 +54,7 @@ export default function Home({navigation}) {
         break;
       case 1:
         //TODO: Nhom
-        navigation.navigate('ListGroups');
+        navigation.navigate('ListGroups', {classId: null});
         break;
       case 2:
         //TODO: Quiz
@@ -62,7 +62,7 @@ export default function Home({navigation}) {
         break;
       case 3:
         //TODO: Bai tap
-        navigation.navigate('Exams');
+        navigation.navigate('Exams', {classId: null});
 
         break;
       case 4:
