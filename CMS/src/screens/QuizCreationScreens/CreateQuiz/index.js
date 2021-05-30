@@ -41,6 +41,7 @@ const CreateQuiz = ({route, navigation}) => {
   const _quizId = route.params ? route.params.quizId : '';
   const quizList = useSelector(state => state.quizList);
   const {quizzes} = quizList;
+  const {classId} = useSelector(state => state.classId);
   const quiz = quizzes?.find(quiz => quiz._quizId === _quizId);
   const [isDialogVisible, setDialogVisible] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
@@ -98,7 +99,14 @@ const CreateQuiz = ({route, navigation}) => {
     if (_quizId) {
       dispatch(saveQuiz({_quizId, quizName, quizImage, quizDescription}));
     } else {
-      dispatch(addQuiz({quizName, quizImage, quizDescription}));
+      dispatch(
+        addQuiz({
+          classId: classId,
+          quizName,
+          quizImage,
+          quizDescription,
+        }),
+      );
     }
 
     navigation.goBack();

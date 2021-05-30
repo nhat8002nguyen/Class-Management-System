@@ -18,7 +18,10 @@ import {
   questionSaveReducer,
 } from './reducers/questionCreateReducer';
 import {currentQuizReducer} from './reducers/currentQuizReducers';
-import {classListReducer} from './reducers/classListReducers';
+import {
+  classListReducer,
+  currentClassReducer,
+} from './reducers/classListReducers';
 
 const appReducer = combineReducers({
   // user auth reducer
@@ -26,6 +29,7 @@ const appReducer = combineReducers({
   userSignup: userSignupReducer,
 
   classList: classListReducer,
+  classId: currentClassReducer, // current class
   quizList: quizListReducer,
   questionList: questionListReducer,
   questionAdd: questionAddReducer,

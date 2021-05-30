@@ -21,9 +21,11 @@ const wait = timeout => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 };
 
-const ListTest = ({navigation}) => {
+const ListTest = ({navigation, route}) => {
   const quizList = useSelector(state => state.quizList);
   const {loading, quizzes, error} = quizList;
+
+  const {classId} = useSelector(state => state.classId);
 
   const dispatch = useDispatch();
 
@@ -31,7 +33,7 @@ const ListTest = ({navigation}) => {
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
-    dispatch(listQuiz());
+    dispatch(listQuiz(classId));
     wait(1000).then(() => setRefreshing(false));
   }, []);
 
@@ -42,8 +44,8 @@ const ListTest = ({navigation}) => {
         <Icon name="arrow-back" size={30} onPress={() => onGoBackHome()} />
       ),
     });
-    dispatch(listQuiz());
-  }, [navigation]);
+    dispatch(listQuiz(classId));
+  }, [navigation, route]);
 
   const onGoBackHome = () => {
     navigation.navigate('Home');

@@ -14,7 +14,7 @@ import {
   QUIZ_REMOVE_FAIL,
 } from '../constants/quizActionConstants';
 
-const listQuiz = () => async (dispatch, getState) => {
+const listQuiz = classId => async (dispatch, getState) => {
   dispatch({type: QUIZ_LIST_REQUEST});
   const {
     userSignin: {
@@ -24,7 +24,7 @@ const listQuiz = () => async (dispatch, getState) => {
   try {
     // get date from api
     const {data} = await axios.get(
-      'https://cms-backend-whatever.herokuapp.com/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/quizzes',
+      `https://cms-backend-whatever.herokuapp.com/api/staff/classes/${classId}/quizzes`,
       {
         headers: {
           token: token,
@@ -48,7 +48,7 @@ const listQuiz = () => async (dispatch, getState) => {
   }
 };
 
-const addQuiz = ({quizName, quizImage, quizDescription}) => async (
+const addQuiz = ({classId, quizName, quizImage, quizDescription}) => async (
   dispatch,
   getState,
 ) => {
@@ -61,7 +61,7 @@ const addQuiz = ({quizName, quizImage, quizDescription}) => async (
 
   try {
     const {data} = await axios.post(
-      'https://cms-backend-whatever.herokuapp.com/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/quizzes',
+      `https://cms-backend-whatever.herokuapp.com/api/staff/classes/${classId}/quizzes`,
       {
         name: quizName,
         mediaURL: quizImage,

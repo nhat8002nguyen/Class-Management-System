@@ -1,22 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {View, Text, StyleSheet, Image, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
+import {chooseCurrentClass} from '../../redux/actions/classActions';
 
 const ClassCard = props => {
   const navigation = useNavigation();
   const {userSignin} = useSelector(state => state.userSignin);
   const [userInfo, setUserInfo] = useState({});
   const [isDialogVisible, setDialogVisible] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setUserInfo(userSignin ? userSignin.userInfo : {});
   }, [userSignin]);
 
   const joinClass = () => {
-    navigation.navigate('Home', {classId: props.id});
+    dispatch(chooseCurrentClass(props.id));
+    navigation.navigate('Home');
   };
 
   return (

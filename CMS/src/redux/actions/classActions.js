@@ -30,4 +30,8 @@ const listClass = () => async (dispatch, getState) => {
   }
 };
 
-export {listClass};
+const chooseCurrentClass = id => async dispatch => {
+  dispatch({type: 'CURRENT_CLASS', payload: id});
+};
+
+export {listClass, chooseCurrentClass};

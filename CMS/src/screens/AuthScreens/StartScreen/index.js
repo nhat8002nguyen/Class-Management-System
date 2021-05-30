@@ -19,12 +19,10 @@ export default function StartScreen({navigation}) {
   const onMoveToLogin = () => {
     if (userSignin?._W?.token) {
       const {userInfo} = userSignin._W;
-      dispatch(
-        signin({email: userInfo.email, password: userInfo.password}),
-      );
+      dispatch(signin({email: userInfo.email, password: userInfo.password}));
       navigation.reset({
         index: 0,
-        routes: [{name: 'Home'}],
+        routes: [{name: 'Dashboard'}],
       });
     } else {
       navigation.navigate('LoginScreen');

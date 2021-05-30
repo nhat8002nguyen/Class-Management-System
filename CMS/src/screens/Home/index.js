@@ -14,18 +14,14 @@ const Box = ({data, onPress}) => {
   );
 };
 
-export default function Home({navigation, route}) {
+export default function Home({navigation}) {
   const [userInfo, setUserInfo] = useState({});
   const {userSignin} = useSelector(state => state.userSignin);
-  const [classId, setClassId] = useState('');
+  const {classId} = useSelector(state => state.classId);
 
   useEffect(() => {
     setUserInfo(userSignin ? userSignin.userInfo : {});
   }, [userSignin]);
-
-  useEffect(() => {
-    if (route?.params) setClassId(route.params.classId);
-  }, [route]);
 
   const list = [
     {
@@ -51,7 +47,6 @@ export default function Home({navigation, route}) {
         //TODO: Quiz
         navigation.navigate(
           userInfo.type === 1 ? 'QuizCreationNavigator' : 'DoingQuizNavigator',
-          {classId},
         );
         break;
       case 2:

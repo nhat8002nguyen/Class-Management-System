@@ -22,4 +22,13 @@ const classListReducer = (state = {classes: []}, action) => {
   }
 };
 
-export {classListReducer};
+const currentClassReducer = (state = {classId: ''}, action) => {
+  switch (action.type) {
+    case 'CURRENT_CLASS':
+      return {classId: action.payload};
+    default:
+      return state;
+  }
+};
+
+export {classListReducer, currentClassReducer};
