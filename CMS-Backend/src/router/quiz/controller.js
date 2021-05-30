@@ -65,7 +65,8 @@ const preJoinQuiz = async (quizPIN) => {
     const quiz = await dbModels.Quizzes.findOne({
         where: {
             PIN: quizPIN
-        }
+        },
+        raw: true
     });
     if (!quiz) {
         throw new Error('No quiz is matched with PIN');
@@ -77,25 +78,45 @@ const preJoinQuiz = async (quizPIN) => {
     if (quiz.end < currentTime) {
         throw new Error('Quiz is ended');
     }
+    const questions = await dbModels.Questions.count({
+        where: {
+            quizID: quiz.id
+        }
+    });
+    quiz.numOfQuestions = questions;
     return quiz;
 }
 
 const joinQuiz = async (quizID, userID, userName) => {
-    const preUserName = await RedisClient.get(`${quizID}_${userID}`);
+    const preUserName = await RedisClient.get(`QUIZ_ID|${quizID}|USER_ID|${userID}|USER_NAME`);
     if (preUserName) {
         if (preUserName !== userName) {
             throw new Error(`User has joined the quiz with name: ${preUserName}`);
         }
         const currentQuestionOrder = parseInt(
-            await RedisClient.get(`${quizID}_${userID}_QUESTION_ORDER`)
+            await RedisClient.get(`QUIZ_ID|${quizID}|USER_ID|${userID}|CUR_QUESTION_ORDER`)
         );
-        throw new Error(`User current question order: ${currentQuestionOrder}`);
+        if (currentQuestionOrder) {
+            const userScore = await RedisClient.zscore(
+                `QUIZ_ID|${quizID}|SCORES`,
+                userID
+            );
+            return {
+                questionOrder: currentQuestionOrder,
+                userScore: userScore ? parseInt(userScore) : 0
+            }
+        }
     }
-    const isUserNameExisted = await RedisClient.get(`${quizID}_${userName}`);
+    const isUserNameExisted = await RedisClient.get(`QUIZ_ID|${quizID}|USER_NAME|${userName}`);
     if (isUserNameExisted && isUserNameExisted !== '') {
         throw new Error('Name has been picked by someone else');
     }
-    await RedisClient.setex(`${quizID}_${userID}`, 3600, String(userName));
+    await RedisClient.setex(`QUIZ_ID|${quizID}|USER_ID|${userID}|USER_NAME`, 3600, String(userName));
+    await RedisClient.setex(`QUIZ_ID|${quizID}|USER_ID|${userID}|CUR_QUESTION_ORDER`, 3600, 1)
+    return {
+        questionOrder: 1,
+        userScore: 0
+    }
 }
 
 module.exports = {
@@ -161,13 +182,13 @@ module.exports = {
             if (!req.params.quizID) {
                 return res.status(400).send('No quizID');
             }
-            if (!req.query.userID || !req.query.userName) {
+            if (!req.id || !req.query.userName) {
                 return res.status(400).send('No userID or userName');
             }
-            await joinQuiz(
-                req.params.quizID, req.query.userID, req.query.userName
+            const questionOrder = await joinQuiz(
+                req.params.quizID, req.id, req.query.userName
             );
-            return res.status(200).end();
+            return res.json(questionOrder);
         } catch (err) {
             return res.status(400).send(err.message);
         }

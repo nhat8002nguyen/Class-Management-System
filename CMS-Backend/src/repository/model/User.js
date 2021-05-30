@@ -9,14 +9,20 @@ module.exports = (Sequelize) => {
                 primaryKey: true,
                 defaultValue: UUIDV4()
             },
-            code: {
-                type: DataTypes.BIGINT
+            type: {
+                type: DataTypes.INTEGER,
+                allowNull: false
             },
             name: {
                 type: DataTypes.TEXT
             },
             email: {
-                type: DataTypes.TEXT
+                type: DataTypes.TEXT,
+                allowNull: false
+            },
+            password: {
+                type: DataTypes.TEXT,
+                allowNull: false
             }
         }
     );

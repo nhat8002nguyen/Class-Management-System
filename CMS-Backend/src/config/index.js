@@ -31,4 +31,6 @@ config.REDIS = {
     port: process.env.REDIS_PORT
 }
 
+config.SECRET = process.env.SECRET;
+
 module.exports = config;

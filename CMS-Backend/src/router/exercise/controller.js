@@ -1,6 +1,4 @@
 const { Op, QueryTypes } = require('sequelize');
-const fs = require('fs');
-const path = require('path');
 const dbModels = require('../../config/sequelize');
 const Enums = require('../../enums');
 
@@ -44,7 +42,7 @@ const getExerciseListForStudent = async (classID, type) => {
     });
 }
 
-const createSubmission = async (exerciseID, userID, file) => {
+const createSubmission = async (exerciseID, userID, body) => {
     const exercise = await dbModels.Exercises.findOne({
         where: {
             id: exerciseID
@@ -60,22 +58,9 @@ const createSubmission = async (exerciseID, userID, file) => {
     if (exercise.endTime < currentTime) {
         throw new Error('Exercise is ended');
     }
-    data = {}
+    let data = {}
     data.exerciseID = exerciseID;
-    const uploadFolder = path.join(
-        __dirname,
-        `../../../uploads`
-    );
-    if (!fs.existsSync(uploadFolder)) {
-        fs.mkdirSync(uploadFolder, { recursive: true });
-    }
-    const fileURI = path.join(
-        __dirname,
-        `../../../uploads/${Date.now()}-${file.name}`
-    );
-    const fileContent = file.data;
-    fs.writeFileSync(fileURI, fileContent);
-    data.fileURI = fileURI;
+    data = { ...data, ...body };
     switch (exercise.type) {
         case Enums.ExerciseType.PERSONAL:
             data.ownerID = userID;
@@ -101,11 +86,39 @@ const createSubmission = async (exerciseID, userID, file) => {
 }
 
 const getSubmissionList = async (exerciseID) => {
-    return await dbModels.Submissions.findAll({
+    const exercise = await dbModels.Exercises.findOne({
         where: {
-            exerciseID: exerciseID
+            id: exerciseID
         }
     });
+
+    const submissions = await dbModels.Submissions.findAll({
+        where: {
+            exerciseID: exerciseID
+        },
+        raw: true
+    });
+
+    const data = [];
+    for (const submission of submissions) {
+        if (exercise.type === Enums.ExerciseType.PERSONAL) {
+            const user = await dbModels.Users.findOne({
+                where: {
+                    id: submission.ownerID
+                }
+            });
+            data.push({ ...submission, userEmail: user.email });
+        } else {
+            const group = await dbModels.Groups.findOne({
+                where: {
+                    id: submission.ownerID
+                }
+            });
+            data.push({ ...submission, groupName: group.name });
+        }
+    }
+
+    return data;
 }
 
 const getSubmissionListForStudent = async (exerciseID, userID) => {
@@ -149,18 +162,6 @@ const getSubmissionListForStudent = async (exerciseID, userID) => {
             ownerID: userID
         }
     });
-}
-
-const downloadSubmission = async (submissionID) => {
-    const submission = await dbModels.Submissions.findOne({
-        where: {
-            id: submissionID
-        }
-    });
-    if (!submission) {
-        throw new Error('Submission not found');
-    }
-    return submission.fileURI;
 }
 
 const gradeSubmission = async (submissionID, score) => {
@@ -243,16 +244,14 @@ module.exports = {
             if (!req.params.exerciseID) {
                 return res.status(400).send('No exerciseID');
             }
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
-            console.log(req)
-            console.log(req.files)
-            if (!req.files || !req.files.submission) {
-                return res.status(400).send('No file included');
+            if (!req.body.uri) {
+                return res.status(400).send('No uri included');
             }
             const id = await createSubmission(
-                req.params.exerciseID, req.query.userID, req.files.submission
+                req.params.exerciseID, req.id, req.body
             );
             return res.json({ id });
         } catch (err) {
@@ -275,24 +274,13 @@ module.exports = {
             if (!req.params.exerciseID) {
                 return res.status(400).send('No exerciseID');
             }
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
             const submissions = await getSubmissionListForStudent(
-                req.params.exerciseID, req.query.userID
+                req.params.exerciseID, req.id
             );
             return res.json(submissions);
-        } catch (err) {
-            return res.status(400).send(err.message);
-        }
-    },    
-    downloadSubmission: async (req, res, next) => {
-        try {
-            if (!req.params.submissionID) {
-                return res.status(400).send('No submissionID');
-            }
-            const submissionURI = await downloadSubmission(req.params.submissionID);
-            return res.download(submissionURI);
         } catch (err) {
             return res.status(400).send(err.message);
         }

@@ -9,9 +9,17 @@ module.exports = (Sequelize) => {
                 primaryKey: true,
                 defaultValue: UUIDV4()
             },
-            fileURI: {
+            uri: {
                 type: DataTypes.TEXT,
                 allowNull: false
+            },
+            submitTime: {
+                type: DataTypes.DATE,
+                allowNull: false,
+                defaultValue: new Date()
+            },
+            submitNote: {
+                type: DataTypes.TEXT
             },
             ownerID: {
                 type: DataTypes.UUID,

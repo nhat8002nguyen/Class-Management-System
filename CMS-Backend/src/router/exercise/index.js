@@ -5,7 +5,6 @@ const {
     createSubmission,
     getSubmissionList,
     getSubmissionListForStudent,
-    downloadSubmission,
     gradeSubmission
 } = require('./controller');
 
@@ -39,11 +38,6 @@ Router.get(
 Router.get(
     '/exercises/:exerciseID/submissions',
     getSubmissionListForStudent
-);
-
-Router.get(
-    '/staff/submissions/:submissionID',
-    downloadSubmission
 );
 
 Router.post(

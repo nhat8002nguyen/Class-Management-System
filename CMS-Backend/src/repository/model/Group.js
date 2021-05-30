@@ -15,6 +15,12 @@ module.exports = (Sequelize) => {
             password: {
                 type: DataTypes.TEXT
             },
+            description: {
+                type: DataTypes.TEXT
+            },
+            keywords: {
+                type: DataTypes.TEXT
+            },
             classID: {
                 type: DataTypes.UUID
             }

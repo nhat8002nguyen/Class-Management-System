@@ -153,10 +153,10 @@ const getCheckInListForStudent = async (classID, userID) => {
 module.exports = {
     createClass: async (req, res, next) => {
         try {
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
-            const classInfo = await createClass(req.query.userID, req.body);
+            const classInfo = await createClass(req.id, req.body);
             return res.json(classInfo);
         } catch (err) {
             return res.status(400).send(err.message);
@@ -164,10 +164,10 @@ module.exports = {
     },
     getClassList: async (req, res, next) => {
         try {
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
-            const classList = await getClassList(req.query.userID);
+            const classList = await getClassList(req.id);
             return res.json(classList);
         } catch (err) {
             return res.status(400).send(err.message);
@@ -211,13 +211,13 @@ module.exports = {
     },
     joinClass: async (req, res, next) => {
         try {
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
             if (!req.query.code) {
                 return res.status(400).send('No code');
             }
-            const id = await joinClass(req.query.userID, req.query.code);
+            const id = await joinClass(req.id, req.query.code);
             return res.json({ id });
         } catch (err) {
             return res.status(400).send(err.message);
@@ -225,10 +225,10 @@ module.exports = {
     },
     getClassListForStudent: async (req, res, next) => {
         try {
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
-            const classList = await getClassListForStudent(req.query.userID);
+            const classList = await getClassListForStudent(req.id);
             return res.json(classList);
         } catch (err) {
             return res.status(400).send(err.message);
@@ -242,10 +242,10 @@ module.exports = {
             if (!req.params.checkInID) {
                 return res.status(400).send('No checkInID');
             }
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
-            await checkIn(req.params.checkInID, req.query.userID);
+            await checkIn(req.params.checkInID, req.id);
             return res.status(200).end();
         } catch (err) {
             return res.status(400).send(err.message);
@@ -256,10 +256,10 @@ module.exports = {
             if (!req.params.classID) {
                 return res.status(400).send('No classID');
             }
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
-            const checkInList = await getCheckInListForStudent(req.params.classID, req.query.userID);
+            const checkInList = await getCheckInListForStudent(req.params.classID, req.id);
             return res.json(checkInList);
         } catch (err) {
             return res.status(400).send(err.message);

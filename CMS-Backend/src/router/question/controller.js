@@ -83,7 +83,7 @@ const getQuestionForStudent = async (quizID, order) => {
         if (!question) {
             throw new Error('Question not found');
         }
-        await RedisClient.psetex(`${quizID}_${order}`, 3600, JSON.stringify(question));
+        await RedisClient.psetex(`QUIZ_ID|${quizID}|ORDER|${order}`, 3600, JSON.stringify(question));
     } else {
         question = JSON.parse(question);
     }
@@ -92,61 +92,68 @@ const getQuestionForStudent = async (quizID, order) => {
 }
 
 const submitQuestionAnswerForStudent = async (quizID, questionID, userID, answer) => {
-    await RedisClient.incr(`${quizID}_${userID}_QUESTION_ORDER`);
+    await RedisClient.incr(`QUIZ_ID|${quizID}|USER_ID|${userID}|CUR_QUESTION_ORDER`);
 
-    let question = await RedisClient.get(`${quizID}_${questionID}`);
+    let question = await RedisClient.get(`QUIZ_ID|${quizID}|QUESTION_ID|${questionID}`);
     if (!question) {
         question = await dbModels.Questions.findOne({
             where: {
                 id: questionID
             }
         });
-        await RedisClient.psetex(`${quizID}_${questionID}`, 3600, JSON.stringify(question));
+        await RedisClient.psetex(`QUIZ_ID|${quizID}|QUESTION_ID|${questionID}`, 3600, JSON.stringify(question));
     } else {
         question = JSON.parse(question);
     }
 
     if (parseInt(answer) === parseInt(question.correctAnswer)) {
-        const correctAnswerCounter = await RedisClient.incr(`${quizID}_${questionID}_CORRECT_ANSWER_COUNTER`);
+        const correctAnswerCounter = await RedisClient.incr(`QUIZ_ID|${quizID}|QUESTION_ID|${questionID}|CORRECT_ANSWER_COUNTER`);
+        const score = 1000 - (correctAnswerCounter - 1) * 10;
         await RedisClient.zincrby(
-            `${quizID}_SCORES`,
-            1000 - (correctAnswerCounter - 1) * 10,
+            `QUIZ_ID|${quizID}|SCORES`,
+            score >= 10 ? score : 10,
+            userID
+        );
+    } else {
+        await RedisClient.zincrby(
+            `QUIZ_ID|${quizID}|SCORES`,
+            0,
             userID
         );
     }
 }
 
 const getScoreAfterQuestion = async (quizID, userID) => {
-    const userScore = parseInt(await RedisClient.zscore(
-        `${quizID}_SCORES`,
+    let userScore = parseInt(await RedisClient.zscore(
+        `QUIZ_ID|${quizID}|SCORES`,
         userID
     ));
-    const userRank = parseInt(await RedisClient.zrevrank(
-        `${quizID}_SCORES`,
+    let userRank = parseInt(await RedisClient.zrevrank(
+        `QUIZ_ID|${quizID}|SCORES`,
         userID
     ));
-    const usersScore = await RedisClient.zrevrangebyscore(
-        `${quizID}_SCORES`,
-        '+inf',
-        '-inf',
-        {
-            withscores: "WITHSCORES"
-        }
+    userRank++;
+
+    const usersScore = await RedisClient.zrevrange(
+        `QUIZ_ID|${quizID}|SCORES`,
+        0,
+        5,
+        "WITHSCORES"
     );
     const top5 = [];
     let rank = 0;
-    for (const userID of Object.keys(usersScore)) {
+    for (const [userID, userScore] of Object.entries(usersScore)) {
         const userInfo = await dbModels.Users.findOne({
             where: {
                 id: userID
             }
         });
-        const userScore = parseInt(usersScore[userID]);
+        const score = parseInt(userScore);
         top5.push({
-            userID,
-            userName: userInfo.name,
-            userScore,
-            userRank: ++rank
+            id: userID,
+            name: userInfo ? userInfo.name : 'Unknown',
+            score: score,
+            rank: ++rank
         });
         if (top5.length == 5) {
             break;
@@ -228,7 +235,7 @@ module.exports = {
             if (!req.params.questionID) {
                 return res.status(400).send('No questionID');
             }
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
             if (!req.query.answer) {
@@ -236,10 +243,11 @@ module.exports = {
             }
             await submitQuestionAnswerForStudent(
                 req.params.quizID, req.params.questionID,
-                req.query.userID, req.query.answer
+                req.id, req.query.answer
             );
             return res.status(200).end();
         } catch (err) {
+            console.log(err);
             return res.status(400).send(err.message);
         }
     },
@@ -248,11 +256,11 @@ module.exports = {
             if (!req.params.quizID) {
                 return res.status(400).send('No quizID');
             }
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
             const scoreInfo = await getScoreAfterQuestion(
-                req.params.quizID, req.query.userID
+                req.params.quizID, req.id
             );
             return res.json(scoreInfo);
         } catch (err) {

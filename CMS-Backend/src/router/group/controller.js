@@ -2,21 +2,6 @@ const { QueryTypes } = require('sequelize');
 const dbModels = require('../../config/sequelize');
 
 const createGroup = async (classID, userID, data) => {
-    const isUserHasGroup = await dbModels.dbConnection.query(
-        'SELECT gu.id'
-        + ' FROM `Groups` gr INNER JOIN `Group_Users` gu ON gr.id = gu.groupID'
-        + ' WHERE gr.classID = :classID AND gu.userID = :userID',
-        {
-            replacements: {
-                classID: classID,
-                userID: userID
-            },
-            type: QueryTypes.SELECT
-        }
-    );
-    if (isUserHasGroup.length > 0) {
-        throw new Error('User has already in a group');
-    }
     data.classID = classID;
     const group = await dbModels.Groups.create(data);
     await dbModels.Group_Users.create({
@@ -49,23 +34,6 @@ const joinGroup = async (groupID, userID, password) => {
         throw new Error('Wrong password');
     }
 
-    const isUserInOtherGroup = await dbModels.dbConnection.query(
-        'SELECT gu.id'
-        + ' FROM `Groups` gr INNER JOIN `Group_Users` gu ON gr.id = gu.groupID'
-        + ' WHERE gr.classID = :classID AND gu.userID = :userID',
-        {
-            replacements: {
-                classID: group.classID,
-                groupID: groupID,
-                userID: userID
-            },
-            type: QueryTypes.SELECT,
-        }
-    );
-    if (isUserInOtherGroup.length > 0) {
-        throw new Error('User has already in other group');
-    }
-
     const classOfGroup = await dbModels.Classes.findOne({
         where: {
             id: group.classID
@@ -92,11 +60,11 @@ module.exports = {
             if (!req.params.classID) {
                 return res.status(400).send('No classID');
             }
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
             await createGroup(
-                req.params.classID, req.query.userID, req.body
+                req.params.classID, req.id, req.body
             );
             return res.status(200).end();
         } catch (err) {
@@ -119,11 +87,11 @@ module.exports = {
             if (!req.params.groupID) {
                 return res.status(400).send('No groupID');
             }
-            if (!req.query.userID) {
+            if (!req.id) {
                 return res.status(400).send('No userID');
             }
             await joinGroup(
-                req.params.groupID, req.query.userID, req.query.password ? req.query.password : ''
+                req.params.groupID, req.id, req.query.password ? req.query.password : ''
             );
             return res.status(200).end();
         } catch (err) {
