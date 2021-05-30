@@ -23,7 +23,7 @@ import {
   joinQuizReducer,
   answerQuestionReducer,
   getRankReducer,
-} from './reducers/doQuizReducers';
+} from './reducers/DoQuizReducers';
 import {
   classListReducer,
   currentClassReducer,

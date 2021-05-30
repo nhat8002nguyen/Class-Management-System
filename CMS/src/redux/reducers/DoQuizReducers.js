@@ -17,7 +17,7 @@ import {
   GET_RANK,
   GET_RANK_SUCCESSFUL,
   GET_RANK_FAILED
-} from '../constants/doQuizActionConstants';
+} from '../constants/DoQuizActionConstants';
 
 let defaultState = {
   loading: false,

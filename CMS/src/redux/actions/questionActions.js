@@ -21,7 +21,7 @@ const listQuestion = _quizId => async (dispatch, getState) => {
   } = getState();
   try {
     const {data} = await axios.get(
-      `http://192.168.1.10:15000/api/staff/quizzes/${_quizId}/questions`,
+      `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}/questions`,
       {
         headers: {token: token},
       },
@@ -66,7 +66,7 @@ const addQuestion = ({
     const {
       data,
     } = await axios.post(
-      `http://192.168.1.10:15000/api/staff/quizzes/${_quizId}/questions`,
+      `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}/questions`,
       quesData,
       {headers: {token: token}},
     );
@@ -85,7 +85,7 @@ const removeQuestion = questionId => async (dispatch, getState) => {
     const {
       data,
     } = await axios.delete(
-      `http://192.168.1.10:15000/api/staff/questions/${questionId}`,
+      `https://cms-backend-whatever.herokuapp.com/api/staff/questions/${questionId}`,
       {headers: {token: token}},
     );
     dispatch({type: QUESTION_REMOVE_SUCCESS, payload: data});
@@ -118,7 +118,7 @@ const saveQuestion = ({
     const {
       data,
     } = await axios.put(
-      `http://192.168.1.10:15000/api/staff/questions/${questionId}`,
+      `https://cms-backend-whatever.herokuapp.com/api/staff/questions/${questionId}`,
       newUpdate,
       {headers: {token: token}},
     );

@@ -7,9 +7,9 @@ import {
 import { Button, ListItem } from "react-native-elements";
 import styles from './styles';
 import { useDispatch, useSelector } from 'react-redux';
-import { getScoreAfterQuestionInQuiz } from "../../../redux/actions/doQuizActions";
+import { getScoreAfterQuestionInQuiz } from "../../../redux/actions/DoQuizActions";
 import { default as ModalLoading } from "../../../components/ModalLoading";
-import { SAVE_DATA_FOR_GET_QUESTION } from "../../../redux/constants/doQuizActionConstants";
+import { SAVE_DATA_FOR_GET_QUESTION } from "../../../redux/constants/DoQuizActionConstants";
 
 export default function RankScreen({ navigation }) {
   const [quizPIN, setQuizPIN] = useState('');

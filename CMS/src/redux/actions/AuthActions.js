@@ -26,7 +26,7 @@ const signin = ({email, password}) => async (dispatch, getState) => {
   dispatch({type: USER_SIGNIN_REQUEST});
   try {
     const {data} = await axios.post(
-      'http://192.168.1.10:15000/auth/sign-in',
+      'https://cms-backend-whatever.herokuapp.com/auth/sign-in',
       {
         email,
         password,
@@ -53,7 +53,7 @@ const signup = ({name, email, password, type}) => async (
   dispatch({type: USER_SIGNUP_REQUEST});
   try {
     await axios.post(
-      'http://192.168.1.10:15000/auth/sign-up',
+      'https://cms-backend-whatever.herokuapp.com/auth/sign-up',
       {name, email, password, type},
     );
     dispatch({

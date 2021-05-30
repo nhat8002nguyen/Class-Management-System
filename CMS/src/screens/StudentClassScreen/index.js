@@ -65,7 +65,7 @@ const StudentClassScreen = ({navigation}) => {
 
   const onJoinClass = text => {
     axios
-      .post('http://192.168.1.10:15000/api/classes/join', {
+      .post('https://cms-backend-whatever.herokuapp.com/api/classes/join', {
         headers: {
           token: token,
         },
