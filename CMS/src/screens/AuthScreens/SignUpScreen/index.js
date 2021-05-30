@@ -22,7 +22,7 @@ import {
   emailValidator,
   passwordValidator,
 } from '../../../helpers/auth';
-import {signup} from '../../../redux/actions/userActions';
+import {signup} from '../../../redux/actions/AuthActions';
 import {theme} from '../../../styles/theme';
 
 export default function RegisterScreen({navigation}) {

@@ -16,8 +16,8 @@ const listClass = () => async (dispatch, getState) => {
     // get date from api
     const url =
       userInfo.type === 1
-        ? 'https://cms-backend-whatever.herokuapp.com/api/staff/classes'
-        : 'https://cms-backend-whatever.herokuapp.com/api/classes';
+        ? 'http://192.168.1.10:15000/api/staff/classes'
+        : 'http://192.168.1.10:15000/api/classes';
     const {data} = await axios.get(url, {
       headers: {
         token: token,

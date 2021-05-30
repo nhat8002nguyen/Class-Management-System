@@ -18,7 +18,7 @@ import {
   BackButton,
 } from '../../../components/atoms';
 import {passwordValidator, emailValidator} from '../../../helpers/auth';
-import {signin} from '../../../redux/actions/userActions';
+import {signin} from '../../../redux/actions/AuthActions';
 import {theme} from '../../../styles/theme';
 
 export default function LoginScreen({navigation}) {

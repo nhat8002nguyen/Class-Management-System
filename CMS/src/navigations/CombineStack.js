@@ -8,7 +8,7 @@ import Dashboard from '../screens/Dashboard';
 import ClassListScreen from '../screens/ClassListScreen';
 import StudentClassScreen from '../screens/StudentClassScreen';
 import QuizCreationNavigator from './insidestacks/QuizCreationNavigator';
-import DoingQuizNavigator from './insidestacks/DoingQuizNavigator';
+import DoQuizNavigator from './insidestacks/DoQuizNavigator';
 import {ListGroups, CreateGroup} from '../screens/GroupManagement';
 import {
   CreateExercise,
@@ -47,7 +47,7 @@ export default CombineStack = () => {
         />
         <Stack.Screen
           name="DoingQuizNavigator"
-          component={DoingQuizNavigator}
+          component={DoQuizNavigator}
         />
         <Stack.Screen name="ListGroups" component={ListGroups} />
         <Stack.Screen name="Home" component={Home} />

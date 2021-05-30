@@ -1,5 +1,5 @@
 import axios from 'axios';
-const _URL = 'https://cms-backend-whatever.herokuapp.com/api';
+const _URL = 'http://192.168.1.10:15000/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const getUserInfo = async () => {
   try {
@@ -10,7 +10,7 @@ const getUserInfo = async () => {
   }
 };
 
-//https://cms-backend-whatever.herokuapp.com/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/exercises
+//http://192.168.1.10:15000/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/exercises
 const getListExam = async (classId, type) => {
   try {
     console.log(type);
@@ -32,7 +32,7 @@ const getListExam = async (classId, type) => {
 };
 
 
-//https://cms-backend-whatever.herokuapp.com/api/staff/exercises/c26112dd-d15c-4222-b248-1764fd9ca646/submissions
+//http://192.168.1.10:15000/api/staff/exercises/c26112dd-d15c-4222-b248-1764fd9ca646/submissions
 
 const getListSubmission = async (examId) => {
   try {
@@ -66,7 +66,7 @@ const createExam = async (classId, data) => {
   }
 };
 const submit = async (id, data) =>{
-  //https://cms-backend-whatever.herokuapp.com/api/exercises/f3e4da87-e050-434b-ad04-a48be7c3a6f7/submissions
+  //http://192.168.1.10:15000/api/exercises/f3e4da87-e050-434b-ad04-a48be7c3a6f7/submissions
   try {
     const url = `${_URL}/exercises/${id}/submissions`;
     const {token} = await getUserInfo();
@@ -97,7 +97,7 @@ const getSubmit = async (id)=> {
   }
 }
 const grade = async (id, data) =>{
-  //https://cms-backend-whatever.herokuapp.com/api/staff/submissions/b842f2eb-f34e-4e0e-9cc8-77b038df0fa6/grade
+  //http://192.168.1.10:15000/api/staff/submissions/b842f2eb-f34e-4e0e-9cc8-77b038df0fa6/grade
   try {
     const url = `${_URL}/staff/submissions/${id}/grade`;
     const {token} = await getUserInfo();

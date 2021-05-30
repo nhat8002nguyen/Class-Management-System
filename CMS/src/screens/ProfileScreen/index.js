@@ -16,7 +16,7 @@ import {
   passwordValidator,
 } from '../../helpers/auth';
 import {theme} from '../../styles/theme';
-import {logout} from '../../redux/actions/userActions';
+import {logout} from '../../redux/actions/AuthActions';
 import {set} from 'react-native-reanimated';
 
 export default function ProfileScreen({navigation}) {

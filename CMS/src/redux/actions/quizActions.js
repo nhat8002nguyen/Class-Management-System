@@ -24,7 +24,7 @@ const listQuiz = classId => async (dispatch, getState) => {
   try {
     // get date from api
     const {data} = await axios.get(
-      `https://cms-backend-whatever.herokuapp.com/api/staff/classes/${classId}/quizzes`,
+      `http://192.168.1.10:15000/api/staff/classes/${classId}/quizzes`,
       {
         headers: {
           token: token,
@@ -61,7 +61,7 @@ const addQuiz = ({classId, quizName, quizImage, quizDescription}) => async (
 
   try {
     const {data} = await axios.post(
-      `https://cms-backend-whatever.herokuapp.com/api/staff/classes/${classId}/quizzes`,
+      `http://192.168.1.10:15000/api/staff/classes/${classId}/quizzes`,
       {
         name: quizName,
         mediaURL: quizImage,
@@ -106,7 +106,7 @@ const saveQuiz = ({
       };
     }
     const {data} = await axios.put(
-      `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}`,
+      `http://192.168.1.10:15000/api/staff/quizzes/${_quizId}`,
       newUpdate,
       {
         headers: {token: token},
@@ -128,7 +128,7 @@ const removeQuiz = _quizId => async (dispatch, getState) => {
   } = getState();
   try {
     const {data} = await axios.delete(
-      `https://cms-backend-whatever.herokuapp.com/api/staff/quizzes/${_quizId}`,
+      `http://192.168.1.10:15000/api/staff/quizzes/${_quizId}`,
       {
         headers: {token: token},
       },

@@ -1,14 +1,14 @@
 import axios from 'axios';
 import {
-  USER_SIGNIN_FAIL,
   USER_SIGNIN_REQUEST,
   USER_SIGNIN_SUCCESS,
-  USER_SIGNUP_FAIL,
+  USER_SIGNIN_FAIL,
   USER_SIGNUP_REQUEST,
   USER_SIGNUP_SUCCESS,
-  USER_UPDATE_FAIL,
+  USER_SIGNUP_FAIL,
   USER_UPDATE_REQUEST,
   USER_UPDATE_SUCCESS,
+  USER_UPDATE_FAIL,
 } from '../constants/userActionConstants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -26,7 +26,7 @@ const signin = ({email, password}) => async (dispatch, getState) => {
   dispatch({type: USER_SIGNIN_REQUEST});
   try {
     const {data} = await axios.post(
-      'https://cms-backend-whatever.herokuapp.com/auth/sign-in',
+      'http://192.168.1.10:15000/auth/sign-in',
       {
         email,
         password,
@@ -53,7 +53,7 @@ const signup = ({name, email, password, type}) => async (
   dispatch({type: USER_SIGNUP_REQUEST});
   try {
     await axios.post(
-      'https://cms-backend-whatever.herokuapp.com/auth/sign-up',
+      'http://192.168.1.10:15000/auth/sign-up',
       {name, email, password, type},
     );
     dispatch({

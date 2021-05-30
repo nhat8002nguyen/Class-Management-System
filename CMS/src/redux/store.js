@@ -19,6 +19,12 @@ import {
 } from './reducers/questionCreateReducer';
 import {currentQuizReducer} from './reducers/currentQuizReducers';
 import {
+  preJoinQuizReducer,
+  joinQuizReducer,
+  answerQuestionReducer,
+  getRankReducer,
+} from './reducers/doQuizReducers';
+import {
   classListReducer,
   currentClassReducer,
 } from './reducers/classListReducers';
@@ -39,6 +45,10 @@ const appReducer = combineReducers({
   quizAdd: quizAddReducer,
   quizSave: quizSaveReducer,
   quizTake: currentQuizReducer,
+  preJoinQuizReducer,
+  joinQuizReducer,
+  answerQuestionReducer,
+  getRankReducer,
   exercise,
 });
 
