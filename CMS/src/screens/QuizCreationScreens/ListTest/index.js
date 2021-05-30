@@ -69,7 +69,12 @@ const ListTest = ({navigation, route}) => {
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
           }>
           {quizzes.map(quiz => (
-            <QuizCard key={quiz._quizId} {...quiz} navigation={navigation} />
+            <QuizCard
+              key={quiz._quizId}
+              {...quiz}
+              classId={classId}
+              navigation={navigation}
+            />
           ))}
         </ScrollView>
       )}

@@ -67,7 +67,7 @@ const QuizCard = props => {
 
   const onDeleteQuiz = async () => {
     await dispatch(removeQuiz(props._quizId));
-    dispatch(listQuiz());
+    dispatch(listQuiz(props.classId));
   };
 
   const editCreatedQuiz = () => {
