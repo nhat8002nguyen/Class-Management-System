@@ -1,7 +1,7 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import QuizCard from '../../../components/molecules/QuizCard';
+import ClassCard from '../../components/molecules/ClassCard';
 import styles from './styles';
 import {
   View,
@@ -14,16 +14,16 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {listQuiz} from '../../../redux/actions/quizActions';
-import {theme} from '../../../styles/theme';
+import {listClass} from '../../redux/actions/classActions';
+import {theme} from '../../styles/theme';
 
 const wait = timeout => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 };
 
-const ListTest = ({navigation}) => {
-  const quizList = useSelector(state => state.quizList);
-  const {loading, quizzes, error} = quizList;
+const ClassListScreen = ({navigation}) => {
+  const classList = useSelector(state => state.classList);
+  const {loading, classes, error} = classList;
 
   const dispatch = useDispatch();
 
@@ -31,31 +31,31 @@ const ListTest = ({navigation}) => {
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
-    dispatch(listQuiz());
+    dispatch(listClass());
     wait(1000).then(() => setRefreshing(false));
   }, []);
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: 'List Quizzes',
+      title: 'List Class',
       headerLeft: () => (
         <Icon name="arrow-back" size={30} onPress={() => onGoBackHome()} />
       ),
     });
-    dispatch(listQuiz());
+    dispatch(listClass());
   }, [navigation]);
 
   const onGoBackHome = () => {
-    navigation.navigate('Home');
-  };
-
-  const openAddQuiz = () => {
-    navigation.navigate('CreateQuiz');
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Dashboard'}],
+    });
   };
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="red" barStyle="dark-content" />
+      <Text style={styles.title}>List Class</Text>
       {loading ? (
         <ActivityIndicator size="large" color={theme.colors.primary} />
       ) : error ? (
@@ -66,19 +66,13 @@ const ListTest = ({navigation}) => {
           refreshControl={
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
           }>
-          {quizzes.map(quiz => (
-            <QuizCard key={quiz._quizId} {...quiz} navigation={navigation} />
+          {classes.map(aClass => (
+            <ClassCard key={aClass.id} {...aClass} navigation={navigation} />
           ))}
         </ScrollView>
       )}
-
-      <TouchableOpacity style={styles.addQuiz} onPress={() => openAddQuiz()}>
-        <Image
-          style={styles.addIcon}
-          source={require('../../../assets/images/buttonAdd.png')}></Image>
-      </TouchableOpacity>
     </View>
   );
 };
 
-export default ListTest;
+export default ClassListScreen;

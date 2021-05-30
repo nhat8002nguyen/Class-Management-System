@@ -5,7 +5,6 @@ import {
   LoginScreen,
   RegisterScreen,
   ResetPasswordScreen,
-  Dashboard,
   StartScreen,
 } from '../../screens/AuthScreens';
 import QuizCreationNavigator from '../insidestacks/QuizCreationNavigator';
@@ -23,7 +22,6 @@ export default AuthStack = () => {
       <Stack.Screen name="StartScreen" component={StartScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-      <Stack.Screen name="Dashboard" component={Dashboard} />
 
       {/* Nested navigation with main functions */}
 

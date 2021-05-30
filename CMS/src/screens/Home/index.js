@@ -14,21 +14,20 @@ const Box = ({data, onPress}) => {
   );
 };
 
-export default function Home({navigation}) {
+export default function Home({navigation, route}) {
   const [userInfo, setUserInfo] = useState({});
   const {userSignin} = useSelector(state => state.userSignin);
+  const [classId, setClassId] = useState('');
 
   useEffect(() => {
     setUserInfo(userSignin ? userSignin.userInfo : {});
   }, [userSignin]);
 
-  console.log(userSignin);
+  useEffect(() => {
+    if (route?.params) setClassId(route.params.classId);
+  }, [route]);
 
   const list = [
-    {
-      title: 'Lớp học',
-      image: require('../../assets/images/classroom.png'),
-    },
     {
       title: 'Nhóm',
       image: require('../../assets/images/class.png'),
@@ -41,34 +40,24 @@ export default function Home({navigation}) {
       title: 'Bài tập lớn',
       image: require('../../assets/images/exam.jpg'),
     },
-    {
-      title: 'Tài khoản',
-      image: require('../../assets/images/profile.png'),
-    },
   ];
   const onPress = index => {
     switch (index) {
       case 0:
-        //TODO: Quan ly lop hoc
-        break;
-      case 1:
         //TODO: Nhom
         navigation.navigate('ListGroups');
         break;
-      case 2:
+      case 1:
         //TODO: Quiz
         navigation.navigate(
           userInfo.type === 1 ? 'QuizCreationNavigator' : 'DoingQuizNavigator',
+          {classId},
         );
         break;
-      case 3:
+      case 2:
         //TODO: Bai tap
         navigation.navigate('Exams');
 
-        break;
-      case 4:
-        //TODO: Profile
-        navigation.navigate('ProfileScreen');
         break;
     }
   };
@@ -76,7 +65,7 @@ export default function Home({navigation}) {
     <View style={styles.container}>
       <Header isHome={true} title="Trang chủ" />
       <FlatList
-        keyExtractor = {(_)=> _.title}
+        keyExtractor={_ => _.title}
         numColumns={2}
         data={list}
         renderItem={({item, index}) => (

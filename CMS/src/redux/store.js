@@ -9,7 +9,7 @@ import {
   quizRemoveReducer,
   quizSaveReducer,
 } from './reducers/quizListReducer';
-import exercise from './reducers/exerciseReducer'
+import exercise from './reducers/exerciseReducer';
 import questionCreateReducers from './reducers/questionCreateReducer';
 import {
   questionListReducer,
@@ -18,13 +18,14 @@ import {
   questionSaveReducer,
 } from './reducers/questionCreateReducer';
 import {currentQuizReducer} from './reducers/currentQuizReducers';
+import {classListReducer} from './reducers/classListReducers';
 
 const appReducer = combineReducers({
   // user auth reducer
   userSignin: userSigninReducer,
   userSignup: userSignupReducer,
 
-  // quiz reducers
+  classList: classListReducer,
   quizList: quizListReducer,
   questionList: questionListReducer,
   questionAdd: questionAddReducer,
@@ -34,10 +35,10 @@ const appReducer = combineReducers({
   quizAdd: quizAddReducer,
   quizSave: quizSaveReducer,
   quizTake: currentQuizReducer,
-  exercise
+  exercise,
 });
 
-const fetchedUserSignin= (async () => {
+const fetchedUserSignin = (async () => {
   try {
     const jsonValue = await AsyncStorage.getItem('userSignin');
     return jsonValue != null ? JSON.parse(jsonValue) : null;
@@ -45,7 +46,6 @@ const fetchedUserSignin= (async () => {
     return {};
   }
 })();
-
 
 const initialState = {
   userSignin: fetchedUserSignin,

@@ -4,10 +4,18 @@ import {
   CardStyleInterpolators,
 } from '@react-navigation/stack';
 import AuthStack from './outsidestacks/AuthStack';
+import Dashboard from '../screens/Dashboard';
+import ClassListScreen from '../screens/ClassListScreen';
+import StudentClassScreen from '../screens/StudentClassScreen';
 import QuizCreationNavigator from './insidestacks/QuizCreationNavigator';
 import DoingQuizNavigator from './insidestacks/DoingQuizNavigator';
 import {ListGroups, CreateGroup} from '../screens/GroupManagement';
-import {CreateExercise, SetUpExercise, ListExam, Grade} from '../screens/Exercises';
+import {
+  CreateExercise,
+  SetUpExercise,
+  ListExam,
+  Grade,
+} from '../screens/Exercises';
 import Home from '../screens/Home';
 import ProfileScreen from '../screens/ProfileScreen';
 import {Provider} from 'react-redux';
@@ -25,6 +33,12 @@ export default CombineStack = () => {
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
         <Stack.Screen name="AuthScreens" component={AuthStack} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="ClassListScreen" component={ClassListScreen} />
+        <Stack.Screen
+          name="StudentClassScreen"
+          component={StudentClassScreen}
+        />
         <Stack.Screen
           name="QuizCreationNavigator"
           component={QuizCreationNavigator}

@@ -23,8 +23,8 @@ export default function ProfileScreen({navigation}) {
   const {userSignin} = useSelector(state => state.userSignin);
   const [userInfo, setUserInfo] = useState('');
 
-  const [name, setName] = useState({value: userInfo.name, error: ''});
-  const [email, setEmail] = useState({value: userInfo.email, error: ''});
+  const [name, setName] = useState({value: '', error: ''});
+  const [email, setEmail] = useState({value: '', error: ''});
   const [password, setPassword] = useState({value: '', error: ''});
   const dispatch = useDispatch();
 
@@ -33,9 +33,9 @@ export default function ProfileScreen({navigation}) {
   }, [userSignin]);
 
   useEffect(() => {
-    setName({value: userInfo.name});
-    setEmail({value: userInfo.email});
-    setPassword({value: userInfo.password});
+    setName({value: userInfo?.name});
+    setEmail({value: userInfo?.email});
+    setPassword({value: userInfo?.password});
   }, [userInfo]);
 
   const onUpdateInfo = () => {
@@ -62,7 +62,7 @@ export default function ProfileScreen({navigation}) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Create Account</Header>
+      <Header>Profile</Header>
       <TextInput
         label="Name"
         returnKeyType="next"

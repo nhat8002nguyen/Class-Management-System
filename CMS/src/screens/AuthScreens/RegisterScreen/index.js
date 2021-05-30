@@ -44,7 +44,12 @@ export default function RegisterScreen({navigation}) {
       return;
     }
     dispatch(
-      signup({name:name.value ,email: email.value, password: password.value, type: userType}),
+      signup({
+        name: name.value,
+        email: email.value,
+        password: password.value,
+        type: userType,
+      }),
     );
   };
 
@@ -61,7 +66,7 @@ export default function RegisterScreen({navigation}) {
 
   useEffect(() => {
     if (error) {
-      Alert.alert('Something wrong !', 'please try again ', [
+      Alert.alert('Something wrong !' + error, 'please try again ', [
         {text: 'OK', onPress: () => console.log('OKE')},
       ]);
     }
