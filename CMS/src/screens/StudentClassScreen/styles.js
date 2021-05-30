@@ -9,13 +9,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontSize: 16,
-    paddingBottom: 200,
-    minHeight: 800,
+    flex: 1
   },
   addClass: {
     position: 'absolute',

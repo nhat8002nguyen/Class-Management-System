@@ -13,7 +13,6 @@ const getUserInfo = async () => {
 //https://cms-backend-whatever.herokuapp.com/api/staff/classes/d92b8c7f-afee-4700-a350-4d9c5b288040/exercises
 const getListExam = async (classId, type) => {
   try {
-    console.log(type);
     let url = `${_URL}/staff/classes/${classId}/exercises`;
     if(type === 1){
       url += '?type=personal'

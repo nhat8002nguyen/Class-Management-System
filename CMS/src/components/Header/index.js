@@ -7,18 +7,18 @@ import {
   StyleSheet,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {colors} from '../../styles';
-
-export default Header = ({title, isHome, navigation}) => {
+import {useNavigation} from '@react-navigation/native'
+export default Header = ({title, isHome}) => {
+  const navigation = useNavigation()
   return (
     <>
       <StatusBar barStyle="dark-content" backgroundColor={colors.PRIMARY} />
       <View style={styles.container}>
         <View style={styles.colLeft}>
           <Ionicons
-            onPress={() =>
-              isHome ? null : navigation.goBack()
-            }
+            onPress={() => (isHome ? null : navigation.goBack())}
             name={isHome ? 'menu' : 'arrow-back'}
             color={colors.WHITE}
             size={35}
@@ -27,11 +27,15 @@ export default Header = ({title, isHome, navigation}) => {
         <View style={styles.colCenter}>
           <Text style={styles.title}>{title}</Text>
         </View>
-        <View style={styles.colRight}>
-          {isHome ? (
-            <Ionicons name="notifications" color={colors.WHITE} size={30} />
-          ) : null}
-        </View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ProfileScreen')}
+          style={styles.colRight}>
+          <MaterialCommunityIcons
+            name="account-circle"
+            color={colors.WHITE}
+            size={35}
+          />
+        </TouchableOpacity>
       </View>
     </>
   );

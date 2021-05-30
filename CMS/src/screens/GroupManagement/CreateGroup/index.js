@@ -39,7 +39,7 @@ export default CreateGroup = ({navigation}) => {
     }
   };
   const onAdd = async () => {
-    setIsHandling(true)
+  setIsHandling(true)
     try {
       if(grName === "" || pass === "" || description === "" || topic === "") return 
       const data = {

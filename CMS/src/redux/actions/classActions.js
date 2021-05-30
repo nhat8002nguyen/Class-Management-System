@@ -4,14 +4,19 @@ import {
   CLASS_LIST_REQUEST,
   CLASS_LIST_SUCCESS,
 } from '../constants/classActionConstants';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+const getUserInfo = async () => {
+  try {
+    const jsonValue = await AsyncStorage.getItem('userSignin');
+    return jsonValue != null ? JSON.parse(jsonValue) : null;
+  } catch (err) {
+    return {};
+  }
+};
 
 const listClass = () => async (dispatch, getState) => {
   dispatch({type: CLASS_LIST_REQUEST});
-  const {
-    userSignin: {
-      userSignin: {token, userInfo},
-    },
-  } = getState();
+  const {token, userInfo} = await getUserInfo();
   try {
     // get date from api
     const url =
@@ -23,7 +28,6 @@ const listClass = () => async (dispatch, getState) => {
         token: token,
       },
     });
-
     dispatch({type: CLASS_LIST_SUCCESS, payload: data});
   } catch (error) {
     dispatch({type: CLASS_LIST_FAIL, payload: error.message});

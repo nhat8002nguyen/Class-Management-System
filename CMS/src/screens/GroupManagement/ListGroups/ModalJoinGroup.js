@@ -1,35 +1,46 @@
 import React, {useRef, useState} from 'react';
-import {View, TextInput, Text, TouchableOpacity, ActivityIndicator} from 'react-native';
+import {
+  View,
+  TextInput,
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+} from 'react-native';
 import Modal from 'react-native-modal';
 import styles from './styles';
 import api from '../api';
 import {colors} from '../../../styles';
 import Feather from 'react-native-vector-icons/Feather';
 
-export default ModalJoinGroup = ({visible, onClose, group}) => {
+export default ModalJoinGroup = ({visible, onClose, group, _onConfirm}) => {
   const [password, setPassword] = useState('');
-  const [isHandling, setIsHandling] = useState(false)
-  const err = useRef('')
+  const [isHandling, setIsHandling] = useState(false);
+  const err = useRef('');
   const onConfirm = async () => {
     try {
-      setIsHandling(true)
+      setIsHandling(true);
       const res = await api.joinGroup(group.id, password);
-     if(res){
-      onCloseAndReset()
-     }else{
-      err.current ='Sai mật khẩu'
-     }
+      if (res) {
+        onCloseAndReset();
+      } else {
+        err.current = 'Sai mật khẩu';
+      }
     } catch (error) {
-      err.current ='Sai mật khẩu'
+      err.current = 'Sai mật khẩu';
       console.log('Err@JoinGroup', error);
-    }finally{
-      setIsHandling(false)
+    } finally {
+      setIsHandling(false);
     }
   };
+  const __onConfirm = async() =>{
+    setIsHandling(true)
+    await _onConfirm(password)
+    setIsHandling(false)
+  }
   const onCloseAndReset = () => {
     setPassword('');
-    setIsHandling(false)
-    err.current =""
+    setIsHandling(false);
+    err.current = '';
     onClose();
   };
   return (
@@ -41,19 +52,19 @@ export default ModalJoinGroup = ({visible, onClose, group}) => {
       animationOutTiming={500}
       useNativeDriver>
       <View style={styles.modalContainer}>
-        <Text style={styles.mediumBoldText}>Nhập mật khẩu</Text>
+        <Text style={styles.mediumBoldText}>Nhập mật khẩu hoặc ID</Text>
         <View
           style={{
             flexDirection: 'row',
             alignItems: 'center',
             marginTop: 20,
-            marginBottom: 8
+            marginBottom: 8,
           }}>
           {/* <Feather name="lock" color={colors.PRIMARY} size={30}/> */}
           <TextInput
             value={password}
             onChangeText={text => setPassword(text)}
-            placeholder="Mật khẩu"
+            placeholder="Mật khẩu/ID"
             style={{
               height: 40,
               width: '95%',
@@ -62,14 +73,19 @@ export default ModalJoinGroup = ({visible, onClose, group}) => {
               borderColor: 'white',
               borderBottomColor: colors.PRIMARY,
             }}
-            secureTextEntry={true}
           />
         </View>
-          <Text style = {{color: 'red'}}>{err.current}</Text>
-        <TouchableOpacity style={styles.confirmBTn} onPress={onConfirm}>
-         {isHandling? <ActivityIndicator size ='small' color= 'white' />:  <Text style={{...styles.mediumBoldText, color: 'white'}}>
-            Tham gia
-          </Text>}
+        <Text style={{color: 'red'}}>{err.current}</Text>
+        <TouchableOpacity
+          style={styles.confirmBTn}
+          onPress={() => (_onConfirm ? __onConfirm() : onConfirm)}>
+          {isHandling ? (
+            <ActivityIndicator size="small" color="white" />
+          ) : (
+            <Text style={{...styles.mediumBoldText, color: 'white'}}>
+              Tham gia
+            </Text>
+          )}
         </TouchableOpacity>
       </View>
     </Modal>
