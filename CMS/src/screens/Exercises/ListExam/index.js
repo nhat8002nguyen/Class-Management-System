@@ -3,8 +3,6 @@ import {
   View,
   TouchableOpacity,
   Text,
-  FlatList,
-  Dimensions,
   ScrollView,
 } from 'react-native';
 import styles from './styles';
@@ -41,7 +39,7 @@ const ExamItem = ({item}) => {
       clearInterval(timeOutRef.current);
     }
     timeOutRef.current = setInterval(() => {
-      setTimeRemaining(moment(endTime)- moment().utc());
+      setTimeRemaining(moment(endTime) - moment().utc());
     }, 1000 * 60);
   }, []);
   return (
@@ -125,7 +123,7 @@ const ExamItem = ({item}) => {
               Thời gian còn lại
             </Text>
             <Text style={{fontSize: 17, color: 'white', fontWeight: 'bold'}}>
-              {msToDHMS(timeRemaining - 7*1000*60*60)}
+              {msToDHMS(timeRemaining - 7 * 1000 * 60 * 60)}
             </Text>
           </>
         )}
@@ -134,7 +132,7 @@ const ExamItem = ({item}) => {
   );
 };
 
-export default ListExam = ({navigation}) => {
+export default ListExam = ({navigation, route}) => {
   const {userSignin} = useSelector(s => s.userSignin);
   const isFocused = useIsFocused();
   const [listExams, setListExams] = useState([]);
@@ -144,9 +142,17 @@ export default ListExam = ({navigation}) => {
     getData();
   }, [isFocused]);
   const getData = async () => {
+    if (!route.params?.classId) {
+      setIsLoading(false);
+      return;
+    }
     try {
-      const res = await api.getListExam(CLASS_ID, userSignin?.userInfo?.type);
-      setListExams(res.data);
+      const res = await api.getListExam(
+        route.params?.classId,
+        userSignin?.userInfo?.type,
+      );
+
+      setListExams(_list);
     } catch (error) {
       console.log(error);
     } finally {
@@ -159,20 +165,20 @@ export default ListExam = ({navigation}) => {
   const onMoveToCreateExam = () => {
     navigation.navigate('CreateExercise');
   };
-  const onHiddenBtnPress = (item) =>{
-    if(userSignin?.userInfo?.type === 1){
-      return;
-    } else{
-      navigation.navigate('Grade', item)
+  const onHiddenBtnPress = item => {
+    if (userSignin?.userInfo?.type != 1) {
+      navigation.navigate('Submit', item);
+    } else {
+      navigation.navigate('Grade', item);
     }
-  }
+  };
   const _renderContent = section => {
     return (
       <TouchableOpacity
-      onPress= {()=> onHiddenBtnPress(section)}
+        onPress={() => onHiddenBtnPress(section)}
         style={{...styles.btn, backgroundColor: colors.PRIMARY}}>
         <Text style={{color: 'white', fontSize: 17}}>
-          {userSignin?.userInfo?.type === 1 ? 'Nộp bài' : 'Chấm bài'}
+          {userSignin?.userInfo?.type != 1 ? 'Thông tin bài nộp' : 'Chấm bài'}
         </Text>
       </TouchableOpacity>
     );
@@ -184,13 +190,15 @@ export default ListExam = ({navigation}) => {
     <View style={styles.container}>
       <Header title="Bài tập lớn" isHome={false} navigation={navigation} />
 
-      {userSignin?.userInfo?.type != 1 && (
+      {userSignin?.userInfo?.type === 1 && route.params?.classId ? (
         <TouchableOpacity style={styles.addBtn} onPress={onMoveToCreateExam}>
           <Feather name="plus" color="white" size={40} />
         </TouchableOpacity>
-      )}
+      ) : null}
       {isLoading ? (
         <Searching />
+      ) : !route.params?.classId ? (
+        <NoData title="Bạn chưa chọn lớp, vui lòng chọn lớp và thử lại!" />
       ) : listExams.length ? (
         <ScrollView>
           <Accordion
@@ -200,7 +208,7 @@ export default ListExam = ({navigation}) => {
             renderContent={_renderContent}
             onChange={_updateSections}
             underlayColor="#EEEEEE"
-            containerStyle ={{marginBottom: 60}}
+            containerStyle={{marginBottom: 60}}
           />
         </ScrollView>
       ) : (

@@ -15,6 +15,8 @@ import {
   SetUpExercise,
   ListExam,
   Grade,
+  Submit,
+  GradeStudent,
 } from '../screens/Exercises';
 import Home from '../screens/Home';
 import ProfileScreen from '../screens/ProfileScreen';
@@ -55,6 +57,8 @@ export default CombineStack = () => {
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="Exams" component={ListExam} />
         <Stack.Screen name="Grade" component={Grade} />
+        <Stack.Screen name="Submit" component={Submit} />
+        <Stack.Screen name="GradeStudent" component={GradeStudent} />
       </Stack.Navigator>
     </Provider>
   );
