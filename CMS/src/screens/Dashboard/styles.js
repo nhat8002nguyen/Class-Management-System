@@ -29,6 +29,18 @@ const styles = StyleSheet.create({
     fontSize: 17,
     marginTop: 10,
   },
+  addBtn:{
+    height: 50,
+    width: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 25,
+    backgroundColor: colors.PRIMARY,
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+    zIndex: 10
+  },
 });
 
 export default styles;

@@ -19,7 +19,7 @@ import {theme} from '../../styles/theme';
 import {Button} from '../../components/atoms';
 import DialogInput from 'react-native-dialog-input';
 import axios from 'axios';
-
+import Header from '../../components/Header';
 const wait = timeout => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 };
@@ -85,8 +85,7 @@ const StudentClassScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="red" barStyle="dark-content" />
-      <Text style={styles.title}>List Class</Text>
+      <Header title="Lớp học của tôi" isHome={true} />
       {loading ? (
         <ActivityIndicator size="large" color={theme.colors.primary} />
       ) : error ? (

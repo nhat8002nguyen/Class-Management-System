@@ -10,6 +10,10 @@ import StudentClassScreen from '../screens/StudentClassScreen';
 import QuizCreationNavigator from './insidestacks/QuizCreationNavigator';
 import DoQuizNavigator from './insidestacks/DoQuizNavigator';
 import {ListGroups, CreateGroup} from '../screens/GroupManagement';
+import CreateClass from '../screens/CreateClass';
+import CreateCheckIn from '../screens/Home/CreateCheckIn'
+import ListCheckedIn from '../screens/Home/ListCheckedIn'
+
 import {
   CreateExercise,
   SetUpExercise,
@@ -37,6 +41,8 @@ export default CombineStack = () => {
         <Stack.Screen name="AuthScreens" component={AuthStack} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="ClassListScreen" component={ClassListScreen} />
+        <Stack.Screen name="CreateCheckIn" component={CreateCheckIn} />
+        <Stack.Screen name="ListCheckedIn" component={ListCheckedIn} />
         <Stack.Screen
           name="StudentClassScreen"
           component={StudentClassScreen}
@@ -45,10 +51,9 @@ export default CombineStack = () => {
           name="QuizCreationNavigator"
           component={QuizCreationNavigator}
         />
-        <Stack.Screen
-          name="DoingQuizNavigator"
-          component={DoQuizNavigator}
-        />
+        <Stack.Screen name="DoingQuizNavigator" component={DoQuizNavigator} />
+        <Stack.Screen name="CreateClass" component={CreateClass} />
+
         <Stack.Screen name="ListGroups" component={ListGroups} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="CreateGroup" component={CreateGroup} />

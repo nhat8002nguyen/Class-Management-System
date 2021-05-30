@@ -20,25 +20,29 @@ const ClassCard = props => {
 
   const joinClass = () => {
     dispatch(chooseCurrentClass(props.id));
-    navigation.navigate('Home');
+    navigation.navigate('Home', {name: props.name});
   };
 
   return (
-    <TouchableOpacity onPress={() => joinClass()}>
-      <View style={styles.container}>
-        <Text style={styles.className}>
-          {props.name.length < 25
-            ? props.name
-            : props.name.substring(0, 25) + '...'}
+    <TouchableOpacity style={styles.container} onPress={() => joinClass()}>
+      <Text style={styles.className}>{props.name}</Text>
+      <View style={styles.row}>
+        <Text>Phòng học: </Text>
+        <Text style={styles.code}>{props.location}</Text>
+      </View>
+      <View style={styles.row}>
+        <Text>ID lớp</Text>
+        <Text style={styles.code}>{props.code}</Text>
+      </View>
+      <View style={styles.row}>
+        <Text>Số lượng SV tối đa</Text>
+        <Text style={styles.code}>{props.maxGroupMembers}</Text>
+      </View>
+      <View style={styles.row}>
+        <Text>Thời gian học</Text>
+        <Text style={styles.code}>
+          {props.startTime || ''} - {props.endTime || ''}
         </Text>
-        <View style={styles.row}>
-          <Text>Location: </Text>
-          <Text style={styles.location}>{props.location}</Text>
-        </View>
-        <View style={styles.row}>
-          <Text>Code</Text>
-          <Text style={styles.code}>{props.code}</Text>
-        </View>
       </View>
     </TouchableOpacity>
   );
@@ -46,34 +50,40 @@ const ClassCard = props => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'orange',
+    backgroundColor: 'white',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
-    width: 323,
+    width: '95%',
     height: 110,
     marginTop: 20,
     paddingVertical: 10,
     paddingHorizontal: 10,
     borderRadius: 10,
+    alignSelf: 'center',
+    shadowOpacity: 0.9,
+    shadowOffset: {height: 13, width: 55},
+    shadowColor: 'rgba(0, 0, 0, 0.5)',
+    elevation: 6,
+    shadowRadius: 15,
+    marginBottom: 5
   },
   row: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   location: {
-    color: 'white',
+    color: 'black',
     marginLeft: 50,
   },
   code: {
-    color: 'white',
-    marginLeft: 80,
+    color: 'black',
+    fontWeight: 'bold',
   },
   className: {
-    fontWeight: '700',
+    fontWeight: 'bold',
     fontSize: 24,
-    position: 'relative',
-    left: 20,
-    color: 'white',
+    color: 'black',
   },
 });
 

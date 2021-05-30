@@ -23,19 +23,19 @@ export default ListGroups = ({navigation, route}) => {
   const groupSelected = useRef(null);
   const [index, setIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-
+  const {classId} = useSelector(state => state.classId);
   useEffect(() => {
     getData();
   }, [isFocused]);
   const getData = async () => {
-    if (!route.params?.classId) {
+    if (!classId) {
       setIsLoading(false);
       return;
     }
     try {
       const [joined, all] = await Promise.all([
-        api.getListGroupsByUserId(route.params?.classId),
-        api.getListGroupsByClassId(route.params?.classId),
+        api.getListGroupsByUserId(classId),
+        api.getListGroupsByClassId(classId),
       ]);
 
       setListGroupsJoined(joined?.data || []);
@@ -56,7 +56,7 @@ export default ListGroups = ({navigation, route}) => {
   const FirstRoute = () =>
     isLoading ? (
       <Searching />
-    ) : !route.params?.classId ? (
+    ) : !classId ? (
       <NoData title="Bạn chưa chọn lớp, vui lòng chọn lớp và thử lại!" />
     ) : listGroupsJoined.length ? (
       <FlatList
@@ -73,7 +73,7 @@ export default ListGroups = ({navigation, route}) => {
   const SecondRoute = () =>
     isLoading ? (
       <Searching />
-    ) : !route.params?.classId ? (
+    ) : !classId ? (
       <NoData title="Bạn chưa chọn lớp, vui lòng chọn lớp và thử lại!" />
     ) : allGroups.length ? (
       <FlatList
@@ -87,7 +87,6 @@ export default ListGroups = ({navigation, route}) => {
     ) : (
       <NoData title="Không tìm thấy nhóm nào!" />
     );
-
   const TabBar = ({navigationState, position}) => {
     return (
       <View style={styles.tab}>

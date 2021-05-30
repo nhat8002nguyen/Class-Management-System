@@ -138,21 +138,23 @@ export default ListExam = ({navigation, route}) => {
   const [listExams, setListExams] = useState([]);
   const [activeSections, setActiveSections] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const {classId} = useSelector(state => state.classId);
+
   useEffect(() => {
     getData();
   }, [isFocused]);
   const getData = async () => {
-    if (!route.params?.classId) {
+    if (!classId) {
       setIsLoading(false);
       return;
     }
     try {
       const res = await api.getListExam(
-        route.params?.classId,
+        classId,
         userSignin?.userInfo?.type,
       );
 
-      setListExams(_list);
+      setListExams(res.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -190,14 +192,14 @@ export default ListExam = ({navigation, route}) => {
     <View style={styles.container}>
       <Header title="Bài tập lớn" isHome={false} navigation={navigation} />
 
-      {userSignin?.userInfo?.type === 1 && route.params?.classId ? (
+      {userSignin?.userInfo?.type === 1 && classId ? (
         <TouchableOpacity style={styles.addBtn} onPress={onMoveToCreateExam}>
           <Feather name="plus" color="white" size={40} />
         </TouchableOpacity>
       ) : null}
       {isLoading ? (
         <Searching />
-      ) : !route.params?.classId ? (
+      ) : !classId ? (
         <NoData title="Bạn chưa chọn lớp, vui lòng chọn lớp và thử lại!" />
       ) : listExams.length ? (
         <ScrollView>
