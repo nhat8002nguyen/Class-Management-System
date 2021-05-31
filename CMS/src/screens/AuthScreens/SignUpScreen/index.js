@@ -55,7 +55,7 @@ export default function RegisterScreen({navigation}) {
 
   useEffect(() => {
     if (success) {
-      Alert.alert('Signup successful !', 'Move to signin ', [
+      Alert.alert('Đăng ký thành công !', 'Chuyển đến đăng nhập ', [
         {
           text: 'OK',
           onPress: () => navigation.replace('LoginScreen'),
@@ -76,7 +76,7 @@ export default function RegisterScreen({navigation}) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Create Account</Header>
+      <Header>{'Tạo tài khoản'}</Header>
       <TextInput
         label="Name"
         returnKeyType="next"
@@ -108,14 +108,14 @@ export default function RegisterScreen({navigation}) {
       />
       <View style={styles.userTypes}>
         <View style={styles.userType}>
-          <Text>Teacher</Text>
+          <Text>{'Giáo viên'}</Text>
           <RadioButton
             value={1}
             status={userType === 1 ? 'checked' : 'unchecked'}
             onPress={() => setUserType(1)}></RadioButton>
         </View>
         <View>
-          <Text>Student</Text>
+          <Text>{'HS/SV'}</Text>
           <RadioButton
             value={2}
             status={userType === 2 ? 'checked' : 'unchecked'}
@@ -129,13 +129,13 @@ export default function RegisterScreen({navigation}) {
           mode="contained"
           onPress={onSignUpPressed}
           style={{marginTop: 24}}>
-          Sign Up
+          {'Đăng ký'}
         </Button>
       )}
       <View style={styles.row}>
-        <Text>Already have an account? </Text>
+        <Text>{'Đã có tài khoản ?'}</Text>
         <TouchableOpacity onPress={() => navigation.replace('LoginScreen')}>
-          <Text style={styles.link}>Login</Text>
+          <Text style={styles.link}>{' Đăng nhập'}</Text>
         </TouchableOpacity>
       </View>
     </Background>

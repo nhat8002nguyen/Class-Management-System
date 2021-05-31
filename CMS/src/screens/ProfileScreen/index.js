@@ -62,7 +62,7 @@ export default function ProfileScreen({navigation}) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Profile</Header>
+      <Header>{'Hồ Sơ'}</Header>
       <TextInput
         label="Name"
         returnKeyType="next"
@@ -96,7 +96,7 @@ export default function ProfileScreen({navigation}) {
         Update
       </Button>
       <Button mode="outlined" onPress={onLogout}>
-        Logout
+        {'Đăng xuất'}
       </Button>
     </Background>
   );

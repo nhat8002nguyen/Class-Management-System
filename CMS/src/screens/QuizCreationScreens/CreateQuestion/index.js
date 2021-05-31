@@ -17,7 +17,8 @@ import {
   saveQuestion,
 } from '../../../redux/actions/questionActions';
 import styles from './styles';
-import {RadioButton} from 'react-native-paper';
+import {ActivityIndicator, RadioButton} from 'react-native-paper';
+import {theme} from '../../../styles/theme';
 
 const validURL = str => {
   var pattern = new RegExp(
@@ -55,6 +56,9 @@ const CreateQuestion = ({navigation, route}) => {
     isAddNewQuiz ? '' : route.params.questionTime,
   );
 
+  const {loading: addLoading} = useSelector(state => state.questionAdd);
+  const {loading: saveLoading} = useSelector(state => state.questionSave);
+
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
@@ -62,8 +66,8 @@ const CreateQuestion = ({navigation, route}) => {
       headerTitle: () => (
         <Text style={styles.headerTitle}>
           {route.params.questionId !== null
-            ? 'Edit Question'
-            : 'Create A Question'}
+            ? 'Chỉnh sữa câu hỏi'
+            : 'Thêm 1 câu hỏi'}
         </Text>
       ),
     });
@@ -174,7 +178,7 @@ const CreateQuestion = ({navigation, route}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.quizDetail}>
-        <Text style={styles.fieldName}>Tap to add image or video</Text>
+        <Text style={styles.fieldName}>{'Tap để thêm hỉnh ảnh'}</Text>
         <TouchableOpacity onPress={() => setDialogVisible(true)}>
           <Image style={styles.image} source={{uri: questionImage}}></Image>
         </TouchableOpacity>
@@ -187,7 +191,7 @@ const CreateQuestion = ({navigation, route}) => {
           closeDialog={() => {
             setDialogVisible(false);
           }}></DialogInput>
-        <Text style={styles.fieldName}>Add question</Text>
+        <Text style={styles.fieldName}>{'Câu hỏi'}</Text>
         <TextInput
           style={styles.textInput}
           value={questionDescription}
@@ -249,14 +253,18 @@ const CreateQuestion = ({navigation, route}) => {
               onPress={() => setCorrectAnswer(4)}
             />
           </View>
-          <TouchableOpacity onPress={onAddOrUpdateQuestion}>
-            <Icon
-              name="checkcircle"
-              size={40}
-              color="orange"
-              style={styles.acceptTest}
-            />
-          </TouchableOpacity>
+          {addLoading || saveLoading ? (
+            <ActivityIndicator size="small" color={theme.colors.primary} />
+          ) : (
+            <TouchableOpacity onPress={onAddOrUpdateQuestion}>
+              <Icon
+                name="checkcircle"
+                size={40}
+                color="orange"
+                style={styles.acceptTest}
+              />
+            </TouchableOpacity>
+          )}
         </View>
       </View>
     </SafeAreaView>

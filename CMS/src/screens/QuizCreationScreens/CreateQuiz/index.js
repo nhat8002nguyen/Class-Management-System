@@ -64,9 +64,9 @@ const CreateQuiz = ({route, navigation}) => {
     navigation.setOptions({
       headerTitle: () =>
         _quizId !== '' ? (
-          <Text style={styles.headerTitle}>Edit Quiz</Text>
+          <Text style={styles.headerTitle}>{'Chỉnh sữa quiz'}</Text>
         ) : (
-          <Text style={styles.headerTitle}>Create Quiz</Text>
+          <Text style={styles.headerTitle}>{'Thêm bài Quiz'}</Text>
         ),
     });
     dispatch(listQuestion(_quizId));
@@ -109,7 +109,7 @@ const CreateQuiz = ({route, navigation}) => {
       );
     }
 
-    navigation.goBack();
+    navigation.replace('ListTest');
   };
 
   return (
@@ -138,12 +138,12 @@ const CreateQuiz = ({route, navigation}) => {
               setDialogVisible(false);
             }}></DialogInput>
         </View>
-        <Text style={styles.fieldName}>Subject</Text>
+        <Text style={styles.fieldName}>{'Chủ đề'}</Text>
         <TextInput
           style={[styles.input, styles.inputText]}
           value={quizName}
           onChangeText={text => setQuizName(text)}></TextInput>
-        <Text style={styles.fieldName}>Description</Text>
+        <Text style={styles.fieldName}>{'Mô tả'}</Text>
         <TextInput
           style={[styles.input, styles.inputText]}
           value={quizDescription}
@@ -151,7 +151,7 @@ const CreateQuiz = ({route, navigation}) => {
       </View>
       <View style={styles.viewQuestions}>
         <Text style={styles.fieldName}>
-          Questions({questions && questions.length})
+          {'Câu hỏi'}({questions && questions.length})
         </Text>
         <ScrollView
           contentContainerStyle={styles.questions}
@@ -161,7 +161,7 @@ const CreateQuiz = ({route, navigation}) => {
           {loading ? (
             <ActivityIndicator size="large" color={theme.colors.primary} />
           ) : error ? (
-            <Text>you need to confirm quiz first !</Text>
+            <Text>{'Cần Tạo Quiz trước !'}</Text>
           ) : (
             questions.map((question, index) => (
               <QuestionCard
@@ -178,7 +178,7 @@ const CreateQuiz = ({route, navigation}) => {
       <View style={styles.bottomButton}>
         <TouchableNativeFeedback onPress={openAddQuestion}>
           <View style={styles.buttonAdd}>
-            <Text>Add Quiz</Text>
+            <Text>{'Thêm question'}</Text>
           </View>
         </TouchableNativeFeedback>
         <TouchableOpacity onPress={onConfirmQuiz}>

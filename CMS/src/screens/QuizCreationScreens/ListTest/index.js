@@ -1,6 +1,7 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-
+import Searching from '../../../components/Searching';
+import NoData from '../../../components/NoData';
 import QuizCard from '../../../components/molecules/QuizCard';
 import styles from './styles';
 import {
@@ -39,12 +40,12 @@ const ListTest = ({navigation, route}) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: 'List Quizzes',
+      title: 'Danh sách các bài quiz',
       headerLeft: () => (
         <Icon name="arrow-back" size={30} onPress={() => onGoBackHome()} />
       ),
     });
-    dispatch(listQuiz(classId));
+    onRefresh();
   }, [navigation, route]);
 
   const onGoBackHome = () => {
@@ -52,14 +53,14 @@ const ListTest = ({navigation, route}) => {
   };
 
   const openAddQuiz = () => {
-    navigation.navigate('CreateQuiz');
+    navigation.replace('CreateQuiz');
   };
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="red" barStyle="dark-content" />
       {loading ? (
-        <ActivityIndicator size="large" color={theme.colors.primary} />
+        <Searching />
       ) : error ? (
         error.message
       ) : (
@@ -68,14 +69,18 @@ const ListTest = ({navigation, route}) => {
           refreshControl={
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
           }>
-          {quizzes.map(quiz => (
-            <QuizCard
-              key={quiz._quizId}
-              {...quiz}
-              classId={classId}
-              navigation={navigation}
-            />
-          ))}
+          {quizzes.length !== 0 ? (
+            quizzes.map(quiz => (
+              <QuizCard
+                key={quiz._quizId}
+                {...quiz}
+                classId={classId}
+                navigation={navigation}
+              />
+            ))
+          ) : (
+            <NoData title="Không có bài quiz nào, hãy thêm quiz" />
+          )}
         </ScrollView>
       )}
 

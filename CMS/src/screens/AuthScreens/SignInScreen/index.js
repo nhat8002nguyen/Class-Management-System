@@ -86,20 +86,20 @@ export default function LoginScreen({navigation}) {
       <View style={styles.forgotPassword}>
         <TouchableOpacity
           onPress={() => navigation.navigate('ResetPasswordScreen')}>
-          <Text style={styles.forgot}>Forgot your password?</Text>
+          <Text style={styles.forgot}>{'Quên mật khẩu ?'}</Text>
         </TouchableOpacity>
       </View>
       {loading ? (
         <ActivityIndicator size="large" color={theme.colors.primary} />
       ) : (
         <Button mode="contained" onPress={onLoginPressed}>
-          Login
+          {'Đăng nhập'}
         </Button>
       )}
       <View style={styles.row}>
-        <Text>Don’t have an account? </Text>
+        <Text>{'Chưa có tài khoản ?'} </Text>
         <TouchableOpacity onPress={() => navigation.replace('RegisterScreen')}>
-          <Text style={styles.link}>Sign up</Text>
+          <Text style={styles.link}>{'Đăng ký'}</Text>
         </TouchableOpacity>
       </View>
     </Background>

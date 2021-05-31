@@ -71,7 +71,7 @@ const QuizCard = props => {
   };
 
   const editCreatedQuiz = () => {
-    navigation.navigate('CreateQuiz', {
+    navigation.replace('CreateQuiz', {
       quizId: props._quizId,
     });
   };
