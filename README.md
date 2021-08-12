@@ -12,3 +12,8 @@ After setting up and connecting device successfully, cd into folder `CMS`, insta
 
 ## App backend
 To run app backend, cd into folder `CMS-Backend`, install packages (`npm i`) then start (`npm run start`)
+
+
+# SOME DEMO
+https://drive.google.com/file/d/1z-y9upnYBtgdIrDJxrLpickIYyCdU4Tn/view?usp=sharing
+
